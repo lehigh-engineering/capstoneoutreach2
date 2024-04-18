@@ -1,0 +1,45 @@
+.crypto {
+    margin-bottom: 50px;
+}
+
+.crypto h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.crypto img {
+    width: 400px;
+    display: flex;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.body {
+   padding: 20px;
+}
+
+.body h2 {
+    margin-top: 50px;
+    text-decoration: underline;
+}
+
+table {
+    width: 400px;
+    height: 300px;
+}
+table, th, td {
+    border: 2px solid #000;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+}
+
+.crypto a {
+    color: #0000FF;
+}
+.crypto a:visited {
+    color: #800080;
+}
+.crypto a:hover {
+    color: #f82b2b;
+}

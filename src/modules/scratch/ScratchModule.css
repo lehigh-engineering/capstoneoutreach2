@@ -1,0 +1,68 @@
+.scratch {
+    margin-bottom: 50px;
+}
+
+.scratch h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.scratch img {
+    width: 400px;
+    display: flex;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.body {
+   padding: 20px;
+}
+
+.body h2 {
+    margin-top: 50px;
+    text-decoration: underline;
+}
+
+.scratch a {
+    color: #0000FF;
+}
+.scratch a:visited {
+    color: #800080;
+}
+.scratch a:hover {
+    color: #f82b2b;
+}
+
+/* .left-column {
+    float: left;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #502D0F;
+    color: #fff;
+    height: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 100px;
+} */
+
+.toc {
+    float: left;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #502D0F;
+    color: #fff;
+    height: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 100px;
+}
+
+.scratch .toc a:visited {
+  color: white; 
+}
+
+.scratch .toc a:hover {
+  text-decoration: underline; 
+}

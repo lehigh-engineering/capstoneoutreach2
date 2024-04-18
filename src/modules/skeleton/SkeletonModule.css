@@ -1,0 +1,34 @@
+.skeleton {
+    margin-bottom: 50px;
+}
+
+.skeleton h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.skeleton img {
+    width: 400px;
+    display: flex;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.body {
+   padding: 20px;
+}
+
+.body h2 {
+    margin-top: 50px;
+    text-decoration: underline;
+}
+
+.skeleton a {
+    color: #0000FF;
+}
+.skeleton a:visited {
+    color: #800080;
+}
+.skeleton a:hover {
+    color: #f82b2b;
+}

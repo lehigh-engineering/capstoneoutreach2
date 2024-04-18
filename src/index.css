@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  background-color: #502D0F;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.banner img {
+  width: 200px;
+  padding-top: 5px;
+  padding-right: 10px;
+  float: left;
+}
+.banner h2 {
+  font-size: 15px;
+  border-left: 1px solid #e2e2e2;
+  padding-left: 10px;
+  float: left;
+}
+.banner p {
+  display: inline;
+  font-size: 12px;
+  padding: 10px;
+  float: right;
+}
+.banner p + p {
+  border-right: 1px solid #e2e2e2;
+}
+.banner a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: #ff9900;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  clear: both;
+  background-color: #502D0F;
+  color: #fff;
+  text-align: center;
+}
