@@ -1,0 +1,43 @@
+{
+  "api": {
+    "fred": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "fredsmanager"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "fredsmanager": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_fredsmanager_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fredsmanager"
+        }
+      ]
+    },
+    "AMPLIFY_function_fredsmanager_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fredsmanager"
+        }
+      ]
+    }
+  }
+}
