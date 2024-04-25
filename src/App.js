@@ -16,17 +16,41 @@ import MazeModule from './modules/maze/MazeModule';
 import MakeCodeModule from './modules/makecode/MakeCodeModule';
 import HTMLModule from './modules/html/HTMLModule';
 
-// import { Amplify } from 'aws-amplify';
-// import { generateClient } from 'aws-amplify/api';
-// import config from './amplifyconfiguration.json';
-// Amplify.configure(config);
+import { Amplify } from 'aws-amplify';
+import { generateClient } from "aws-amplify/api";
+import awsconfig from './aws-exports';
+import { post } from 'aws-amplify/api';
 
-// const client = generateClient();
+Amplify.configure(awsconfig);
+const API = generateClient();
 
 function App() {
+  const invokeLambda = async () => {
+    try {
+      const restOperation = post({
+        apiName: 'fred',
+        path: '/public',
+        options: {
+          body: {
+            message: 'Mow the lawn'
+          }
+        }
+      });
+  
+      const { body } = await restOperation.response;
+      const response = await body.json();
+  
+      console.log('POST call succeeded');
+      console.log(response);
+    } catch (e) {
+      console.log('POST call failed: ', e);
+    }
+  };
+
   return (
     <Router>
       <div className="App">
+        <button onClick={invokeLambda}>Invoke Lambda</button>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
