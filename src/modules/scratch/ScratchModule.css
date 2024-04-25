@@ -11,14 +11,42 @@
     width: 400px;
     display: flex;
     margin: 0 auto;
-    padding-bottom: 20px;
+    padding-bottom: 70px;
 }
 
-.body {
+
+.scratch .toc {
+    float: left;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #502D0F;
+    color: #fff;
+    height: 515px;
+    padding-bottom: 10px;
+    margin-bottom: 100px;
+}
+
+.scratch .toc h2 {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.scratch .toc li {
+    font-size: 20px;
+    padding: 10px;
+    padding-bottom: 12px;
+}
+
+.scratch .body {
    padding: 20px;
 }
 
-.body h2 {
+.scratch .body h2 {
     margin-top: 50px;
     text-decoration: underline;
 }
@@ -33,36 +61,6 @@
     color: #f82b2b;
 }
 
-/* .left-column {
-    float: left;
-    width: 300px;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: #502D0F;
-    color: #fff;
-    height: 100%;
-    padding-bottom: 20px;
-    margin-bottom: 100px;
-} */
-
-.toc {
-    float: left;
-    width: 300px;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: #502D0F;
-    color: #fff;
-    height: 100%;
-    padding-bottom: 20px;
-    margin-bottom: 100px;
-}
-
-.scratch .toc a:visited {
-  color: white; 
-}
-
-.scratch .toc a:hover {
-  text-decoration: underline; 
+.scratch .toc a {
+    color:  white;
 }

@@ -46,7 +46,7 @@ function CryptoModule() {
                 </ul>
             </div> }
             <h1>Introduction to Cryptography:<br></br><i>Secret Codes and Ciphers</i></h1>
-            <img src={cipherImg} alt="Ceasar's Cipher"></img>
+            <img src={cipherImg} alt="Caesar's Cipher"></img>
             <div class="body">
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>
@@ -98,7 +98,7 @@ function CryptoModule() {
                 <h2 id="Introduction">Introduction</h2>
                     <p>Begin by asking students if they have heard of cryptography before. Discuss with them what they think it is, what it actually is, and why it is important.</p>
                     <p>A classroom example might be students secretly passing notes. Peers or teachers can intercept the note, it might be accidentally dropped or forgotten for anyone to pick up and read. An encrypted message will only read as gibberish if it falls into the wrong hands. Without the key possessed by the creator and recipient of the message, the cipher text holds no meaning.</p>
-                <h2>Ceasar Cipher</h2>
+                <h2>Caesar Cipher</h2>
                     <p>Introduce the Caesar cipher as one of the oldest and simplest forms of encryption. Julius Caesar first used it to communicate with his generals on the battlefield so opposing generals couldn’t decipher his plans.</p>
                     <p>To demo it, write the alphabet on the board. And right under it, write the alphabet again offset by a shift of 3 (Caesar used a shift of 3) such that the letters line up.</p>
                     <p><b>Example:</b>

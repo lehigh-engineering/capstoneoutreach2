@@ -8,17 +8,45 @@
 }
 
 .injection img {
-    width: 400px;
+    width: 450px;
     display: flex;
     margin: 0 auto;
     padding-bottom: 20px;
 }
 
-.body {
+.injection .toc {
+    float: left;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #502D0F;
+    color: #fff;
+    height: 515px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.injection .toc h2 {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.injection .toc li {
+    font-size: 20px;
+    padding: 10px;
+    padding-bottom: 12px;
+}
+.injection .toc a {
+    color: #fff;
+}
+
+.injection .body {
    padding: 20px;
 }
 
-.body h2 {
+.injection .body h2 {
     margin-top: 50px;
     text-decoration: underline;
 }

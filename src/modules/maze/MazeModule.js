@@ -47,7 +47,7 @@ function MazeModule() {
             <h1>Program a Maze with Paper</h1>
             <img src={mazeImg} alt="Maze"></img>
             <div class="body">
-            <p>Inspired by <a href="https://www.sciencebuddies.org/stem-activities/program-a-maze-with-paper?from=Blog">Program a Maze with Paper from Science Buddies</a></p>
+            <p id="inspo">Inspired by <a href="https://www.sciencebuddies.org/stem-activities/program-a-maze-with-paper?from=Blog">Program a Maze with Paper from Science Buddies</a></p>
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>
                         <li><a href="https://files5.pdesas.org/050205197024147196040149181007017248032244235080/Download.ashx?hash=2.2">3.5.6-8.F</a></li>

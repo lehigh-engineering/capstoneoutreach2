@@ -1,20 +1,20 @@
-.maze {
+.HTML {
     margin-bottom: 50px;
 }
 
-.maze h1 {
+.HTML h1 {
     text-align: center;
     padding-bottom: 20px;
 }
 
-.maze img {
-    width: 600px;
+.HTML img {
+    width: 500px;
     display: flex;
     margin: 0 auto;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }
 
-.maze .toc {
+.HTML .toc {
     float: left;
     width: 300px;
     margin-top: 20px;
@@ -26,45 +26,42 @@
     padding-bottom: 20px;
     margin-bottom: 100px;
 }
-.maze .toc h2 {
+.HTML .toc h2 {
     font-size: 30px;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 30px;
     border-bottom: 1px solid #e2e2e2;
 }
-.maze .toc li {
+.HTML .toc li {
     font-size: 20px;
     padding: 10px;
     padding-bottom: 12px;
 }
-.maze .toc a {
+.HTML .toc a {
     color: #fff;
 }
 
-.maze .body {
+.HTML .body {
    padding: 20px;
 }
 
-.maze .body h2 {
-    margin-top: 60px;
+.HTML h2#STEELS\ Standards {
+    margin-top: 100px;
     text-decoration: underline;
 }
 
-.maze .body #inspo {
-    text-align: center;
- }
+.HTML .body h2 {
+    margin-top: 50px;
+    text-decoration: underline;
+}
 
-.maze a {
+.HTML a {
     color: #0000FF;
 }
-.maze a:visited {
+.HTML a:visited {
     color: #800080;
 }
-.maze a:hover {
+.HTML a:hover {
     color: #f82b2b;
 }
-/* 
-.body {
-    padding: 75px;
- } */

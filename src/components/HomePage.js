@@ -3,9 +3,11 @@ import './HomePage.css';
 
 import cipherImg from './images/cipher.jpg';
 import hackerImg from './images/hacker.jpeg';
-import skeletonImg from './images/skeleton.avif';
 import scratchImg from './images/Scratch.png';
 import mazeImg from './images/maze.jpeg';
+import heartImg from './images/heart.jpg';
+import HTMLImg from './images/HTML_logo.jpg'
+
 
 function HomePage() {
     return (
@@ -43,7 +45,7 @@ function HomePage() {
                     <p><i>Recommended for: Grades 6-8</i></p>
                     <li class="content"><a href="/cryptography">Introduction to Cryptography</a></li>
                     <li class="content"><a href="/scratch">Introduction to Scratch</a></li>
-                    <li class="content">Module 3</li>
+                    <li class="content"><a href="/makecode">Introduction to MakeCode</a></li>
                     <li class="content">Module 4</li>
                 </ul>
                 <ul class="advanced">
@@ -63,19 +65,22 @@ function HomePage() {
                     <button type="button">Search</button>
                 </div>
                 <div class="module">
+                    <img src={mazeImg} alt="Maze"></img><nav><p><a href="/maze">Program a Maze with Paper</a></p></nav>
+                </div>
+                <div class="module">
                     <img src={cipherImg} alt="Ceasar's Cipher"></img><nav><p><a href="/cryptography">Introduction to Cryptography</a></p></nav>
-                </div>
-                <div class="module">
-                    <img src={hackerImg} alt="Hacker"></img><nav><p><a href="/cybersecurity">Introduction to Cybersecurity</a></p></nav>
-                </div>
-                <div class="module">
-                    <img src={skeletonImg} alt="Skeleton"></img><nav><p><a href="/skeleton">Skeleton Module Code</a></p></nav>
                 </div>
                 <div class="module">
                     <img src={scratchImg} alt="Scratch"></img><nav><p><a href="/scratch">Introduction to Scratch</a></p></nav>
                 </div>
                 <div class="module">
-                    <img src={mazeImg} alt="Maze"></img><nav><p><a href="/maze">Program a Maze with Paper</a></p></nav>
+                    <img src={heartImg} alt="Heart"></img><nav><p><a href="/makecode">Introduction to MakeCode</a></p></nav>
+                </div>
+                <div class="module">
+                    <img src={hackerImg} alt="Hacker"></img><nav><p><a href="/cybersecurity">Introduction to Cybersecurity</a></p></nav>
+                </div>
+                <div class="module">
+                    <img src={HTMLImg} alt="HTML"></img><nav><p><a href="/html">Introduction to HTML</a></p></nav>
                 </div>
             </div>
         </div>
