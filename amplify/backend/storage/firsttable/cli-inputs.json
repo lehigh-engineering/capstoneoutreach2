@@ -1,0 +1,10 @@
+{
+  "resourceName": "firsttable",
+  "tableName": "firsttable",
+  "partitionKey": {
+    "fieldName": "primarykey",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

@@ -18,6 +18,17 @@
   "function": {
     "fredsmanager": {
       "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "firsttable"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
@@ -38,6 +49,12 @@
           "resourceName": "fredsmanager"
         }
       ]
+    }
+  },
+  "storage": {
+    "firsttable": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }
