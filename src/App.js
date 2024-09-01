@@ -33,8 +33,8 @@ function App() {
   const invokeLambda = async () => {
     try {
       const restOperation = post({
-        apiName: 'fred',
-        path: '/public',
+        apiName: 'capstoneoutreachgateway',
+        path: '/modules',
         options: {
           body: {
             message: 'Mow the lawn'
