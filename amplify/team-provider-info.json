@@ -10,17 +10,6 @@
       "StackName": "amplify-capstoneoutreach2-dev-f41de",
       "StackId": "arn:aws:cloudformation:us-east-2:767397900696:stack/amplify-capstoneoutreach2-dev-f41de/6c8c9ad0-fdc6-11ee-b411-0a68c8ad7edb",
       "AmplifyAppId": "d28r2k7kb7jmte"
-    },
-    "categories": {
-      "function": {
-        "fredsmanager": {
-          "deploymentBucketName": "amplify-capstoneoutreach2-dev-f41de-deployment",
-          "s3Key": "amplify-builds/fredsmanager-33632b57685261586745-build.zip"
-        }
-      },
-      "api": {
-        "fred": {}
-      }
     }
   }
 }
