@@ -31,7 +31,13 @@
     },
     "categories": {
       "function": {
-        "modulespublic": {}
+        "modulespublic": {
+          "deploymentBucketName": "amplify-capstoneoutreach2-main-4e42f-deployment",
+          "s3Key": "amplify-builds/modulespublic-77343452636d49443432-build.zip"
+        }
+      },
+      "api": {
+        "capstoneoutreachgateway": {}
       }
     }
   }
