@@ -16,5 +16,23 @@
         "modulespublic": {}
       }
     }
+  },
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-capstoneoutreach2-main-4e42f-authRole",
+      "UnauthRoleArn": "arn:aws:iam::891377136298:role/amplify-capstoneoutreach2-main-4e42f-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::891377136298:role/amplify-capstoneoutreach2-main-4e42f-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-capstoneoutreach2-main-4e42f-deployment",
+      "UnauthRoleName": "amplify-capstoneoutreach2-main-4e42f-unauthRole",
+      "StackName": "amplify-capstoneoutreach2-main-4e42f",
+      "StackId": "arn:aws:cloudformation:us-east-2:891377136298:stack/amplify-capstoneoutreach2-main-4e42f/dfb5f480-6a26-11ef-9712-06404a30a2c3",
+      "AmplifyAppId": "dap4uhc34b16x"
+    },
+    "categories": {
+      "function": {
+        "modulespublic": {}
+      }
+    }
   }
 }
