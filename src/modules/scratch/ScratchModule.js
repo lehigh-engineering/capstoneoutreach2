@@ -1,11 +1,13 @@
 // import React from 'react';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ScratchModule.css';
 
-import scratchImg from './Scratch.png';
+import scratchImg from './scratch.png';
 import scratchBlock from './ScratchBlocks.png'
 
 function SkeletonModule() {
+    const [isVisible, setIsVisible] = useState(false);
+    
     useEffect(() => {
         // Add event listeners to all TOC links
         const tocLinks = document.querySelectorAll('.toc a');
@@ -34,19 +36,24 @@ function SkeletonModule() {
     }
     return (
         <div class="scratch">
-            { <div class="toc">
-                <h2>Table of Contents</h2>
-                <ul>
-                    <li><a href="#STEELS Standards">STEELS Standards</a></li>
-                    <li><a href="#Objectives">Objectives</a></li>
-                    <li><a href="#Materials">Materials</a></li>
-                    <li><a href="#Basic Vocab">Basic Vocab</a></li>
-                    <li><a href="#Introduction">Introduction</a></li>
-                    <li><a href="#Class Activity">Class Activity</a></li>
-                    <li><a href="#Summary">Summary</a></li>
-                    <li><a href="#Discussion">Discussion</a></li>
-                </ul>
-            </div> }
+            <button className="toc-toggle" onClick={() => setIsVisible(!isVisible)}>
+                {isVisible ? '-' : '+'}
+            </button>
+            {isVisible && (
+                <div className="toc">
+                    <h2>Table of Contents</h2>
+                    <ul>
+                        <li><a href="#STEELS Standards">STEELS Standards</a></li>
+                        <li><a href="#Objectives">Objectives</a></li>
+                        <li><a href="#Materials">Materials</a></li>
+                        <li><a href="#Basic Vocab">Basic Vocab</a></li>
+                        <li><a href="#Introduction">Introduction</a></li>
+                        <li><a href="#Class Activity">Class Activity</a></li>
+                        <li><a href="#Summary">Summary</a></li>
+                        <li><a href="#Discussion">Discussion</a></li>
+                    </ul>
+                </div>
+            )}
             <h1>Introduction to Scratch:<br></br><i>Creative Coding</i></h1>
             <img src={scratchImg} alt="Scratch"></img>
             <div class="body">
@@ -92,23 +99,23 @@ function SkeletonModule() {
                     <p>Introduce Scratch as a means to create interactive stories, games, and animations. It was first launched in 2007 by the Lifelong Kindergarten Group at the MIT Media Lab and was developed with the intention of providing an intuitive platform allowing for creative expression. As one of the first kid-friendly open source resources of its time, it drew in users, teachers and students alike, and fostered a community of young minds seeking to create, with some going as far as creating extensions that improve user experience. </p>
                     <p>Although lacking the finesse of professional cartoons and animations, Scratch covers a variety of actions, environments, and stories, only limited by creativity. To demonstrate the potential of Scratch, you can display some finished projects located <a href="https://scratch.mit.edu/explore/projects/all/"><u>here</u>.</a></p>
                     <p>To navigate to your own project, click create, located near the top next to the Scratch logo</p>
-                <h2>Basic Blocks</h2>
+                <h3>Basic Blocks</h3>
                     <p>Start with the motion blocks ⇒ As the name suggests, they all make the sprite perform a motion. To utilize a block, drag it from its side  panel to the center. Clicking on it will make the sprite move as specified. To delete a block, simply click on it so that it is highlighted, and hit delete.</p>
                     <p>Go through a few of the motion blocks with the class and observe what happens each time and encourage them to play around with all the possible options so they know what they have at their disposal. Values can be altered as well to perform more specific actions. For example, instead of moving the default ten steps, you can have your sprite take a larger step of 100. </p>
                     <p><i>Try some negative values too and draw connections to how the stage is essentially a large coordinate grid</i></p>
                     <p>As students grow more comfortable with the interface, they can independently explore the Looks and Sounds blocks as well.</p>
-                <h2>Chaining Blocks</h2>
+                <h3>Chaining Blocks</h3>
                     <p>Combining actions allow for multiple actions to happen simultaneously. By snapping two blocks together to create a combined block. Try adding a “Say Hello” block under a “Move 10 Steps” block so that they snap together. Clicking the large block will trigger both actions at once! </p>
-                <h2>Events</h2>
+                <h3>Events</h3>
                     <p>Event blocks focus on specifying when an action occurs. Essentially think of it as When x Do y. By adding an Event block to your Action block, you can induce the action at will. Notice that all the Event blocks are header blocks since they are the highest level of control. Try adding a “When Flag clicked” block followed by some basic blocks. Clicking the green flag at the top will run the block. Remove it and the green flag has no effect anymore! </p>
-                <h2>Control</h2>
+                <h3>Control</h3>
                     <p>Control blocks help control what occurs on stage. It dictates when and how many times certain actions should be performed. Observe the three main types: loops, ifs, and commands. </p>
                     <p>Loops “loop” through the block UNTIL the end condition is met. Try the “Repeat 10” block. Any action placed inside it will run ten times! In this case, the block is looped through ten times. What other Control blocks are loops? (“Forever” and “Repeat until”)</p>
                     <p>If blocks only run IF a certain condition is met. Note that the two if blocks take in a diamond shaped condition. Go through all the different types of blocks and take note of which ones would fit. To demo you can build a block stack like the one pictured below. Discuss why you might need the wait in between. (The blocks run sequentially without the wait, once the flag is clicked, the sprite checks if it senses that it is touching the mouse. Obviously he isn’t since the mouse is on the flag and so the if block will never be true) </p>
                     <img src={scratchBlock} alt="Scratch"></img>
                     <p>In this case, the sprite will only move 10 steps IF it is touching the mouse pointer. </p>
                     <p>The Command blocks are the rest of them. They instruct simple commands such as create a clone or delete a clone.</p>
-                <h2>Fun Bonuses</h2>
+                <h3>Fun Bonuses</h3>
                     <li>Access backdrop on the bottom right to change the scene</li>
                     <li>Choose a sprite on the bottom right to choose from a wide range of sprites and customize its size and direction</li>
                 <h2 id="Class Activity">Class Activity</h2>
