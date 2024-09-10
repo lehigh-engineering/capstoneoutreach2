@@ -42,18 +42,17 @@ body {
 }
 
 .nav-link {
-  color: #000; /* Default color for all links */
-  text-decoration: none; /* Remove underline */
+  color: #000;
+  text-decoration: none; 
 }
 
 .nav-link:hover {
-  color: #ff9900; /* Color on hover */
+  color: #ff9900;
 }
 
-/* Active link styles */
 .nav-link.active {
-  color: #ff9900; /* Color for the active link */
-  font-weight: bold; /* Optional: Make the active link bold */
+  color: #ff9900;
+  font-weight: bold;
 }
 
 
