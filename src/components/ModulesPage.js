@@ -4,7 +4,7 @@ import './ModulesPage.css';
 import cipherImg from './images/cipher.jpg';
 import hackerImg from './images/hacker.jpg';
 import heartImg from './images/heart.png';
-import scratchImg from './images/scratch.png';
+import scratchImg from './images/scratchcat.png';
 import mazeImg from './images/maze.jpg';
 
 function ModulesPage() {

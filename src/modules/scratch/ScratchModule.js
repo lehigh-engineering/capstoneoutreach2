@@ -2,12 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import './ScratchModule.css';
 
-import scratchImg from './scratch.png';
+import scratchImg from './scratchcat.png';
 import scratchBlock from './ScratchBlocks.png'
 
 function SkeletonModule() {
     const [isVisible, setIsVisible] = useState(false);
-    
+
     useEffect(() => {
         // Add event listeners to all TOC links
         const tocLinks = document.querySelectorAll('.toc a');
