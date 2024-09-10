@@ -1,4 +1,4 @@
-.injection {
+.makecode {
     margin-top: 75px;
 }
 
@@ -40,7 +40,7 @@
     margin-bottom: 5px;
 }
 
-.injection .toc a {
+.makecode .toc a {
     color: #fff;
     text-decoration: none;
 }
@@ -63,12 +63,12 @@
     background-color: #ff9900;
 }
 
-.injection h1 {
+.makecode h1 {
     text-align: center;
     padding-bottom: 20px;
 }
 
-.injection img {
+.makecode img {
     width: 400px;
     display: flex;
     margin: 0 auto;
@@ -84,11 +84,11 @@
     text-decoration: underline;
 }
 
-.injection a {
+.makecode a {
     color: #502D0F;
     text-decoration: underline;
 }
 
-.injection a:hover {
+.makecode a:hover {
     color: #ff9900;
 }
