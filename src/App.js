@@ -65,7 +65,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <button onClick={invokeLambda}>Invoke Lambda</button> */} {/* do we need this? */}
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
@@ -83,6 +82,7 @@ function App() {
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        <button onClick={invokeLambda}>Invoke Lambda</button> {/* do we need this? */}
       </div>
     </Router>
   );

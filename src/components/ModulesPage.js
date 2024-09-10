@@ -14,22 +14,6 @@ function ModulesPage() {
         setActiveTab(tabId);
     };
 
-    const getTabName = () => {
-        switch (activeTab) {
-            case 'lower-beginner':
-                return 'Lower-Beginner Level';
-            case 'upper-beginner':
-                return 'Upper-Beginner Level';
-            case 'proficient':
-                return 'Proficient Level';
-            case 'advanced':
-                return 'Advanced Level';
-            case 'all-modules':
-            default:
-                return 'All Modules';
-        }
-    };
-
     return (
         <div className="modulesPage">
             <header>
