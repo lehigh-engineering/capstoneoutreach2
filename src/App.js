@@ -82,7 +82,7 @@ function App() {
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        <button onClick={invokeLambda}>Invoke Lambda</button> {/* do we need this? */}
+        {/* <button onClick={invokeLambda}>Invoke Lambda</button> */}
       </div>
     </Router>
   );
