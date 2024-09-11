@@ -14,6 +14,22 @@ function ModulesPage() {
         setActiveTab(tabId);
     };
 
+    const  [flipped, setFlipped] = useState({});
+    const handleFlip = (moduleID) => {
+        setFlipped((prevState) => ({
+            ...prevState,
+            [moduleID]: !prevState[moduleID],
+        }));
+    };
+
+    const modules = [
+        {id: 'cryptography', title: "Introduction to Cryptography", img: cipherImg, summary: "Crypto Test"},
+        {id: 'cybersecurity', title: "Introduction to Cybersecurity", img: hackerImg, summary: "Crypto Test"},
+        {id: 'makecode', title: "Introduction to MakeCode", img: heartImg, summary: "Crypto Test"},
+        {id: 'maze', title: "Program a Maze with Paper", img: mazeImg, summary: "Crypto Test"},
+        {id: 'scratch', title: "Introduction to Scratch", img: scratchImg, summary: "Crypto Test"},
+    ];
+
     return (
         <div className="modulesPage">
             <header>
@@ -50,25 +66,80 @@ function ModulesPage() {
                     <>
                         <h1>All Modules</h1>
                         <div className="module-container">
-                            <div className="module">
-                                <img src={cipherImg} alt="Ceasar's Cipher" />
-                                <nav><p><a href="/cryptography">Introduction to Cryptography</a></p></nav>
+                            <div className={`module ${flipped['cryptography'] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container" onClick={() => handleFlip('cryptography')}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={cipherImg} alt="Ceasar's Cipher" />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">Learn about the Caesar Cipher and how other cryptography mechanisms help keep us safe on the web! </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href="/cryptography">Introduction to Cryptography</a></p></nav>
+                                </div>
                             </div>
-                            <div className="module">
-                                <img src={hackerImg} alt="Hacker" />
-                                <nav><p><a href="/cybersecurity">Introduction to Cybersecurity</a></p></nav>
+                            <div className={`module ${flipped['cybersecurity'] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container" onClick={() => handleFlip('cybersecurity')}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={hackerImg} alt="Hacker" />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">A brief overview cybersecurity and the role AI plays in it!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href="/cybersecurity">Introduction to Cybersecurity</a></p></nav>
+                                </div>
                             </div>
-                            <div className="module">
-                                <img src={heartImg} alt="Heart" />
-                                <nav><p><a href="/makecode">Introduction to MakeCode</a></p></nav>
+                            <div className={`module ${flipped['make'] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container" onClick={() => handleFlip('make')}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={heartImg} alt="Heart" />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">Utilize blockcoding to learn about basic core computer science concepts!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href="/makecode">Introduction to MakeCode</a></p></nav>
+                                </div>
                             </div>
-                            <div className="module">
-                                <img src={mazeImg} alt="Maze" />
-                                <nav><p><a href="/maze">Program a Maze with Paper</a></p></nav>
+                            <div className={`module ${flipped['maze'] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container" onClick={() => handleFlip('maze')}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={mazeImg} alt="Maze" />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">Program a maze for a deeper insight in how computer science programs run!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href="/maze">Program a Maze</a></p></nav>
+                                </div>
                             </div>
-                            <div className="module">
-                                <img src={scratchImg} alt="Scratch" />
-                                <nav><p><a href="/scratch">Introduction to Scratch</a></p></nav>
+                            <div className={`module ${flipped['scratch'] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container" onClick={() => handleFlip('scratch')}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={scratchImg} alt="Scratch" />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">Create your own animation and explore computer science concepts through blockcoding!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href="/scratch">Introduction to Scratch</a></p></nav>
+                                </div>
                             </div>
                         </div>
                     </>
@@ -87,9 +158,20 @@ function ModulesPage() {
                         <h1>Upper-Beginner Level</h1>
                         <h2>Recommended for: Grades 4-5</h2>
                         <div className="module-container">
-                            <div className="module">
-                                <img src={mazeImg} alt="Maze" />
-                                <nav><p><a href="/maze">Program a Maze with Paper</a></p></nav>
+                           <div className={`module ${flipped['maze'] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container" onClick={() => handleFlip('maze')}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={mazeImg} alt="Maze" />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">Program a maze for a deeper insight in how computer science programs run!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href="/maze">Program a Maze</a></p></nav>
+                                </div>
                             </div>
                         </div>
                     </>
@@ -99,13 +181,35 @@ function ModulesPage() {
                         <h1>Proficient Level</h1>
                         <h2>Recommended for: Grades 6-8</h2>
                         <div className="module-container">
-                            <div className="module">
-                                <img src={cipherImg} alt="Ceasar's Cipher" />
-                                <nav><p><a href="/cryptography">Introduction to Cryptography</a></p></nav>
+                            <div className={`module ${flipped['cryptography'] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container" onClick={() => handleFlip('cryptography')}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={cipherImg} alt="Ceasar's Cipher" />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">Learn about the Caesar Cipher and how other cryptography mechanisms help keep us safe on the web! </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href="/cryptography">Introduction to Cryptography</a></p></nav>
+                                </div>
                             </div>
-                            <div className="module">
-                                <img src={scratchImg} alt="Scratch" />
-                                <nav><p><a href="/scratch">Introduction to Scratch</a></p></nav>
+                            <div className={`module ${flipped['scratch'] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container" onClick={() => handleFlip('scratch')}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={scratchImg} alt="Scratch" />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">Create your own animation and explore computer science concepts through blockcoding!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href="/scratch">Introduction to Scratch</a></p></nav>
+                                </div>
                             </div>
                         </div>
                     </>
@@ -115,13 +219,35 @@ function ModulesPage() {
                         <h1>Advanced Level</h1>
                         <h2>Recommended for: Grades 9-12</h2>
                         <div className="module-container">
-                            <div className="module">
-                                <img src={hackerImg} alt="Hacker" />
-                                <nav><p><a href="/cybersecurity">Introduction to Cybersecurity</a></p></nav>
+                            <div className={`module ${flipped['cybersecurity'] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container" onClick={() => handleFlip('cybersecurity')}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={hackerImg} alt="Hacker" />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">A brief overview cybersecurity and the role AI plays in it!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href="/cybersecurity">Introduction to Cybersecurity</a></p></nav>
+                                </div>
                             </div>
-                            <div className="module">
-                                <img src={heartImg} alt="Heart" />
-                                <nav><p><a href="/makecode">Introduction to MakeCode</a></p></nav>
+                            <div className={`module ${flipped['make'] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container" onClick={() => handleFlip('make')}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={heartImg} alt="Heart" />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">Utilize blockcoding to learn about basic core computer science concepts!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href="/makecode">Introduction to MakeCode</a></p></nav>
+                                </div>
                             </div>
                         </div>
                     </>
