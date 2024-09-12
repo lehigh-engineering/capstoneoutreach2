@@ -1,5 +1,66 @@
 .scratch {
-    margin-bottom: 50px;
+    margin-top: 75px;
+}
+
+.toc {
+    position: fixed;
+    top: 450px;
+    right: 30px;
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 15px;
+    color: #fff;
+    background-color: #502D0F;
+    padding: 15px;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.9;
+    transform: translateY(1);
+}
+
+.toc-hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.toc h2 {
+    margin: 0 0 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.toc ul {
+    list-style-type: decimal;
+    padding-left: 15px;
+    margin: 0;
+}
+
+.toc li {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.scratch .toc a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.toc-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #502D0F;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
+}
+
+.toc-toggle:hover {
+    background-color: #ff9900;
 }
 
 .scratch h1 {
@@ -24,45 +85,10 @@
 }
 
 .scratch a {
-    color: #0000FF;
+    color: #502D0F;
+    text-decoration: underline;
 }
-.scratch a:visited {
-    color: #800080;
-}
+
 .scratch a:hover {
-    color: #f82b2b;
-}
-
-/* .left-column {
-    float: left;
-    width: 300px;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: #502D0F;
-    color: #fff;
-    height: 100%;
-    padding-bottom: 20px;
-    margin-bottom: 100px;
-} */
-
-.toc {
-    float: left;
-    width: 300px;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: #502D0F;
-    color: #fff;
-    height: 100%;
-    padding-bottom: 20px;
-    margin-bottom: 100px;
-}
-
-.scratch .toc a:visited {
-  color: white; 
-}
-
-.scratch .toc a:hover {
-  text-decoration: underline; 
+    color: #ff9900;
 }
