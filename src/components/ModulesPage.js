@@ -14,21 +14,51 @@ function ModulesPage() {
         setActiveTab(tabId);
     };
 
-    const  [flipped, setFlipped] = useState({});
-    const handleFlip = (moduleID) => {
+    const [flipped, setFlipped] = useState({});
+
+    const handleFlip = (moduleId) => {
         setFlipped((prevState) => ({
             ...prevState,
-            [moduleID]: !prevState[moduleID],
+            [moduleId]: !prevState[moduleId], // Toggle flip state for the module
+        }));
+    };
+
+    const handleMouseEnter = (moduleID) => {
+        setFlipped((prevState) => ({
+            ...prevState,
+            [moduleID]: true,
+        }));
+    };
+
+    const handleMouseLeave = (moduleID) => {
+        setFlipped((prevState) => ({
+            ...prevState,
+            [moduleID]: false,
         }));
     };
 
     const modules = [
-        {id: 'cryptography', title: "Introduction to Cryptography", img: cipherImg, summary: "Crypto Test"},
-        {id: 'cybersecurity', title: "Introduction to Cybersecurity", img: hackerImg, summary: "Crypto Test"},
-        {id: 'makecode', title: "Introduction to MakeCode", img: heartImg, summary: "Crypto Test"},
-        {id: 'maze', title: "Program a Maze with Paper", img: mazeImg, summary: "Crypto Test"},
-        {id: 'scratch', title: "Introduction to Scratch", img: scratchImg, summary: "Crypto Test"},
+        {id: 'cryptography', title: "Introduction to Cryptography", img: cipherImg, summary: "Learn about the Caesar Cipher and how other cryptography mechanisms help keep us safe on the web!"},
+        {id: 'cybersecurity', title: "Introduction to Cybersecurity", img: hackerImg, summary: "A brief overview on cybersecurity and the role AI plays in it!"},
+        {id: 'makecode', title: "Introduction to MakeCode", img: heartImg, summary: "Utilize blockcoding to learn about basic core computer science concepts!"},
+        {id: 'maze', title: "Program a Maze with Paper", img: mazeImg, summary: "Program a maze for a deeper insight in how computer science programs run!"},
+        {id: 'scratch', title: "Introduction to Scratch", img: scratchImg, summary: "Create your own animation and explore computer science concepts through blockcoding!"},
     ];
+
+    const upperBeginner = [
+        {id: 'maze', title: "Program a Maze with Paper", img: mazeImg, summary: "Program a maze for a deeper insight in how computer science programs run!"},
+    ]
+
+    const proficient = [
+        {id: 'cryptography', title: "Introduction to Cryptography", img: cipherImg, summary: "Learn about the Caesar Cipher and how other cryptography mechanisms help keep us safe on the web!"},
+        {id: 'scratch', title: "Introduction to Scratch", img: scratchImg, summary: "Create your own animation and explore computer science concepts through blockcoding!"},
+    ]
+
+    const advanced = [
+        {id: 'cybersecurity', title: "Introduction to Cybersecurity", img: hackerImg, summary: "A brief overview on cybersecurity and the role AI plays in it!"},
+        {id: 'makecode', title: "Introduction to MakeCode", img: heartImg, summary: "Utilize blockcoding to learn about basic core computer science concepts!"},
+    ]
+
 
     return (
         <div className="modulesPage">
@@ -66,81 +96,29 @@ function ModulesPage() {
                     <>
                         <h1>All Modules</h1>
                         <div className="module-container">
-                            <div className={`module ${flipped['cryptography'] ? 'flipped' : ''}`}>
+                            {modules.map((module) => (
+                                <div
+                                    className={`module ${flipped[module.id] ? 'flipped' : ''}`}
+                                
+                                    key={module.id}
+                                >
                                 <div className="module-inner">
-                                    <div className="module-flip-container" onClick={() => handleFlip('cryptography')}>
+                                    <div className="module-flip-container"
+                                        onMouseEnter={() => handleMouseEnter(module.id)}
+                                        onMouseLeave={() => handleMouseLeave(module.id)}>
                                         <div className="module-flip">
                                             <div className="module-front">
-                                                <img src={cipherImg} alt="Ceasar's Cipher" />
+                                                <img src={module.img} alt={module.title} />
                                             </div>
                                             <div className="module-back">
-                                                <div className = "summary-text">Learn about the Caesar Cipher and how other cryptography mechanisms help keep us safe on the web! </div>
+                                                <div className="summary-text">{module.summary}</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <nav><p><a href="/cryptography">Introduction to Cryptography</a></p></nav>
+                                    <nav><p><a href={`/${module.id}`}>{module.title}</a></p></nav>
                                 </div>
                             </div>
-                            <div className={`module ${flipped['cybersecurity'] ? 'flipped' : ''}`}>
-                                <div className="module-inner">
-                                    <div className="module-flip-container" onClick={() => handleFlip('cybersecurity')}>
-                                        <div className="module-flip">
-                                            <div className="module-front">
-                                                <img src={hackerImg} alt="Hacker" />
-                                            </div>
-                                            <div className="module-back">
-                                                <div className = "summary-text">A brief overview cybersecurity and the role AI plays in it!</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <nav><p><a href="/cybersecurity">Introduction to Cybersecurity</a></p></nav>
-                                </div>
-                            </div>
-                            <div className={`module ${flipped['make'] ? 'flipped' : ''}`}>
-                                <div className="module-inner">
-                                    <div className="module-flip-container" onClick={() => handleFlip('make')}>
-                                        <div className="module-flip">
-                                            <div className="module-front">
-                                                <img src={heartImg} alt="Heart" />
-                                            </div>
-                                            <div className="module-back">
-                                                <div className = "summary-text">Utilize blockcoding to learn about basic core computer science concepts!</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <nav><p><a href="/makecode">Introduction to MakeCode</a></p></nav>
-                                </div>
-                            </div>
-                            <div className={`module ${flipped['maze'] ? 'flipped' : ''}`}>
-                                <div className="module-inner">
-                                    <div className="module-flip-container" onClick={() => handleFlip('maze')}>
-                                        <div className="module-flip">
-                                            <div className="module-front">
-                                                <img src={mazeImg} alt="Maze" />
-                                            </div>
-                                            <div className="module-back">
-                                                <div className = "summary-text">Program a maze for a deeper insight in how computer science programs run!</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <nav><p><a href="/maze">Program a Maze</a></p></nav>
-                                </div>
-                            </div>
-                            <div className={`module ${flipped['scratch'] ? 'flipped' : ''}`}>
-                                <div className="module-inner">
-                                    <div className="module-flip-container" onClick={() => handleFlip('scratch')}>
-                                        <div className="module-flip">
-                                            <div className="module-front">
-                                                <img src={scratchImg} alt="Scratch" />
-                                            </div>
-                                            <div className="module-back">
-                                                <div className = "summary-text">Create your own animation and explore computer science concepts through blockcoding!</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <nav><p><a href="/scratch">Introduction to Scratch</a></p></nav>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </>
                 )}
@@ -158,21 +136,29 @@ function ModulesPage() {
                         <h1>Upper-Beginner Level</h1>
                         <h2>Recommended for: Grades 4-5</h2>
                         <div className="module-container">
-                           <div className={`module ${flipped['maze'] ? 'flipped' : ''}`}>
+                            {upperBeginner.map((module) => (
+                                <div
+                                    className={`module ${flipped[module.id] ? 'flipped' : ''}`}
+                                
+                                    key={module.id}
+                                >
                                 <div className="module-inner">
-                                    <div className="module-flip-container" onClick={() => handleFlip('maze')}>
+                                    <div className="module-flip-container"
+                                        onMouseEnter={() => handleMouseEnter(module.id)}
+                                        onMouseLeave={() => handleMouseLeave(module.id)}>
                                         <div className="module-flip">
                                             <div className="module-front">
-                                                <img src={mazeImg} alt="Maze" />
+                                                <img src={module.img} alt={module.title} />
                                             </div>
                                             <div className="module-back">
-                                                <div className = "summary-text">Program a maze for a deeper insight in how computer science programs run!</div>
+                                                <div className="summary-text">{module.summary}</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <nav><p><a href="/maze">Program a Maze</a></p></nav>
+                                    <nav><p><a href={`/${module.id}`}>{module.title}</a></p></nav>
                                 </div>
                             </div>
+                            ))}
                         </div>
                     </>
                 )}
@@ -181,36 +167,29 @@ function ModulesPage() {
                         <h1>Proficient Level</h1>
                         <h2>Recommended for: Grades 6-8</h2>
                         <div className="module-container">
-                            <div className={`module ${flipped['cryptography'] ? 'flipped' : ''}`}>
+                            {proficient.map((module) => (
+                                <div
+                                    className={`module ${flipped[module.id] ? 'flipped' : ''}`}
+                                
+                                    key={module.id}
+                                >
                                 <div className="module-inner">
-                                    <div className="module-flip-container" onClick={() => handleFlip('cryptography')}>
+                                    <div className="module-flip-container"
+                                        onMouseEnter={() => handleMouseEnter(module.id)}
+                                        onMouseLeave={() => handleMouseLeave(module.id)}>
                                         <div className="module-flip">
                                             <div className="module-front">
-                                                <img src={cipherImg} alt="Ceasar's Cipher" />
+                                                <img src={module.img} alt={module.title} />
                                             </div>
                                             <div className="module-back">
-                                                <div className = "summary-text">Learn about the Caesar Cipher and how other cryptography mechanisms help keep us safe on the web! </div>
+                                                <div className="summary-text">{module.summary}</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <nav><p><a href="/cryptography">Introduction to Cryptography</a></p></nav>
+                                    <nav><p><a href={`/${module.id}`}>{module.title}</a></p></nav>
                                 </div>
                             </div>
-                            <div className={`module ${flipped['scratch'] ? 'flipped' : ''}`}>
-                                <div className="module-inner">
-                                    <div className="module-flip-container" onClick={() => handleFlip('scratch')}>
-                                        <div className="module-flip">
-                                            <div className="module-front">
-                                                <img src={scratchImg} alt="Scratch" />
-                                            </div>
-                                            <div className="module-back">
-                                                <div className = "summary-text">Create your own animation and explore computer science concepts through blockcoding!</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <nav><p><a href="/scratch">Introduction to Scratch</a></p></nav>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </>
                 )}
@@ -219,36 +198,29 @@ function ModulesPage() {
                         <h1>Advanced Level</h1>
                         <h2>Recommended for: Grades 9-12</h2>
                         <div className="module-container">
-                            <div className={`module ${flipped['cybersecurity'] ? 'flipped' : ''}`}>
+                            {advanced.map((module) => (
+                                <div
+                                    className={`module ${flipped[module.id] ? 'flipped' : ''}`}
+                                
+                                    key={module.id}
+                                >
                                 <div className="module-inner">
-                                    <div className="module-flip-container" onClick={() => handleFlip('cybersecurity')}>
+                                    <div className="module-flip-container"
+                                        onMouseEnter={() => handleMouseEnter(module.id)}
+                                        onMouseLeave={() => handleMouseLeave(module.id)}>
                                         <div className="module-flip">
                                             <div className="module-front">
-                                                <img src={hackerImg} alt="Hacker" />
+                                                <img src={module.img} alt={module.title} />
                                             </div>
                                             <div className="module-back">
-                                                <div className = "summary-text">A brief overview cybersecurity and the role AI plays in it!</div>
+                                                <div className="summary-text">{module.summary}</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <nav><p><a href="/cybersecurity">Introduction to Cybersecurity</a></p></nav>
+                                    <nav><p><a href={`/${module.id}`}>{module.title}</a></p></nav>
                                 </div>
                             </div>
-                            <div className={`module ${flipped['make'] ? 'flipped' : ''}`}>
-                                <div className="module-inner">
-                                    <div className="module-flip-container" onClick={() => handleFlip('make')}>
-                                        <div className="module-flip">
-                                            <div className="module-front">
-                                                <img src={heartImg} alt="Heart" />
-                                            </div>
-                                            <div className="module-back">
-                                                <div className = "summary-text">Utilize blockcoding to learn about basic core computer science concepts!</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <nav><p><a href="/makecode">Introduction to MakeCode</a></p></nav>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </>
                 )}
