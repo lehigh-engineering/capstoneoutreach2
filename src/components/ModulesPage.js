@@ -16,13 +16,6 @@ function ModulesPage() {
 
     const [flipped, setFlipped] = useState({});
 
-    const handleFlip = (moduleId) => {
-        setFlipped((prevState) => ({
-            ...prevState,
-            [moduleId]: !prevState[moduleId], // Toggle flip state for the module
-        }));
-    };
-
     const handleMouseEnter = (moduleID) => {
         setFlipped((prevState) => ({
             ...prevState,
