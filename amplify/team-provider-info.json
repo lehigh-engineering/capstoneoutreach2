@@ -43,5 +43,23 @@
         "capstoneoutreachgateway": {}
       }
     }
+  },
+  "master": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-capstoneoutreach2-master-ec3b4-authRole",
+      "UnauthRoleArn": "arn:aws:iam::767397900696:role/amplify-capstoneoutreach2-master-ec3b4-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::767397900696:role/amplify-capstoneoutreach2-master-ec3b4-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-capstoneoutreach2-master-ec3b4-deployment",
+      "UnauthRoleName": "amplify-capstoneoutreach2-master-ec3b4-unauthRole",
+      "StackName": "amplify-capstoneoutreach2-master-ec3b4",
+      "StackId": "arn:aws:cloudformation:us-east-2:767397900696:stack/amplify-capstoneoutreach2-master-ec3b4/87fb9b00-75f7-11ef-af2a-06f61369a55f",
+      "AmplifyAppId": "d28r2k7kb7jmte"
+    },
+    "categories": {
+      "function": {
+        "modulespublic": {}
+      }
+    }
   }
 }

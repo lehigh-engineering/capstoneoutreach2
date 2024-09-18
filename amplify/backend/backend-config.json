@@ -22,23 +22,5 @@
       "service": "Lambda"
     }
   },
-  "parameters": {
-    "AMPLIFY_function_modulespublic_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "modulespublic"
-        }
-      ]
-    },
-    "AMPLIFY_function_modulespublic_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "modulespublic"
-        }
-      ]
-    }
-  },
   "storage": {}
 }
