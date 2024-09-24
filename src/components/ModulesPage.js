@@ -6,6 +6,7 @@ import hackerImg from './images/hacker.jpg';
 import heartImg from './images/heart.png';
 import scratchImg from './images/scratchcat.png';
 import mazeImg from './images/maze.jpg';
+import htmlImg from './images/HTML.png';
 
 function ModulesPage() {
     const [activeTab, setActiveTab] = useState('all-modules');
@@ -36,6 +37,7 @@ function ModulesPage() {
         {id: 'makecode', title: "Introduction to MakeCode", img: heartImg, summary: "Utilize blockcoding to learn about basic core computer science concepts!"},
         {id: 'maze', title: "Program a Maze with Paper", img: mazeImg, summary: "Program a maze for a deeper insight in how computer science programs run!"},
         {id: 'scratch', title: "Introduction to Scratch", img: scratchImg, summary: "Create your own animation and explore computer science concepts through blockcoding!"},
+        {id: 'html', title: "Introduction to HTML", img: htmlImg, summary: "Create your own basic webpage with a text editor and your creativity!"},
     ];
 
     const upperBeginner = [
@@ -45,6 +47,7 @@ function ModulesPage() {
     const proficient = [
         {id: 'cryptography', title: "Introduction to Cryptography", img: cipherImg, summary: "Learn about the Caesar Cipher and how other cryptography mechanisms help keep us safe on the web!"},
         {id: 'scratch', title: "Introduction to Scratch", img: scratchImg, summary: "Create your own animation and explore computer science concepts through blockcoding!"},
+        {id: 'html', title: "Introduction to HTML", img: htmlImg, summary: "Create your own basic webpage with a text editor and your creativity!"},
     ]
 
     const advanced = [
