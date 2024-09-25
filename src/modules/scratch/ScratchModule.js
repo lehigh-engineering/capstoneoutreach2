@@ -1,6 +1,6 @@
 // import React from 'react';
 import React, { useEffect, useState } from 'react';
-import './ScratchModule.css';
+import '../template/Module.css';
 
 import scratchImg from './scratchcat.png';
 import scratchBlock from './ScratchBlocks.png'
@@ -35,7 +35,7 @@ function SkeletonModule() {
         }
     }
     return (
-        <div class="scratch">
+        <div class="anymodule">
             <button className="toc-toggle" onClick={() => setIsVisible(!isVisible)}>
                 {isVisible ? '-' : '+'}
             </button>
@@ -54,9 +54,11 @@ function SkeletonModule() {
                     </ul>
                 </div>
             )}
-            <h1>Introduction to Scratch:<br></br><i>Creative Coding</i></h1>
+            <div class="header-container">
+            <h1 class="title">Introduction to Scratch:<br></br><i>Creative Coding</i></h1>
             <img src={scratchImg} alt="Scratch"></img>
-            <div class="body">
+            </div>
+            <div class="anymodulebody">
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>
                         <li><a href="https://files5.pdesas.org/250014226114139172173254247149098013233116174016/Download.ashx?hash=2.2">3.5.6-8.G</a></li>
@@ -69,7 +71,7 @@ function SkeletonModule() {
                         <li><a href="https://files5.pdesas.org/191077107162061033191092180254094011093001251131/Download.ashx?hash=2.2">3.5.6-8.X</a></li>
                         <li><a href="https://files5.pdesas.org/067057030146123187047085208090089082001012155008/Download.ashx?hash=2.2">3.5.6-8.GG</a></li>
                     </ul>
-                <h2 id="Objectives">Obectives</h2>
+                <h2 id="Objectives">Objectives</h2>
                     <ul>
                         <li>Students will understand how to navigate the Scratch interface</li>
                         <li>Students will understand how to chain motion blocks together to create a simple animation</li>
