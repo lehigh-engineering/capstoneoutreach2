@@ -15,6 +15,7 @@ import InjectionModule from './modules/injection/InjectionModule';
 import MakeCodeModule from './modules/makecode/MakeCodeModule';
 import ScratchModule from './modules/scratch/ScratchModule';
 import MazeModule from './modules/maze/MazeModule';
+import HtmlModule from './modules/html/HtmlModule';
 
 // import { Amplify } from 'aws-amplify';
 // import { generateClient } from 'aws-amplify/api';
@@ -79,6 +80,7 @@ function App() {
           <Route path="/makecode" element={<MakeCodeModule />} />
           <Route path="/maze" element={<MazeModule />} />
           <Route path="/scratch" element={<ScratchModule />} />
+          <Route path="/html" element={<HtmlModule/>}/>
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
