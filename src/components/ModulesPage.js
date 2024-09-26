@@ -3,7 +3,7 @@ import './ModulesPage.css';
 
 import awsconfig from '../aws-exports';
 import { Amplify } from 'aws-amplify';
-import { get } from 'aws-amplify/api';
+import { post } from 'aws-amplify/api';
 
 Amplify.configure(awsconfig);
 
@@ -34,7 +34,7 @@ function ModulesPage() {
 
     const invokeLambda = async () => {
         try {
-            const response = await get({
+            const response = await post({
                 apiName: 'capstoneoutreachgateway',
                 path: '/modules',
                 headers: {
