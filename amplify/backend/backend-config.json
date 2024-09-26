@@ -40,5 +40,10 @@
       ]
     }
   },
-  "storage": {}
+  "storage": {
+    "capstonemodules": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
 }
