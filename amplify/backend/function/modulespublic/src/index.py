@@ -1,4 +1,5 @@
 import boto3
+import os
 
 def lambda_handler(event, context):
     try:
@@ -6,7 +7,7 @@ def lambda_handler(event, context):
         dynamodb = boto3.resource('dynamodb')
         
         # Name of your DynamoDB table
-        table_name = 'modules'
+        table_name = 'capstonemodules-'+os.environ['ENV']
         
         # Retrieve the DynamoDB table
         table = dynamodb.Table(table_name)
