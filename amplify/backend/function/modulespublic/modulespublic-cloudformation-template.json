@@ -15,6 +15,18 @@
     },
     "s3Key": {
       "Type": "String"
+    },
+    "storagecapstonemodulesName": {
+      "Type": "String",
+      "Default": "storagecapstonemodulesName"
+    },
+    "storagecapstonemodulesArn": {
+      "Type": "String",
+      "Default": "storagecapstonemodulesArn"
+    },
+    "storagecapstonemodulesStreamArn": {
+      "Type": "String",
+      "Default": "storagecapstonemodulesStreamArn"
     }
   },
   "Conditions": {
@@ -69,6 +81,15 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
+            },
+            "STORAGE_CAPSTONEMODULES_NAME": {
+              "Ref": "storagecapstonemodulesName"
+            },
+            "STORAGE_CAPSTONEMODULES_ARN": {
+              "Ref": "storagecapstonemodulesArn"
+            },
+            "STORAGE_CAPSTONEMODULES_STREAMARN": {
+              "Ref": "storagecapstonemodulesStreamArn"
             }
           }
         },
@@ -160,6 +181,53 @@
                   }
                 ]
               }
+            }
+          ]
+        }
+      }
+    },
+    "AmplifyResourcesPolicy": {
+      "DependsOn": [
+        "LambdaExecutionRole"
+      ],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Get*",
+                "dynamodb:BatchGetItem",
+                "dynamodb:List*",
+                "dynamodb:Describe*",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:PartiQLSelect"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storagecapstonemodulesArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storagecapstonemodulesArn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
             }
           ]
         }
