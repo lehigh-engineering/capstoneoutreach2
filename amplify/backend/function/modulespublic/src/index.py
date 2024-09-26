@@ -1,7 +1,7 @@
 import boto3
 import os
 
-def lambda_handler(event, context):
+def handler(event, context):
     try:
         # Initialize the DynamoDB client
         dynamodb = boto3.resource('dynamodb')
