@@ -18,6 +18,17 @@
   "function": {
     "modulespublic": {
       "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "capstonemodules"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
@@ -40,5 +51,10 @@
       ]
     }
   },
-  "storage": {}
+  "storage": {
+    "capstonemodules": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
 }
