@@ -2,24 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="%PUBLIC_URL%/lehigh-logo.svg" />
     <title>CS Outreach</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Titan+One&display=swap" rel="stylesheet">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <header class="banner">
       <img src="%PUBLIC_URL%/lehigh-white-logo.svg" alt="logo">
-      <h2>P.C. ROSSIN COLLEGE OF<br>ENGINEERING AND APPLIED SCIENCE</h2>
+      <h1>P.C. ROSSIN COLLEGE OF<br>ENGINEERING AND APPLIED SCIENCE</h1>
       <nav>
-        <p><a href="/resources">Resources</a></p>
-        <p><a href="/about">About</a></p>
-        <p><a href="/">Home</a></p>
+        <h2><a href="/" class="nav-link">Home</a></h2> <!-- fix with home page -->
+        <!-- <h2><a href="/home">Home</a></h2> -->
+        <h2><a href="/modules" class="nav-link">Modules</a></h2>
+        <h2><a href="/about" class="nav-link">About</a></h2>
+        <h2><a href="/resources" class="nav-link">Resources</a></h2>
+        <h2><a href="/feedback" class="nav-link">Feedback</a></h2>
       </nav>
     </header>
     <div id="root"></div>
     <footer>
-      <p>&copy; 2024 CS Outreach Program, All Rights Reserved</p>
+      <p>&copy; 2024 CS Outreach Program</p>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>

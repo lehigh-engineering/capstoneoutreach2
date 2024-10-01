@@ -1,0 +1,50 @@
+.feedback {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 60vh; /* Full viewport height */
+    flex-direction: column; /* Align items vertically */
+    margin: 0; /* Remove default margin */
+}
+
+.feedback h1 {
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    padding-top: 60px;
+    font-size: 40px;
+}
+
+.feedback h2 {
+    font-family: "Nunito", sans-serif;
+    padding-left: 20px;
+}
+
+.feedback p{
+    font-family: "Nunito", sans-serif;
+    padding-left: 20px;
+}
+
+.feedback .button-container {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Optional: Center buttons horizontally */
+    gap: 20px; /* Add space between the buttons */
+    margin: 0px;
+    margin-bottom: 30px;
+}
+
+.feedback button {
+    background: #ff9900;
+    border: none;
+    color: #fff;
+    padding: 10px 30px;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.feedback button:hover {
+    background-color: #ff990080;
+    color: #00000085;
+}

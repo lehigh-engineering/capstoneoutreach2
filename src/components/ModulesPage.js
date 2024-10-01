@@ -1,0 +1,259 @@
+import React, { useState , useEffect } from 'react';
+import './ModulesPage.css';
+
+import awsconfig from '../aws-exports';
+import { Amplify } from 'aws-amplify';
+import { get } from 'aws-amplify/api';
+
+Amplify.configure(awsconfig);
+
+function ModulesPage() {
+    const [activeTab, setActiveTab] = useState('all-modules');
+    const [modules, setModules] = useState([]);
+    
+
+    const handleTabClick = (tabId) => {
+        setActiveTab(tabId);
+    };
+
+    const  [flipped, setFlipped] = useState({});
+    
+    const handleMouseEnter = (moduleID) => {
+        setFlipped((prevState) => ({
+            ...prevState,
+            [moduleID]: true,
+        }));
+    };
+
+    const handleMouseLeave = (moduleID) => {
+        setFlipped((prevState) => ({
+            ...prevState,
+            [moduleID]: false,
+        }));
+    };
+
+    const invokeLambda = async () => {
+        try {
+            const response = await get({
+                apiName: 'capstoneoutreachgateway',
+                path: '/modules',
+                headers: {
+                        'Content-Type': 'application/json',
+                    },
+                options: {
+                  body: {
+                    message: 'Mow the lawn'
+                  }
+                }
+              }).response;
+            
+              const data = await response.body.json(); // Parse the JSON response
+                console.log('Fetched data:', data);
+                if (Array.isArray(data)) {
+                    setModules(data);
+                } else {
+                    console.error('Expected an array but got:', data);
+                }
+                console.log('GET call succeeded: ', data); // Log the resolved response
+        } 
+        
+        catch (error) {
+            console.error('GET call failed: ', error);
+        }
+
+      };
+
+      useEffect(() => {
+        invokeLambda();
+      }, []);
+    return (
+        
+        
+        <div className="modulesPage">
+            <header>
+                <nav className="tabs">
+                    <button
+                        className={`tab-button ${activeTab === 'all-modules' ? 'active' : ''}`}
+                        onClick={() => handleTabClick('all-modules')}
+                        > All Modules
+                    </button>
+                    <button
+                        className={`tab-button ${activeTab === 'lower-beginner' ? 'active' : ''}`}
+                        onClick={() => handleTabClick('lower-beginner')}
+                        > Lower-Beginner Level
+                    </button>
+                    <button
+                        className={`tab-button ${activeTab === 'upper-beginner' ? 'active' : ''}`}
+                        onClick={() => handleTabClick('upper-beginner')}
+                        > Upper-Beginner Level
+                    </button>
+                    <button
+                        className={`tab-button ${activeTab === 'proficient' ? 'active' : ''}`}
+                        onClick={() => handleTabClick('proficient')}
+                        > Proficient Level
+                    </button>
+                    <button
+                        className={`tab-button ${activeTab === 'advanced' ? 'active' : ''}`}
+                        onClick={() => handleTabClick('advanced')}
+                        > Advanced Level
+                    </button>
+                </nav>
+            </header>
+            <div className="modules">
+                {activeTab === 'all-modules' && ( 
+                    <>
+                        <h1>All Modules</h1>
+                        <div className="module-container">
+                        {modules.map((module) => (
+                        <div key={module.id} className={`module ${flipped[module.id] ? 'flipped' : ''}`}>
+                                <div className="module-inner">
+                                    <div className="module-flip-container"
+                                        onMouseEnter={() => handleMouseEnter(module.id)}
+                                        onMouseLeave={() => handleMouseLeave(module.id)}>
+                                        <div className="module-flip">
+                                            <div className="module-front">
+                                                <img src={module.url} alt={module.keyword} />
+                                            </div>
+                                            <div className="module-back">
+                                                <div className = "summary-text">{module.description}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav><p><a href={`/${module.keyword}`}>{module.title}</a></p></nav>
+                                </div>
+                            </div>
+                        ))}
+                        </div>
+                    </>
+                )}
+                {activeTab === 'lower-beginner' && (
+                    <>
+                        <h1>Lower-Beginner Level</h1>
+                        <h2>Recommended for: Grades 1-3</h2>
+                        <div className="module-container">
+                        {modules.filter(module => module.level === 'lowerbeg').length === 0 ? (
+                            <p><i>No content available for this tab yet.</i></p>
+                        ) : (
+                            modules.filter(module => module.level === 'lowerbeg').map((module) => (
+                                    <div key={module.id} className={`module ${flipped[module.id] ? 'flipped' : ''}`}>
+                                        <div className="module-inner">
+                                        <div className="module-flip-container"
+                                                onMouseEnter={() => handleMouseEnter(module.id)}
+                                                onMouseLeave={() => handleMouseLeave(module.id)}>
+                                                <div className="module-flip">
+                                                    <div className="module-front">
+                                                        <img src={module.url} alt={module.keyword} />
+                                                    </div>
+                                                    <div className="module-back">
+                                                        <div className="summary-text">{module.description}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <nav><p><a href={`/${module.keyword}`}>{module.title}</a></p></nav>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </>
+                )}
+                
+                {activeTab === 'upper-beginner' && (
+                    <>
+                        <h1>Upper-Beginner Level</h1>
+                        <h2>Recommended for: Grades 4-5</h2>
+                        <div className="module-container">
+                        {modules.filter(module => module.level === 'upperbeg').length === 0 ? (
+                            <p><i>No content available for this tab yet.</i></p>
+                        ) : (
+                            modules.filter(module => module.level === 'upperbeg').map((module) => (
+                                <div key={module.id} className={`module ${flipped[module.id] ? 'flipped' : ''}`}>
+                                    <div className="module-inner">
+                                    <div className="module-flip-container"
+                                            onMouseEnter={() => handleMouseEnter(module.id)}
+                                            onMouseLeave={() => handleMouseLeave(module.id)}>
+                                            <div className="module-flip">
+                                                    <div className="module-front">
+                                                        <img src={module.url} alt={module.keyword} />
+                                                    </div>
+                                                    <div className="module-back">
+                                                        <div className="summary-text">{module.description}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <nav><p><a href={`/${module.keyword}`}>{module.title}</a></p></nav>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </>
+                )}
+                {activeTab === 'proficient' && (
+                    <>
+                        <h1>Proficient Level</h1>
+                        <h2>Recommended for: Grades 6-8</h2>
+                        <div className="module-container">
+                        {modules.filter(module => module.level === 'proficient').length === 0 ? (
+                            <p><i>No content available for this tab yet.</i></p>
+                        ) : (
+                            modules.filter(module => module.level === 'proficient').map((module) => (
+                                <div key={module.id} className={`module ${flipped[module.id] ? 'flipped' : ''}`}>
+                                    <div className="module-inner">
+                                    <div className="module-flip-container"
+                                            onMouseEnter={() => handleMouseEnter(module.id)}
+                                            onMouseLeave={() => handleMouseLeave(module.id)}>
+                                                <div className="module-flip">
+                                                    <div className="module-front">
+                                                        <img src={module.url} alt={module.keyword} />
+                                                    </div>
+                                                    <div className="module-back">
+                                                        <div className="summary-text">{module.description}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <nav><p><a href={module.keyword}>{module.title}</a></p></nav>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </>
+                )}
+                {activeTab === 'advanced' && (
+                    <>
+                        <h1>Advanced Level</h1>
+                        <h2>Recommended for: Grades 9-12</h2>
+                        <div className="module-container">
+                        {modules.filter(module => module.level === 'advanced').length === 0 ? (
+                            <p><i>No content available for this tab yet.</i></p>
+                        ) : (
+                            modules.filter(module => module.level === 'advanced').map((module) => (
+                                <div key={module.id} className={`module ${flipped[module.id] ? 'flipped' : ''}`}>
+                                    <div className="module-inner">
+                                    <div className="module-flip-container"
+                                            onMouseEnter={() => handleMouseEnter(module.id)}
+                                            onMouseLeave={() => handleMouseLeave(module.id)}>
+                                                <div className="module-flip">
+                                                    <div className="module-front">
+                                                        <img src={module.url} alt={module.keyword} />
+                                                    </div>
+                                                    <div className="module-back">
+                                                        <div className="summary-text">{module.description}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <nav><p><a href={module.keyword}>{module.title}</a></p></nav>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </>
+                )}
+            </div>
+        </div>
+    );
+}
+
+export default ModulesPage;

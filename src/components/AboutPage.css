@@ -1,19 +1,73 @@
 .about {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .about h1 {
+    font-family: "Nunito", sans-serif;
     text-align: center;
+    margin-top: 3rem;
 }
 
 .about h2 {
+    font-family: "Nunito", sans-serif;
     padding-left: 20px;
 }
 
 .about p {
+    font-family: "Nunito", sans-serif;
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 20px;
 }
 
+
+.ourTeam {
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+.teamMember {
+    padding:10px;
+}
+
+.teamMember img {
+    width:250px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.teamMember h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.teamMember p {
+    font-size:1rem;
+    color: gray;
+}
+
+.ourMission {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 40px;
+    align-items: center;
+}
+
+.missionText {
+    text-align: left;
+}
+
+.missionText h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.missionText img {
+    width: 100%;
+    height: auto;
+}

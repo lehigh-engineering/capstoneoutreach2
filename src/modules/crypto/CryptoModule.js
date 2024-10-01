@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
-import './CryptoModule.css';
+import React, { useEffect, useState } from 'react';
+import '../template/Module.css';
 
 import cipherImg from './cipher.jpg';
 
 function CryptoModule() {
+    const [isVisible, setIsVisible] = useState(false);
+    
     useEffect(() => {
         // Add event listeners to all TOC links
         const tocLinks = document.querySelectorAll('.toc a');
@@ -31,23 +33,31 @@ function CryptoModule() {
         }
     }
     return (
-        <div class="crypto">
-            { <div class="toc">
-                <h2>Table of Contents</h2>
-                <ul>
-                    <li><a href="#STEELS Standards">STEELS Standards</a></li>
-                    <li><a href="#Objectives">Objectives</a></li>
-                    <li><a href="#Materials">Materials</a></li>
-                    <li><a href="#Basic Vocab">Basic Vocab</a></li>
-                    <li><a href="#Introduction">Introduction</a></li>
-                    <li><a href="#Class Activity">Class Activity</a></li>
-                    <li><a href="#Summary">Summary</a></li>
-                    <li><a href="#Discussion">Discussion</a></li>
-                </ul>
-            </div> }
-            <h1>Introduction to Cryptography:<br></br><i>Secret Codes and Ciphers</i></h1>
+        <div class="anymodule">
+            <button className="toc-toggle" onClick={() => setIsVisible(!isVisible)}>
+                {isVisible ? '-' : '+'}
+            </button>
+            {isVisible && (
+                <div className="toc">
+                    <h2>Table of Contents</h2>
+                    <ul>
+                        <li><a href="#STEELS Standards">STEELS Standards</a></li>
+                        <li><a href="#Objectives">Objectives</a></li>
+                        <li><a href="#Materials">Materials</a></li>
+                        <li><a href="#Basic Vocab">Basic Vocab</a></li>
+                        <li><a href="#Introduction">Introduction</a></li>
+                        <li><a href="#Class Activity">Class Activity</a></li>
+                        <li><a href="#Summary">Summary</a></li>
+                        <li><a href="#Discussion">Discussion</a></li>
+                    </ul>
+                </div>
+            )}
+            <div class="header-container">
+            <h1 class="title">Introduction to Cryptography:<br></br><i>Secret Codes and Ciphers</i></h1>
             <img src={cipherImg} alt="Ceasar's Cipher"></img>
-            <div class="body">
+            </div>
+            
+            <div class="anymodulebody">
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>
                         <li><a href="https://files5.pdesas.org/163005038051165169006245176208132131190217116096/Download.ashx?hash=2.2">3.5.6-8.H</a></li>
@@ -57,7 +67,7 @@ function CryptoModule() {
                         <li><a href="https://files5.pdesas.org/202207034238051062213202015009077219061167227169/Download.ashx?hash=2.2">3.5.6-8.CC</a></li>
                         <li><a href="https://files5.pdesas.org/101203203242197017109096133004207133057127052228/Download.ashx?hash=2.2">3.5.6-8.EE</a></li>
                     </ul>
-                <h2 id="Objectives">Obectives</h2>
+                <h2 id="Objectives">Objectives</h2>
                     <ul>
                         <li>Students will understand the basic principles of cryptography</li>
                         <li>Students will understand the importance of encrypting sensitive information</li>
@@ -98,7 +108,7 @@ function CryptoModule() {
                 <h2 id="Introduction">Introduction</h2>
                     <p>Begin by asking students if they have heard of cryptography before. Discuss with them what they think it is, what it actually is, and why it is important.</p>
                     <p>A classroom example might be students secretly passing notes. Peers or teachers can intercept the note, it might be accidentally dropped or forgotten for anyone to pick up and read. An encrypted message will only read as gibberish if it falls into the wrong hands. Without the key possessed by the creator and recipient of the message, the cipher text holds no meaning.</p>
-                <h2>Ceasar Cipher</h2>
+                <h3>Ceasar Cipher</h3>
                     <p>Introduce the Caesar cipher as one of the oldest and simplest forms of encryption. Julius Caesar first used it to communicate with his generals on the battlefield so opposing generals couldn’t decipher his plans.</p>
                     <p>To demo it, write the alphabet on the board. And right under it, write the alphabet again offset by a shift of 3 (Caesar used a shift of 3) such that the letters line up.</p>
                     <p><b>Example:</b>

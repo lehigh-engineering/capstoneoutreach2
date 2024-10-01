@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
-import './InjectionModule.css';
+import React, { useEffect, useState } from 'react';
+import '../template/Module.css';
 
-import hackerImg from './hacker.jpeg';
+import hackerImg from './hacker.jpg';
 
 function InjectionModule() {
+    const [isVisible, setIsVisible] = useState(false);
+
     useEffect(() => {
         // Add event listeners to all TOC links
         const tocLinks = document.querySelectorAll('.toc a');
@@ -31,23 +33,31 @@ function InjectionModule() {
         }
     }
     return (
-        <div class="injection">
-            { <div class="toc">
-                <h2>Table of Contents</h2>
-                <ul>
-                    <li><a href="#STEELS Standards">STEELS Standards</a></li>
-                    <li><a href="#Objectives">Objectives</a></li>
-                    <li><a href="#Materials">Materials</a></li>
-                    <li><a href="#Basic Vocab">Basic Vocab</a></li>
-                    <li><a href="#Introduction">Introduction</a></li>
-                    <li><a href="#Class Activity">Class Activity</a></li>
-                    <li><a href="#Summary">Summary</a></li>
-                    <li><a href="#Discussion">Discussion</a></li>
-                </ul>
-            </div> }
-            <h1>Introduction to Cybersecurity:<br></br><i>Prompt Injection Attacks</i></h1>
+        <div class="anymodule">
+            <button className="toc-toggle" onClick={() => setIsVisible(!isVisible)}>
+                {isVisible ? '-' : '+'}
+            </button>
+            {isVisible && (
+                <div className="toc">
+                    <h2>Table of Contents</h2>
+                    <ul>
+                        <li><a href="#STEELS Standards">STEELS Standards</a></li>
+                        <li><a href="#Objectives">Objectives</a></li>
+                        <li><a href="#Materials">Materials</a></li>
+                        <li><a href="#Basic Vocab">Basic Vocab</a></li>
+                        <li><a href="#Introduction">Introduction</a></li>
+                        <li><a href="#Class Activity">Class Activity</a></li>
+                        <li><a href="#Summary">Summary</a></li>
+                        <li><a href="#Discussion">Discussion</a></li>
+                    </ul>
+                </div>
+            )}
+            <div class="header-container">
+            <h1 class="title">Introduction to Cybersecurity:<br></br><i>Prompt Injection Attacks</i></h1>
             <img src={hackerImg} alt="Hacker"></img>
-            <div class="body">
+            </div>
+            
+            <div class="anymodulebody">
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>
                         <li><a href="https://files5.pdesas.org/050205197024147196040149181007017248032244235080/Download.ashx?hash=2.2">3.5.6-8.F</a></li>
@@ -58,7 +68,7 @@ function InjectionModule() {
                         <li><a href="https://files5.pdesas.org/101203203242197017109096133004207133057127052228/Download.ashx?hash=2.2">3.5.6-8.EE</a></li>
                         <li><a href="https://files5.pdesas.org/031176110099065030206242252068251045122192108014/Download.ashx?hash=2.2">3.5.6-8.KK</a></li>
                     </ul>
-                <h2 id="Objectives">Obectives</h2>
+                <h2 id="Objectives">Objectives</h2>
                     <ul>
                         <li>Students will understand the basic principles of cyberattacks in cybersecurity</li>
                         <li>Students will understand the impact of different technologies like AI and LLMs</li>
@@ -115,7 +125,7 @@ function InjectionModule() {
                     <p>Begin by asking students if they have heard of cybersecurity, cyberattacks, or hacking before. Discuss with them what they think it is, what it actually is, and why it is important.</p>
                     <p>Now, initiate discussion about a specific type of cyberattack called injection attacks. A classroom example could include students passing notes in class. Imagine a malicious peer (“threat actor”) intercepted the note, and added something unexpected and inappropriate to it (“injected malicious code”) but in such a way that it still appeared as if it were a part of the original message. This could trick the intended recipient into thinking that the addition was the actual original content of the note, potentially leading to unintended actions or the reveal of sensitive information!</p>
                     <p>In the digital world, prompt injection attacks involve injecting malicious code into things like pop-up dialog boxes where user-input is required, or even prompts – which includes instructions or questions/queries that you enter into a service to return a response. Threat actors may utilize a prompt injection attack in order to exploit vulnerabilities and even manipulate users into taking actions they shouldn't. Just like in our note-passing scenario, these attacks aim to deceive and compromise the security of communication.</p>
-                <h2>Prompt Injection Attacks</h2>
+                <h3>Prompt Injection Attacks</h3>
                     <p>Introduce prompt injection attacks as a new form of cyberattack, and one of the major up-and-coming safety concerns of Large Language Models (LLMs) like ChatGPT.</p>
                     <p>If students are unfamiliar with ChatGPT, open https://chat.openai.com and project it to the class. Try asking it questions or instructional statements, incorporating students by letting them choose what to ask. This could include anything, but here are a few fun options:
                         <ul>

@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
-import './MazeModule.css';
+import React, { useEffect, useState } from 'react';
+import '../template/Module.css';
 
-import mazeImg from './maze.jpeg';
+import mazeImg from './maze.jpg';
 
 function MazeModule() {
+    const [isVisible, setIsVisible] = useState(false);
+
     useEffect(() => {
         // Add event listeners to all TOC links
         const tocLinks = document.querySelectorAll('.toc a');
@@ -31,30 +33,39 @@ function MazeModule() {
         }
     }
     return (
-        <div class="maze">
-            { <div class="toc">
-                <h2>Table of Contents</h2>
-                <ul>
-                    <li><a href="#STEELS Standards">STEELS Standards</a></li>
-                    <li><a href="#Objectives">Objectives</a></li>
-                    <li><a href="#Materials">Materials</a></li>
-                    <li><a href="#Basic Vocab">Basic Vocab</a></li>
-                    <li><a href="#Introduction">Introduction</a></li>
-                    <li><a href="#Class Activity">Class Activity</a></li>
-                    <li><a href="#Discussion">Discussion</a></li>
-                </ul>
-            </div> }
-            <h1>Program a Maze with Paper</h1>
+        <div class="anymodule">
+            <button className="toc-toggle" onClick={() => setIsVisible(!isVisible)}>
+                {isVisible ? '-' : '+'}
+            </button>
+            {isVisible && (
+                <div className="toc">
+                    <h2>Table of Contents</h2>
+                    <ul>
+                        <li><a href="#STEELS Standards">STEELS Standards</a></li>
+                        <li><a href="#Objectives">Objectives</a></li>
+                        <li><a href="#Materials">Materials</a></li>
+                        <li><a href="#Basic Vocab">Basic Vocab</a></li>
+                        <li><a href="#Introduction">Introduction</a></li>
+                        <li><a href="#Class Activity">Class Activity</a></li>
+                        <li><a href="#Discussion">Discussion</a></li>
+                        <li><a href="#Additional Resources">Additional Resources</a></li>
+                    </ul>
+                </div>
+            )}
+            <div class="header-container">
+            <h1 class="title">Program a Maze with Paper</h1>
             <img src={mazeImg} alt="Maze"></img>
-            <div class="body">
-            <p>Inspired by <a href="https://www.sciencebuddies.org/stem-activities/program-a-maze-with-paper?from=Blog">Program a Maze with Paper from Science Buddies</a></p>
+            </div>
+            
+            <div class="anymodulebody">
+                <p class="inspo">Inspired by <a href="https://www.sciencebuddies.org/stem-activities/program-a-maze-with-paper?from=Blog">Program a Maze with Paper from Science Buddies</a></p>
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>
                         <li><a href="https://files5.pdesas.org/050205197024147196040149181007017248032244235080/Download.ashx?hash=2.2">3.5.6-8.F</a></li>
                         <li><a href="https://files5.pdesas.org/010055042080117107037076135031230155085176210204/Download.ashx?hash=2.2">3.5.6-8.Q</a></li>
                         <li><a href="https://files5.pdesas.org/141226021166097059033041122098250156067086251078/Download.ashx?hash=2.2">3.5.6-8.T</a></li>
                     </ul>
-                <h2 id="Objectives">Obectives</h2>
+                <h2 id="Objectives">Objectives</h2>
                     <ul>
                         <li>Introduce the basics of programming (bugs, commands, relationship between person and program)</li>
                         <li>Hands-on learning: by physically manipulating paper mazes and coding sequences of commands to navigate them, participants engage in experiential learning, which can help their understanding of programming concepts</li>
@@ -160,7 +171,7 @@ function MazeModule() {
                         </ul>
                     </li>
                     </ul>
-                    <h2>Additional Resources</h2>
+                <h2 id="Additional Resources">Additional Resources</h2>
                     <a href="https://studio.code.org/hoc/1">Maze Game on Code.org (highly recommended)</a>
                     <ul>
                         <li>Students can use the fundamental ideas from this activity and apply it to this game on their devices.</li>

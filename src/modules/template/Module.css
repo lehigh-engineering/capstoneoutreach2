@@ -1,0 +1,124 @@
+.anymodule {
+    margin-top: 75px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Space between title and image */
+    align-items: center; /* Aligns items vertically in the middle */
+    padding: 20px; /* Optional padding */
+    border-radius: 25px;
+    
+    padding: 20px;
+    margin: 50px;
+    box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.5); /* Creates a shadow */
+  }
+  
+  .title {
+    padding-left: 70px;
+    text-align: left;
+    font-size: 2em; /* Adjust the font size */
+  }
+
+.toc {
+    position: fixed;
+    top: 450px;
+    right: 30px;
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 15px;
+    color: #fff;
+    background-color: #502D0F;
+    padding: 15px;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.9;
+    transform: translateY(1);
+}
+
+.toc-hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.toc h2 {
+    margin: 0 0 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.toc ul {
+    list-style-type: decimal;
+    padding-left: 15px;
+    margin: 0;
+}
+
+.toc li {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.anymodule .toc a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.toc-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #502D0F;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
+}
+
+.toc-toggle:hover {
+    background-color: #ff9900;
+}
+
+.anymodule h1 {
+    font-family: "Nunito", sans-serif;
+    font-size: 50px;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    text-align: center;
+    
+}
+
+.anymodule img {
+    width: 300px;
+    display: flex;
+    margin: 0 auto;
+    
+}
+
+.anymodulebody {
+    font-family: "Nunito", sans-serif;
+   padding-left: 70px;
+   padding-right: 70px;
+   font-size: 18px;
+   line-height: 1.6;
+}
+
+.anymodulebody h2 {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.anymodule a {
+    color: #502D0F;
+    text-decoration: underline;
+}
+
+.anymodule a:hover {
+    color: #ff9900;
+}
