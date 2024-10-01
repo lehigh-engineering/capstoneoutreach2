@@ -8,16 +8,19 @@
 }
 
 .feedback h1 {
-    font-size: 30px;
     text-align: center;
-    margin-top: 300px;
+    font-family: "Nunito", sans-serif;
+    padding-top: 60px;
+    font-size: 40px;
 }
 
 .feedback h2 {
+    font-family: "Nunito", sans-serif;
     padding-left: 20px;
 }
 
 .feedback p{
+    font-family: "Nunito", sans-serif;
     padding-left: 20px;
 }
 
@@ -35,6 +38,7 @@
     border: none;
     color: #fff;
     padding: 10px 30px;
+    font-family: "Nunito", sans-serif;
     font-size: 20px;
     cursor: pointer;
     margin-left: 20px;

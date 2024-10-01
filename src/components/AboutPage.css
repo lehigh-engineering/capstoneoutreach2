@@ -4,15 +4,18 @@
 }
 
 .about h1 {
+    font-family: "Nunito", sans-serif;
     text-align: center;
     margin-top: 3rem;
 }
 
 .about h2 {
+    font-family: "Nunito", sans-serif;
     padding-left: 20px;
 }
 
 .about p {
+    font-family: "Nunito", sans-serif;
     padding-left: 30px;
     padding-right: 30px;
 }

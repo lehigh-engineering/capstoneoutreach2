@@ -16,7 +16,7 @@ function FeedbackPage() {
 
     return (
         <div class="feedback">
-            <h2>Feedback</h2>
+            <h1>Feedback</h1>
             <p>Encountered any issues, like typos or software glitches?</p>
             <button className={'button-container'} onClick={handleBugClick}
                 > Report a Bug
