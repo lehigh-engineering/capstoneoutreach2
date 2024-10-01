@@ -49,8 +49,8 @@ function ModulesPage() {
             
               const data = await response.body.json(); // Parse the JSON response
                 console.log('Fetched data:', data);
-                if (Array.isArray(data.body)) {
-                    setModules(data.body);
+                if (Array.isArray(data)) {
+                    setModules(data);
                 } else {
                     console.error('Expected an array but got:', data);
                 }
