@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './MazeModule.css';
+import '../template/Module.css';
 
 import mazeImg from './maze.jpg';
 
@@ -33,7 +33,7 @@ function MazeModule() {
         }
     }
     return (
-        <div class="maze">
+        <div class="anymodule">
             <button className="toc-toggle" onClick={() => setIsVisible(!isVisible)}>
                 {isVisible ? '-' : '+'}
             </button>
@@ -52,9 +52,12 @@ function MazeModule() {
                     </ul>
                 </div>
             )}
-            <h1>Program a Maze with Paper</h1>
+            <div class="header-container">
+            <h1 class="title">Program a Maze with Paper</h1>
             <img src={mazeImg} alt="Maze"></img>
-            <div class="body">
+            </div>
+            
+            <div class="anymodulebody">
                 <p class="inspo">Inspired by <a href="https://www.sciencebuddies.org/stem-activities/program-a-maze-with-paper?from=Blog">Program a Maze with Paper from Science Buddies</a></p>
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>
@@ -62,7 +65,7 @@ function MazeModule() {
                         <li><a href="https://files5.pdesas.org/010055042080117107037076135031230155085176210204/Download.ashx?hash=2.2">3.5.6-8.Q</a></li>
                         <li><a href="https://files5.pdesas.org/141226021166097059033041122098250156067086251078/Download.ashx?hash=2.2">3.5.6-8.T</a></li>
                     </ul>
-                <h2 id="Objectives">Obectives</h2>
+                <h2 id="Objectives">Objectives</h2>
                     <ul>
                         <li>Introduce the basics of programming (bugs, commands, relationship between person and program)</li>
                         <li>Hands-on learning: by physically manipulating paper mazes and coding sequences of commands to navigate them, participants engage in experiential learning, which can help their understanding of programming concepts</li>

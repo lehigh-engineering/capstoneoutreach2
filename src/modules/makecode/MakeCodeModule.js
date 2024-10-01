@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './MakeCodeModule.css';
+import '../template/Module.css';
 
 import heartImg from './heart.png';
 import homeImg from './makecodeImages/home.png';
@@ -42,7 +42,7 @@ function MakeCodeModule() {
         }
     }
     return (
-        <div class="makecode">
+        <div class="anymodule">
             <button className="toc-toggle" onClick={() => setIsVisible(!isVisible)}>
                 {isVisible ? '-' : '+'}
             </button>
@@ -63,7 +63,7 @@ function MakeCodeModule() {
             )}
             <h1>Introduction to MakeCode:<br></br><i>Block Coding a "Beating" Heart</i></h1>
             <img src={heartImg} alt="Heart" class="header-image"></img>
-            <div class="body">
+            <div class="anymodulebody">
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>
                         <li><a href="https://files5.pdesas.org/210068028204179255183193205226156047092243105180/Download.ashx?hash=2.2">3.5.9-12.J</a></li>
@@ -72,7 +72,7 @@ function MakeCodeModule() {
                         <li><a href="https://files5.pdesas.org/249184236118237112138065070190000199084023253024/Download.ashx?hash=2.2">3.5.9-12.BB</a></li>
                         <li><a href="https://files5.pdesas.org/222150208161165221218230117007195241191135055206/Download.ashx?hash=2.2">3.5.9-12.LL</a></li>
                     </ul>
-                <h2 id="Objectives">Obectives</h2>
+                <h2 id="Objectives">Objectives</h2>
                     <ul>
                         <li>Students will understand how to interact with Microsoft's MakeCode resource</li>
                         <li>Students will learn how to block code a flashing / ”beating” heart</li>
