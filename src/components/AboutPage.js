@@ -38,22 +38,22 @@ function AboutPage() {
                 <div class="teamMember">
                   <img src={kyraImg} alt="Kyra"></img> 
                   <h3>Kyra Lee</h3>
-                    <p>summary? major?</p>
+                  <p>Computer Science and Business '25<br/>Full Stack Developer</p>
                 </div> 
                 <div class="teamMember">
                     <img src={berniceImg} alt="Bernice"></img>
                     <h3>Bernice Wong</h3>
-                    <p>summary? major?</p>
+                    <p>Computer Science and Business '25<br/>Full Stack Developer</p>
                 </div> 
                 <div class="teamMember">
                     <img src={laraImg} alt="Lara"></img>
                     <h3>Lara Flaten</h3>
-                    <p>summary? major?</p>
+                    <p>Computer Science '25<br/>Engineering Minor<br/>Frontend Developer</p>
                 </div> 
                 <div class="teamMember">
                     <img src={jacobImg} alt="Jacob"></img>
                     <h3>Jacob The Losen</h3>
-                    <p>summary? major?</p>
+                    <p>Computer Science Engineering & Finance '25<br/>AWS Backend & CI/CD Developer</p>
                 </div> 
 
             </section>            
