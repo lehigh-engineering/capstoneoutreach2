@@ -5,6 +5,7 @@ import berniceImg from './images/bernice.png'
 import laraImg from './images/lara.png'
 import jacobImg from './images/jacob.png'
 import classroomImg from './images/classroom.png'
+import packardImg from './images/packard.jpg'
 
 
 function AboutPage() {
@@ -21,27 +22,38 @@ function AboutPage() {
                     <img src={classroomImg} alt="Classroom"></img>
                 </div>
             </section>
+            <section class="ourMission">
+                <div class="missionImg">
+                    <img src={packardImg} alt="Classroom"></img>
+                </div>
+                <div class="missionText">
+                    <h2>Our Journey</h2>
+                    <p>Our journey began in Spring 2023 with a vision to provide teachers in the Bethlehem community with access to high quality stand-alone computer science modules that they can easily incorporate into their cirriculum.</p>
+                    <p>Along the way we faced many challenges in assessing user needs and balancing them with the realistic design and functionalities of our solution. However, by utilizing our personal experience in computer science and adopting a customer first mentality, we published six modules closely aligned with the STEELS Standards to a user friendly site  </p>
+                    <p>As we look ahead, we're excited to continue expanding the resources we offer, refining our site and content, and reach beyond the Bethlehem community, offering these resources to teachers and students all over.</p>
+                </div>
+            </section>
             <h1>Our Team</h1>
             <section class="ourTeam">
                 <div class="teamMember">
                   <img src={kyraImg} alt="Kyra"></img> 
                   <h3>Kyra Lee</h3>
-                    <p>summary? major?</p>
+                  <p>Computer Science and Business '25<br/>Full Stack Developer</p>
                 </div> 
                 <div class="teamMember">
                     <img src={berniceImg} alt="Bernice"></img>
                     <h3>Bernice Wong</h3>
-                    <p>summary? major?</p>
+                    <p>Computer Science and Business '25<br/>Full Stack Developer</p>
                 </div> 
                 <div class="teamMember">
                     <img src={laraImg} alt="Lara"></img>
                     <h3>Lara Flaten</h3>
-                    <p>summary? major?</p>
+                    <p>Computer Science '25<br/>Engineering Minor<br/>Frontend Developer</p>
                 </div> 
                 <div class="teamMember">
                     <img src={jacobImg} alt="Jacob"></img>
                     <h3>Jacob The Losen</h3>
-                    <p>summary? major?</p>
+                    <p>Computer Science Engineering & Finance '25<br/>AWS Backend & CI/CD Developer</p>
                 </div> 
 
             </section>            
