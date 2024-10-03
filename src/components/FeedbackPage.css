@@ -1,31 +1,46 @@
 .feedback {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 60vh; /* Full viewport height */
-    flex-direction: column; /* Align items vertically */
-    margin: 0; /* Remove default margin */
+    margin: 0;
+    padding: 10px;
+    height: 60vh;
 }
 
 .feedback h1 {
-    font-size: 30px;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 500;
+    font-size: 50px;
     text-align: center;
-    margin-top: 300px;
+    margin-top: 50px;
+    margin-bottom: 75px;
 }
 
-.feedback h2 {
-    padding-left: 20px;
+.feedback h3 {
+    margin-bottom: 30px;
 }
 
-.feedback p{
-    padding-left: 20px;
+.feedback img {
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 125px;
+}
+
+.feedback-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .feedback .button-container {
     display: flex;
-    flex-direction: column; /* Align items vertically */
-    align-items: center; /* Optional: Center buttons horizontally */
-    gap: 20px; /* Add space between the buttons */
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
     margin: 0px;
     margin-bottom: 30px;
 }
@@ -33,11 +48,13 @@
 .feedback button {
     background: #ff9900;
     border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: #fff;
     padding: 10px 30px;
+    font-family: "Nunito", sans-serif;
     font-size: 20px;
     cursor: pointer;
-    margin-left: 20px;
 }
 
 .feedback button:hover {

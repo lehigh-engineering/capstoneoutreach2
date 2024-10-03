@@ -4,15 +4,18 @@
 }
 
 .about h1 {
+    font-family: "Nunito", sans-serif;
     text-align: center;
     margin-top: 3rem;
 }
 
 .about h2 {
+    font-family: "Nunito", sans-serif;
     padding-left: 20px;
 }
 
 .about p {
+    font-family: "Nunito", sans-serif;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -53,6 +56,11 @@
     gap: 20px;
     padding: 40px;
     align-items: center;
+}
+
+.ourMission img {
+    width: 100%;
+    height: 100%;
 }
 
 .missionText {

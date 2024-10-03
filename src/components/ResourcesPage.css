@@ -5,6 +5,9 @@
 
 .resources h1 {
     text-align: center;
+    font-family: "Nunito", sans-serif;
+    padding-top: 20px;
+    font-size: 40px;
 }
 
 .resources h2 {
