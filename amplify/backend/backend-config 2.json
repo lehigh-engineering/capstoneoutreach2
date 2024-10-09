@@ -1,0 +1,60 @@
+{
+  "api": {
+    "capstoneoutreachgateway": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "modulespublic"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "modulespublic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "capstonemodules"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_modulespublic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "modulespublic"
+        }
+      ]
+    },
+    "AMPLIFY_function_modulespublic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "modulespublic"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "capstonemodules": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}
