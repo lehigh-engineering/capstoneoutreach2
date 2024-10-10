@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState , useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -17,51 +17,49 @@ import ScratchModule from './modules/scratch/ScratchModule';
 import MazeModule from './modules/maze/MazeModule';
 import HtmlModule from './modules/html/HtmlModule';
 
-// import { Amplify } from 'aws-amplify';
-// import { generateClient } from 'aws-amplify/api';
-// import config from './amplifyconfiguration.json';
-// Amplify.configure(config);
-
-// const client = generateClient();
-
 import { Amplify } from 'aws-amplify';
 import { generateClient } from "aws-amplify/api";
 import awsconfig from './aws-exports';
 import { post } from 'aws-amplify/api';
+import { get } from 'aws-amplify/api';
 
 Amplify.configure(awsconfig);
 const API = generateClient();
 
 function App() {
+  const [modulesData, setModules] = useState([]);
   const invokeLambda = async () => {
     try {
-      const restOperation = post({
-        apiName: 'capstoneoutreachgateway',
-        path: '/modules',
-        options: {
-          body: {
-            message: 'Mow the lawn'
+      const response = await get({
+          apiName: 'capstoneoutreachgateway',
+          path: '/modules',
+          headers: {
+                  'Content-Type': 'application/json',
+              },
+          options: {
+            body: {
+              message: 'Mow the lawn'
+            }
           }
-        }
-      });
+        }).response;
+      
+        const data = await response.body.json(); // Parse the JSON response
+          if (Array.isArray(data)) {
+              setModules(data);
+          } else {
+              console.error('Expected an array but got:', data);
+          }
+          console.log('GET call succeeded: ', data); // Log the resolved response
+  } 
   
-      const { body } = await restOperation.response;
-      const response = await body.json();
-  
-      console.log('POST call succeeded');
-      console.log(response);
-    } catch (e) {
-      console.log('POST call failed: ', JSON.parse(e.response.body));
-    }
-    // try {
-    //   const response = await API.get('fred', '/public', {});
-    //   console.log('Response from Lambda:', response);
-    //   alert('Lambda response: ' + JSON.stringify(response));
-    // } catch (error) {
-    //   console.error('Error invoking Lambda:', error);
-    //   alert('Error invoking Lambda: ' + error);
-    // }
+  catch (error) {
+      console.error('GET call failed: ', error);
+  }
   };
+
+  useEffect(() => {
+    invokeLambda();
+  }, []);
 
   return (
     <Router>
@@ -69,7 +67,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/modules" element={<ModulesPage />} />
+          <Route path="/modules" element={<ModulesPage modules={modulesData} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/feedback" element={<FeedbackPage />} />

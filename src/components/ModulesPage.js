@@ -1,16 +1,24 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ModulesPage.css';
+
+import Spinner from './Spinner';
 
 import awsconfig from '../aws-exports';
 import { Amplify } from 'aws-amplify';
-import { get } from 'aws-amplify/api';
 
 Amplify.configure(awsconfig);
 
-function ModulesPage() {
+function ModulesPage({modules}) {
     const [activeTab, setActiveTab] = useState('all-modules');
-    const [modules, setModules] = useState([]);
+    const [loading, setLoading] = useState(true);
     
+    useEffect(() => {
+        if (modules && modules.length > 0) {
+            setLoading(false); // Modules have been initialized and contain items
+        } else {
+            setLoading(true);  // Modules are either not initialized or empty
+        }
+    }, [modules]);
 
     const handleTabClick = (tabId) => {
         setActiveTab(tabId);
@@ -31,41 +39,7 @@ function ModulesPage() {
             [moduleID]: false,
         }));
     };
-
-    const invokeLambda = async () => {
-        try {
-            const response = await get({
-                apiName: 'capstoneoutreachgateway',
-                path: '/modules',
-                headers: {
-                        'Content-Type': 'application/json',
-                    },
-                options: {
-                  body: {
-                    message: 'Mow the lawn'
-                  }
-                }
-              }).response;
-            
-              const data = await response.body.json(); // Parse the JSON response
-                console.log('Fetched data:', data);
-                if (Array.isArray(data)) {
-                    setModules(data);
-                } else {
-                    console.error('Expected an array but got:', data);
-                }
-                console.log('GET call succeeded: ', data); // Log the resolved response
-        } 
-        
-        catch (error) {
-            console.error('GET call failed: ', error);
-        }
-
-      };
-
-      useEffect(() => {
-        invokeLambda();
-      }, []);
+    
     return (
         
         
@@ -99,7 +73,7 @@ function ModulesPage() {
                     </button>
                 </nav>
             </header>
-            <div className="modules">
+            {loading ? <Spinner /> : <div className="modules">
                 {activeTab === 'all-modules' && ( 
                     <>
                         <h1>All Modules</h1>
@@ -251,7 +225,7 @@ function ModulesPage() {
                         </div>
                     </>
                 )}
-            </div>
+            </div>}
         </div>
     );
 }
