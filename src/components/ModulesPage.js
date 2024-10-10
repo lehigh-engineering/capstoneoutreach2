@@ -5,7 +5,6 @@ import Spinner from './Spinner';
 
 import awsconfig from '../aws-exports';
 import { Amplify } from 'aws-amplify';
-import { get } from 'aws-amplify/api';
 
 Amplify.configure(awsconfig);
 
