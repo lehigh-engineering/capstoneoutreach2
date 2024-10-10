@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ModulesPage.css';
+
+import Spinner from './Spinner';
 
 import awsconfig from '../aws-exports';
 import { Amplify } from 'aws-amplify';
+import { get } from 'aws-amplify/api';
 
 Amplify.configure(awsconfig);
 
 function ModulesPage({modules}) {
     const [activeTab, setActiveTab] = useState('all-modules');
+    const [loading, setLoading] = useState(true);
     
+    useEffect(() => {
+        if (modules && modules.length > 0) {
+            setLoading(false); // Modules have been initialized and contain items
+        } else {
+            setLoading(true);  // Modules are either not initialized or empty
+        }
+    }, [modules]);
 
     const handleTabClick = (tabId) => {
         setActiveTab(tabId);
@@ -29,8 +40,7 @@ function ModulesPage({modules}) {
             [moduleID]: false,
         }));
     };
-
-   
+    
     return (
         
         
@@ -64,7 +74,7 @@ function ModulesPage({modules}) {
                     </button>
                 </nav>
             </header>
-            <div className="modules">
+            {loading ? <Spinner /> : <div className="modules">
                 {activeTab === 'all-modules' && ( 
                     <>
                         <h1>All Modules</h1>
@@ -216,7 +226,7 @@ function ModulesPage({modules}) {
                         </div>
                     </>
                 )}
-            </div>
+            </div>}
         </div>
     );
 }

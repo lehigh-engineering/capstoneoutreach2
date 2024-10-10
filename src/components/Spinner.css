@@ -1,0 +1,25 @@
+/* Spinner.css */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* You can adjust this depending on where you want the spinner */
+  }
+  
+  .spinner {
+    border: 12px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #ff9900;;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
