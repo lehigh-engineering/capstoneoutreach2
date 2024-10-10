@@ -1,6 +1,8 @@
 import React, { useState , useEffect } from 'react';
 import './ModulesPage.css';
 
+import Spinner from './Spinner';
+
 import awsconfig from '../aws-exports';
 import { Amplify } from 'aws-amplify';
 import { get } from 'aws-amplify/api';
@@ -10,6 +12,7 @@ Amplify.configure(awsconfig);
 function ModulesPage() {
     const [activeTab, setActiveTab] = useState('all-modules');
     const [modules, setModules] = useState([]);
+    const [loading, setLoading] = useState(true);
     
 
     const handleTabClick = (tabId) => {
@@ -51,6 +54,7 @@ function ModulesPage() {
                 console.log('Fetched data:', data);
                 if (Array.isArray(data)) {
                     setModules(data);
+                    setLoading(false)
                 } else {
                     console.error('Expected an array but got:', data);
                 }
@@ -99,7 +103,7 @@ function ModulesPage() {
                     </button>
                 </nav>
             </header>
-            <div className="modules">
+            {loading ? <Spinner /> : <div className="modules">
                 {activeTab === 'all-modules' && ( 
                     <>
                         <h1>All Modules</h1>
@@ -251,7 +255,7 @@ function ModulesPage() {
                         </div>
                     </>
                 )}
-            </div>
+            </div>}
         </div>
     );
 }
