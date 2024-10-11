@@ -3,10 +3,10 @@ import './ModulesPage.css';
 
 import Spinner from './Spinner';
 
-import awsconfig from '../aws-exports';
-import { Amplify } from 'aws-amplify';
+// import awsconfig from '../aws-exports';
+// import { Amplify } from 'aws-amplify';
 
-Amplify.configure(awsconfig);
+// Amplify.configure(awsconfig);
 
 function ModulesPage({modules}) {
     const [activeTab, setActiveTab] = useState('all-modules');
