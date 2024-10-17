@@ -1,7 +1,6 @@
 .feedback {
     margin: 0;
     padding: 10px;
-    height: 60vh;
 }
 
 .feedback h1 {
@@ -24,6 +23,7 @@
 
 .feedback-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 125px;
