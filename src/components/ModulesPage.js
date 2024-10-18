@@ -24,14 +24,6 @@ function ModulesPage() {
             setLoading(true); // No data in localStorage
         }
     }, []); // Empty dependency array to only run once on mount
-    
-    // useEffect(() => {
-    //     if (modules && modules.length > 0) {
-    //         setLoading(false); // Modules have been initialized and contain items
-    //     } else {
-    //         setLoading(true);  // Modules are either not initialized or empty
-    //     }
-    // }, [modules]);
 
     const handleTabClick = (tabId) => {
         setActiveTab(tabId);
