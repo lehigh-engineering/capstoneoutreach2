@@ -18,16 +18,13 @@ import MazeModule from './modules/maze/MazeModule';
 import HtmlModule from './modules/html/HtmlModule';
 
 import { Amplify } from 'aws-amplify';
-import { generateClient } from "aws-amplify/api";
 import awsconfig from './aws-exports';
-import { post } from 'aws-amplify/api';
 import { get } from 'aws-amplify/api';
 
 Amplify.configure(awsconfig);
-const API = generateClient();
 
 function App() {
-  const [modulesData, setModules] = useState([]);
+  // const [modulesData, setModules] = useState([]);
   const invokeLambda = async () => {
     try {
       const response = await get({
@@ -45,7 +42,8 @@ function App() {
       
         const data = await response.body.json(); // Parse the JSON response
           if (Array.isArray(data)) {
-              setModules(data);
+              // setModules(data);
+              localStorage.setItem("modules", JSON.stringify(data));
           } else {
               console.error('Expected an array but got:', data);
           }
@@ -67,7 +65,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/modules" element={<ModulesPage modules={modulesData} />} />
+          <Route path="/modules" element={<ModulesPage/>} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/feedback" element={<FeedbackPage />} />
