@@ -3,22 +3,27 @@ import './ModulesPage.css';
 
 import Spinner from './Spinner';
 
-import awsconfig from '../aws-exports';
-import { Amplify } from 'aws-amplify';
-
-Amplify.configure(awsconfig);
-
-function ModulesPage({modules}) {
+function ModulesPage() {
+    const [modules, setModules] = useState([]);
     const [activeTab, setActiveTab] = useState('all-modules');
     const [loading, setLoading] = useState(true);
-    
+
     useEffect(() => {
-        if (modules && modules.length > 0) {
-            setLoading(false); // Modules have been initialized and contain items
+        // Fetch modules from localStorage when the component mounts
+        const storedModules = localStorage.getItem('modules');
+
+        if (storedModules) {
+            const parsedModules = JSON.parse(storedModules);
+            if (Array.isArray(parsedModules) && parsedModules.length > 0) {
+                setModules(parsedModules);
+                setLoading(false); // Data is available, stop loading
+            } else {
+                setLoading(true); // No valid data, stay in loading state
+            }
         } else {
-            setLoading(true);  // Modules are either not initialized or empty
+            setLoading(true); // No data in localStorage
         }
-    }, [modules]);
+    }, []); // Empty dependency array to only run once on mount
 
     const handleTabClick = (tabId) => {
         setActiveTab(tabId);
