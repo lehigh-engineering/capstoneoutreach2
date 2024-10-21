@@ -94,7 +94,9 @@ function ModulesPage() {
                                                 <img src={module.url} alt={module.keyword} />
                                             </div>
                                             <div className="module-back">
-                                                <div className = "summary-text">{module.description}</div>
+                                                <a href={`/${module.keyword}`}>
+                                                    <div className = "summary-text">{module.description}</div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -124,7 +126,9 @@ function ModulesPage() {
                                                         <img src={module.url} alt={module.keyword} />
                                                     </div>
                                                     <div className="module-back">
-                                                        <div className="summary-text">{module.description}</div>
+                                                        <a href={`/${module.keyword}`}>
+                                                            <div className = "summary-text">{module.description}</div>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -156,7 +160,9 @@ function ModulesPage() {
                                                         <img src={module.url} alt={module.keyword} />
                                                     </div>
                                                     <div className="module-back">
-                                                        <div className="summary-text">{module.description}</div>
+                                                        <a href={`/${module.keyword}`}>
+                                                            <div className = "summary-text">{module.description}</div>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -187,7 +193,9 @@ function ModulesPage() {
                                                         <img src={module.url} alt={module.keyword} />
                                                     </div>
                                                     <div className="module-back">
-                                                        <div className="summary-text">{module.description}</div>
+                                                        <a href={`/${module.keyword}`}>
+                                                            <div className = "summary-text">{module.description}</div>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -218,7 +226,9 @@ function ModulesPage() {
                                                         <img src={module.url} alt={module.keyword} />
                                                     </div>
                                                     <div className="module-back">
-                                                        <div className="summary-text">{module.description}</div>
+                                                        <a href={`/${module.keyword}`}>
+                                                            <div className = "summary-text">{module.description}</div>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
