@@ -24,7 +24,6 @@ import { get } from 'aws-amplify/api';
 Amplify.configure(awsconfig);
 
 function App() {
-  // const [modulesData, setModules] = useState([]);
   const invokeLambda = async () => {
     try {
       const response = await get({
@@ -80,7 +79,6 @@ function App() {
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        {/* <button onClick={invokeLambda}>Invoke Lambda</button> */}
       </div>
     </Router>
   );
