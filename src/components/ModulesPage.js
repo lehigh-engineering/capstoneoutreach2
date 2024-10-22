@@ -91,7 +91,7 @@ function ModulesPage() {
                                         onMouseLeave={() => handleMouseLeave(module.id)}>
                                         <div className="module-flip">
                                             <div className="module-front">
-                                                <img src={module.url} alt={module.keyword} />
+                                                <img src={module.imgurl} alt={module.keyword} />
                                             </div>
                                             <div className="module-back">
                                                 <div className = "summary-text">{module.description}</div>
@@ -121,7 +121,7 @@ function ModulesPage() {
                                                 onMouseLeave={() => handleMouseLeave(module.id)}>
                                                 <div className="module-flip">
                                                     <div className="module-front">
-                                                        <img src={module.url} alt={module.keyword} />
+                                                        <img src={module.imgurl} alt={module.keyword} />
                                                     </div>
                                                     <div className="module-back">
                                                         <div className="summary-text">{module.description}</div>
@@ -153,7 +153,7 @@ function ModulesPage() {
                                             onMouseLeave={() => handleMouseLeave(module.id)}>
                                             <div className="module-flip">
                                                     <div className="module-front">
-                                                        <img src={module.url} alt={module.keyword} />
+                                                        <img src={module.imgurl} alt={module.keyword} />
                                                     </div>
                                                     <div className="module-back">
                                                         <div className="summary-text">{module.description}</div>
@@ -184,7 +184,7 @@ function ModulesPage() {
                                             onMouseLeave={() => handleMouseLeave(module.id)}>
                                                 <div className="module-flip">
                                                     <div className="module-front">
-                                                        <img src={module.url} alt={module.keyword} />
+                                                        <img src={module.imgurl} alt={module.keyword} />
                                                     </div>
                                                     <div className="module-back">
                                                         <div className="summary-text">{module.description}</div>
@@ -215,7 +215,7 @@ function ModulesPage() {
                                             onMouseLeave={() => handleMouseLeave(module.id)}>
                                                 <div className="module-flip">
                                                     <div className="module-front">
-                                                        <img src={module.url} alt={module.keyword} />
+                                                        <img src={module.imgurl} alt={module.keyword} />
                                                     </div>
                                                     <div className="module-back">
                                                         <div className="summary-text">{module.description}</div>
