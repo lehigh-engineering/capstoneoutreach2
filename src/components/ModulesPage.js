@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ModulesPage.css';
 
-import awsconfig from '../aws-exports';
-import { Amplify } from 'aws-amplify';
+import Spinner from './Spinner';
 
-Amplify.configure(awsconfig);
-
-function ModulesPage({modules}) {
+function ModulesPage() {
+    const [modules, setModules] = useState([]);
     const [activeTab, setActiveTab] = useState('all-modules');
-    
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // Fetch modules from localStorage when the component mounts
+        const storedModules = localStorage.getItem('modules');
+
+        if (storedModules) {
+            const parsedModules = JSON.parse(storedModules);
+            if (Array.isArray(parsedModules) && parsedModules.length > 0) {
+                setModules(parsedModules);
+                setLoading(false); // Data is available, stop loading
+            } else {
+                setLoading(true); // No valid data, stay in loading state
+            }
+        } else {
+            setLoading(true); // No data in localStorage
+        }
+    }, []); // Empty dependency array to only run once on mount
 
     const handleTabClick = (tabId) => {
         setActiveTab(tabId);
@@ -29,8 +44,7 @@ function ModulesPage({modules}) {
             [moduleID]: false,
         }));
     };
-
-   
+    
     return (
         
         
@@ -64,7 +78,7 @@ function ModulesPage({modules}) {
                     </button>
                 </nav>
             </header>
-            <div className="modules">
+            {loading ? <Spinner /> : <div className="modules">
                 {activeTab === 'all-modules' && ( 
                     <>
                         <h1>All Modules</h1>
@@ -216,7 +230,7 @@ function ModulesPage({modules}) {
                         </div>
                     </>
                 )}
-            </div>
+            </div>}
         </div>
     );
 }
