@@ -29,7 +29,7 @@ def handler(event, context):
         # Extract the items from the response
         items = response.get('Items', [])
         # Extract IDs and titles from each module
-        modules_info = [{'id': item['id'], 'title': item['title'], 'level': item['level'], 'keyword': item['keyword'], 'description': item['description'], 'url': item['url']} for item in items]
+        modules_info = [{'id': item['id'], 'title': item['title'], 'level': item['level'], 'keyword': item['keyword'], 'description': item['description'], 'imgurl': item['imgurl'], 'jsurl': item['jsurl']} for item in items]
         # Return the IDs and titles
         return send_response(200, modules_info)
     except Exception as e:

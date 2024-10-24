@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './CryptoModule.css';
+import '../template/Module.css';
 
 import cipherImg from './cipher.jpg';
 
@@ -33,7 +33,7 @@ function CryptoModule() {
         }
     }
     return (
-        <div class="crypto">
+        <div class="anymodule">
             <button className="toc-toggle" onClick={() => setIsVisible(!isVisible)}>
                 {isVisible ? '-' : '+'}
             </button>
@@ -52,9 +52,12 @@ function CryptoModule() {
                     </ul>
                 </div>
             )}
-            <h1>Introduction to Cryptography:<br></br><i>Secret Codes and Ciphers</i></h1>
+            <div class="header-container">
+            <h1 class="title">Introduction to Cryptography:<br></br><i>Secret Codes and Ciphers</i></h1>
             <img src={cipherImg} alt="Ceasar's Cipher"></img>
-            <div class="body">
+            </div>
+            
+            <div class="anymodulebody">
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>
                         <li><a href="https://files5.pdesas.org/163005038051165169006245176208132131190217116096/Download.ashx?hash=2.2">3.5.6-8.H</a></li>
@@ -64,7 +67,7 @@ function CryptoModule() {
                         <li><a href="https://files5.pdesas.org/202207034238051062213202015009077219061167227169/Download.ashx?hash=2.2">3.5.6-8.CC</a></li>
                         <li><a href="https://files5.pdesas.org/101203203242197017109096133004207133057127052228/Download.ashx?hash=2.2">3.5.6-8.EE</a></li>
                     </ul>
-                <h2 id="Objectives">Obectives</h2>
+                <h2 id="Objectives">Objectives</h2>
                     <ul>
                         <li>Students will understand the basic principles of cryptography</li>
                         <li>Students will understand the importance of encrypting sensitive information</li>

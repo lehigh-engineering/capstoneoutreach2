@@ -1,5 +1,8 @@
 import React from 'react';
 import './FeedbackPage.css';
+import bugImg from './images/bug.jpg';
+import lightImg from './images/lightbulb.png';
+import feedbackImg from './images/feedback.jpg';
 
 function FeedbackPage() {
     const handleBugClick = () => {
@@ -16,19 +19,30 @@ function FeedbackPage() {
 
     return (
         <div class="feedback">
-            <h2>Feedback</h2>
-            <p>Encountered any issues, like typos or software glitches?</p>
-            <button className={'button-container'} onClick={handleBugClick}
-                > Report a Bug
-            </button>
-            <p>Have suggestions or feedback on what you like or what could be improved?</p>
-            <button className={'button-container'} onClick={handleGeneralClick}
-                > General Feedback
-            </button>
-            <p>Have an idea for a new module?</p>
-            <button className={'button-container'} onClick={handleIdeaClick}
-                > New Module Idea
-            </button>
+            <h1>We'd love to hear from you!</h1>
+            <div class="feedback-container">
+                <div class="feedback-item">
+                    <h3>Encountered any issues,<br></br>like typos or software glitches?</h3>
+                    <img src={bugImg} alt="Bug" />
+                    <button className={'button-container'} onClick={handleBugClick}
+                        > Report a Bug
+                    </button>
+                </div>
+                <div class="feedback-item">
+                    <h3>Have any feedback on what you like<br></br>or suggestions on what could be improved?</h3>
+                    <img src={feedbackImg} alt="Feedback" />
+                    <button className={'button-container'} onClick={handleGeneralClick}
+                        > General Feedback
+                    </button>
+                </div>
+                <div class="feedback-item">
+                    <h3>Have an idea<br></br>for a new module?</h3>
+                    <img src={lightImg} alt="Light" />
+                    <button className={'button-container'} onClick={handleIdeaClick}
+                        > New Module Idea
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }

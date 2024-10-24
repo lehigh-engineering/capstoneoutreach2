@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './InjectionModule.css';
+import '../template/Module.css';
 
 import hackerImg from './hacker.jpg';
 
@@ -33,7 +33,7 @@ function InjectionModule() {
         }
     }
     return (
-        <div class="injection">
+        <div class="anymodule">
             <button className="toc-toggle" onClick={() => setIsVisible(!isVisible)}>
                 {isVisible ? '-' : '+'}
             </button>
@@ -52,9 +52,12 @@ function InjectionModule() {
                     </ul>
                 </div>
             )}
-            <h1>Introduction to Cybersecurity:<br></br><i>Prompt Injection Attacks</i></h1>
+            <div class="header-container">
+            <h1 class="title">Introduction to Cybersecurity:<br></br><i>Prompt Injection Attacks</i></h1>
             <img src={hackerImg} alt="Hacker"></img>
-            <div class="body">
+            </div>
+            
+            <div class="anymodulebody">
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>
                         <li><a href="https://files5.pdesas.org/050205197024147196040149181007017248032244235080/Download.ashx?hash=2.2">3.5.6-8.F</a></li>
@@ -65,7 +68,7 @@ function InjectionModule() {
                         <li><a href="https://files5.pdesas.org/101203203242197017109096133004207133057127052228/Download.ashx?hash=2.2">3.5.6-8.EE</a></li>
                         <li><a href="https://files5.pdesas.org/031176110099065030206242252068251045122192108014/Download.ashx?hash=2.2">3.5.6-8.KK</a></li>
                     </ul>
-                <h2 id="Objectives">Obectives</h2>
+                <h2 id="Objectives">Objectives</h2>
                     <ul>
                         <li>Students will understand the basic principles of cyberattacks in cybersecurity</li>
                         <li>Students will understand the impact of different technologies like AI and LLMs</li>

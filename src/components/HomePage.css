@@ -10,12 +10,15 @@
     margin: 0;
     padding: 0;
     background-color: #EDDEEF;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%; 
     background-image: url('./images/homepage.png');
     background-size: 105% 120%;
     background-position: center bottom;
     position: relative;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    padding-bottom: 60px;
 }
 
 .container {
@@ -25,10 +28,12 @@
 }
 
 .text {
+    font-family: "Nunito", sans-serif;
     font-size: 4rem;
     font-weight: bold;
-    color: gray ;
+    color: rgb(0, 0, 0) ;
     margin-top: 4rem;
+    text-align: center;
 }
 
 /* Styles for the button */
@@ -50,8 +55,10 @@
 }
 
 .summaryText {
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
     text-align: center;
-    color: gray;
-    width: 50%;
+    color: rgb(0, 0, 0);
+    width: 75%;
     margin-top: 1rem;
 }
