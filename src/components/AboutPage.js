@@ -28,7 +28,7 @@ function AboutPage() {
                 </div>
                 <div class="missionText">
                     <h2>Our Journey</h2>
-                    <p>Our journey began in Spring 2023 with a vision to provide teachers in the Bethlehem community with access to high quality stand-alone computer science modules that they can easily incorporate into their cirriculum.</p>
+                    <p>Our journey began in Spring 2024 with a vision to provide teachers in the Bethlehem community with access to high quality stand-alone computer science modules that they can easily incorporate into their cirriculum.</p>
                     <p>Along the way we faced many challenges in assessing user needs and balancing them with the realistic design and functionalities of our solution. However, by utilizing our personal experience in computer science and adopting a customer first mentality, we published six modules closely aligned with the STEELS Standards to a user friendly site  </p>
                     <p>As we look ahead, we're excited to continue expanding the resources we offer, refining our site and content, and reach beyond the Bethlehem community, offering these resources to teachers and students all over.</p>
                 </div>
