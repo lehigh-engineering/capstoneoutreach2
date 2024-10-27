@@ -45,3 +45,15 @@
     width: 75%;
     margin-top: .5rem;
 }
+
+@media (max-width: 600px) {
+    .text {
+        font-family: "Nunito", sans-serif;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        color: rgb(0, 0, 0) ;
+        margin-top: 2rem;
+    }
+  }
+  
