@@ -1,6 +1,19 @@
 .home {
     margin: 0;
     padding: 0;
+    background-color: #EDDEEF;
+    min-height: 100vh;
+    width: 100%; 
+    background-image: url('./images/homepage.png');
+    background-size: 105% 120%;
+    background-position: center bottom;
+    position: relative;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    padding-bottom: 60px;
+}
+
+.container {
     display: grid;
     align-items: center;
     justify-items: center;

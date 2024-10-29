@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './HtmlModule.css';
+import '../template/Module.css';
 
 import htmlImg from './HTML.png';
 
@@ -33,7 +33,7 @@ function HtmlModule() {
         }
     }
     return (
-        <div class="html">
+        <div class="anymodule">
             <button className="toc-toggle" onClick={() => setIsVisible(!isVisible)}>
                 {isVisible ? '-' : '+'}
             </button>
@@ -52,9 +52,12 @@ function HtmlModule() {
                     </ul>
                 </div>
             )}
+            <div class="header-container">
             <h1>Introduction to HTML:<br></br><i>A Basic Webpage</i></h1>
             <img src={htmlImg} alt="HTML"></img>
-            <div class="body">
+            </div>
+            
+            <div class="anymodulebody">
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                 <ul>
                     <li><a href="https://files5.pdesas.org/050205197024147196040149181007017248032244235080/Download.ashx?hash=2.2">3.5.6-8.F</a></li>
