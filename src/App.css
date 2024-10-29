@@ -7,6 +7,7 @@
   padding: 20px;
   overflow: hidden;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .banner img {
@@ -23,6 +24,13 @@
   font-weight: normal;
 }
 
+/* Center nav links */
+.banner nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
 .banner h2 {
   font-family: "Nunito", sans-serif;
   display: inline;
@@ -30,6 +38,7 @@
   font-weight: normal;
   padding: 8px;
   margin-left: auto;
+  margin: 0;
 }
 
 .banner a {
@@ -37,9 +46,10 @@
   text-decoration: none;
 }
 
+/* Style for nav links */
 .nav-link {
-  color: #000;
-  text-decoration: none; 
+  color: #fff;
+  text-decoration: none;
 }
 
 .nav-link:hover {
@@ -49,4 +59,47 @@
 .nav-link.active {
   color: #ff9900;
   font-weight: bold;
+}
+
+/* Hide nav links and show hamburger icon on small screens */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-left: auto; /* Align hamburger to the right */
+}
+
+.nav-links {
+  display: flex;
+}
+
+/* Responsive styles */
+@media (max-width: 1050px) {
+  .banner nav {
+    display: none; /* Hide nav links by default on small screens */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger on small screens */
+  }
+
+  /* Show nav when hamburger is clicked */
+  .nav-links.open {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    background-color: #502D0F;
+    padding: 20px 0; /* Space around the links */
+    gap: 10px; /* Space between links */
+    width: 100%; /* Make it full width */
+    margin-top: 10px; /* Add space below the banner */
+  }
+
+  .nav-links h2 {
+    font-size: 18px;
+    padding: 5px 0;
+    text-align: center; /* Center the text */
+  }
 }
