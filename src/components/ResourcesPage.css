@@ -1,17 +1,41 @@
 .resources {
     width: 100%;
-    height: 100%;
+    background-image: url('./images/computer_science_resources.png');
+    background-size: cover;
+    background-position: center;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    min-height: 100vh;
+}
+
+.button-container {
+    display: flex;
+    padding: 40px;
+    gap: 20px;
+    flex-direction: column; /* Stacks buttons vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    height: 100%; /* Full height to center vertically */
 }
 
 .resources h1 {
-    text-align: center;
-    font-family: "Nunito", sans-serif;
-    padding-top: 20px;
-    font-size: 40px;
+    padding-left: 20px;
+}
+
+button {
+    display: inline-block; /* Allows padding and margins */
+    padding: 10px 20px;
+    border-radius: 2rem;
+    margin-top: 1rem;
+    font-size: 1.2em; 
+    font-weight: bold;
+    
 }
 
 .resources h2 {
-    padding-left: 20px;
+    text-align: center;
+    font-size: 2.5rem;
 }
 
 .resources li {
@@ -23,4 +47,83 @@
     margin-left: 20px;
     margin-top: 10px;
     max-width: 375px;
+}
+
+.levels-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+
+.box {
+    text-align: center;
+    padding: 20px;
+    /* background-color: #f0f0f0; */
+    background-color: #F0F0F0;
+    border-radius: 10px;
+}
+
+.box a {
+    display: inline-block; /* Ensures links are treated as blocks for spacing */
+    font-size: 1.5rem;
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px 12px; /* Padding for links */
+    margin: 5px 0; /* Margin for spacing between links */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.box h3 {
+    font-size: 2rem; /* Increase font size */
+    color: #333; /* Darker text color for better contrast */
+    margin-bottom: 10px; /* Space between heading and paragraph */
+    text-align: center; /* Center-align the heading */
+}
+
+.box h3 a{
+    font-size: 2rem; /* Increase font size */
+    color: #333; /* Darker text color for better contrast */
+    margin-bottom: 10px; /* Space between heading and paragraph */
+    text-align: center; /* Center-align the heading */
+}
+
+.box p{
+    font-size: 1.25rem; /* Increase font size */
+    color: #333; /* Darker text color for better contrast */
+    margin-bottom: 10px; /* Space between heading and paragraph */
+    text-align: center; /* Center-align the heading */
+}
+
+.level h3 {
+    font-size: 1.5rem;
+}
+
+.level p {
+    font-size: 1rem;
+    padding-top: 10px;
+}
+
+.platforms-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.projects-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.left-alignedP {
+    text-align: left; /* Aligns text to the left */
+    font-size: 1.25rem; /* Set font size (adjust as needed) */
+    padding: 1rem;
 }
