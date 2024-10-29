@@ -1,3 +1,4 @@
+
 .modulesPage {
     margin: 0;
     padding: 0;
@@ -63,7 +64,6 @@
     justify-content: center;
     gap: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
 }
   
 .module {
@@ -125,18 +125,17 @@
 }
 
 .module-back {
-    background-color: #fff;
+    background-color: #502D0F;
     transform: rotateY(180deg);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.summary-text {
-    color: #000;
+.summary-text{
+    color: white;
     font-size: 1.5rem;
-    padding: 4rem;
-    text-align: center;
+    padding: 1rem;
 }
 
 a {
@@ -147,5 +146,3 @@ a {
 a:hover {
     color: #ff9900;
 }
-
-
