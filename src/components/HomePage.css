@@ -10,20 +10,22 @@
     margin-top: 20px;
 }
 .text {
-    font-family: "Nunito", sans-serif;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 200;
+    text-shadow: 3px 3px 0 rgb(200, 200, 200);
     text-align: center;
     font-size: 4rem;
-    font-weight: bold;
-    color: rgb(0, 0, 0) ;
+    color: black;
     margin-top: 2rem;
 }
-/* Styles for the button */
 .button {
-    display: inline-block; /* Allows padding and margins */
+    font-family: "Nunito", sans-serif;
+    display: inline-block;
+    box-shadow: 4px 4px 0 rgb(200, 200, 200);
     padding: 10px 20px;
     background-color: #988EAC;
     border-radius: 0.5rem;
-    margin-top: .75rem;
+    margin-top: 1rem;
     color: white;
     font-size: 1.2em;
     font-weight: bold;
@@ -34,11 +36,11 @@
 }
 .summaryText {
     font-family: "Nunito", sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
     color: rgb(0, 0, 0);
     width: 75%;
-    margin-top: .5rem;
+    margin-top: 1rem;
 }
 @media (max-width: 600px) {
     .text {
