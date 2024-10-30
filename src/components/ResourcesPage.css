@@ -23,7 +23,7 @@
     padding-left: 20px;
 }
 
-button {
+.resources button {
     display: inline-block; /* Allows padding and margins */
     padding: 10px 20px;
     border-radius: 2rem;

@@ -85,8 +85,18 @@
 }
 
 @media (max-width: 900px) {
+    .ourMission {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
     .ourTeam {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+    .missionImg {
+        order: 2; /* Image appears below the text */
+    }
+
+    .missionText {
+        order: 1; /* Text above the image */
     }
 }
 
