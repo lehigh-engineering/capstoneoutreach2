@@ -40,6 +40,7 @@
 }
 
 .teamMember h3 {
+    font-family: "Nunito", sans-serif;
     margin-top: 10px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -75,4 +76,38 @@
 .missionText img {
     width: 100%;
     height: auto;
+}
+
+@media (max-width: 1200px) {
+    .ourTeam {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .ourMission {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+    .ourTeam {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+    .missionImg {
+        order: 2; /* Image appears below the text */
+    }
+
+    .missionText {
+        order: 1; /* Text above the image */
+    }
+}
+
+@media (max-width: 600px) {
+    .ourTeam {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+
+    .teamMember img {
+        width: 100%;
+        max-width: 250px; /* Limit the image size */
+        height: auto; /* Maintain aspect ratio */
+    }
 }

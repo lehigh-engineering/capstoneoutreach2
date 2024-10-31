@@ -1,5 +1,5 @@
-import React, { useState , useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './components/HomePage';
@@ -24,6 +24,13 @@ import { get } from 'aws-amplify/api';
 Amplify.configure(awsconfig);
 
 function App() {
+  // const [modulesData, setModules] = useState([]);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   const invokeLambda = async () => {
     try {
       const response = await get({
@@ -61,6 +68,21 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <header class="banner">
+          <a href="https://www2.lehigh.edu"><img src="./lehigh-white-logo.svg" alt="logo"></img></a>
+          <h1><a href="https://engineering.lehigh.edu">P.C. ROSSIN COLLEGE OF<br></br>ENGINEERING AND APPLIED SCIENCE</a></h1>
+          <button className="hamburger" onClick={toggleNav}>
+            ☰
+          </button>
+          <nav className={`nav-links ${isNavOpen ? "open" : ""}`}>
+            <h2><NavLink to="/" className="nav-link" activeClassName="active">Home</NavLink></h2>
+            <h2><NavLink to="/modules" className="nav-link" activeClassName="active">Modules</NavLink></h2>
+            <h2><NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink></h2>
+            <h2><NavLink to="/resources" className="nav-link" activeClassName="active">Resources</NavLink></h2>
+            <h2><NavLink to="/feedback" className="nav-link" activeClassName="active">Feedback</NavLink></h2>
+          </nav>
+        </header>
+        
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />

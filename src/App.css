@@ -1,41 +1,105 @@
-/* body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 .banner {
+  display: flex;
+  align-items: center;
   background-color: #502D0F;
   color: #fff;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   overflow: hidden;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
+
 .banner img {
-  width: 200px;
-  padding-top: 5px;
-  padding-right: 10px;
-  float: left;
+  width: 175px;
+  margin-right: 10px;
 }
-.banner h2 {
+
+.banner h1 {
+  font-family: "Nunito", sans-serif;
   font-size: 15px;
   border-left: 1px solid #e2e2e2;
   padding-left: 10px;
-  float: left;
+  margin-right: auto;
+  font-weight: normal;
 }
-.banner p {
+
+/* Center nav links */
+.banner nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.banner h2 {
+  font-family: "Nunito", sans-serif;
   display: inline;
-  font-size: 12px;
-  padding: 10px;
-  float: right;
+  font-size: 20px;
+  font-weight: normal;
+  padding: 8px;
+  margin-left: auto;
+  margin: 0;
 }
-.banner p + p {
-  border-right: 1px solid #e2e2e2;
-}
-a {
+
+.banner a {
   color: inherit;
   text-decoration: none;
 }
-a:hover {
+
+/* Style for nav links */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link:hover {
   color: #ff9900;
-} */
+}
+
+.nav-link.active {
+  color: #ff9900;
+  font-weight: bold;
+}
+
+/* Hide nav links and show hamburger icon on small screens */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-left: auto; /* Align hamburger to the right */
+}
+
+.nav-links {
+  display: flex;
+}
+
+/* Responsive styles */
+@media (max-width: 1050px) {
+  .banner nav {
+    display: none; /* Hide nav links by default on small screens */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger on small screens */
+  }
+
+  /* Show nav when hamburger is clicked */
+  .nav-links.open {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    background-color: #502D0F;
+    padding: 20px 0; /* Space around the links */
+    gap: 10px; /* Space between links */
+    width: 100%; /* Make it full width */
+    margin-top: 10px; /* Add space below the banner */
+  }
+
+  .nav-links h2 {
+    font-size: 18px;
+    padding: 5px 0;
+    text-align: center; /* Center the text */
+  }
+}

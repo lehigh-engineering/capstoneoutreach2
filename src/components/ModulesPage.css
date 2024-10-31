@@ -11,6 +11,7 @@
 .tabs {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .tab-button {
@@ -62,6 +63,7 @@
     justify-content: center;
     gap: 20px;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
   
 .module {
@@ -123,17 +125,18 @@
 }
 
 .module-back {
-    background-color: #502D0F;
+    background-color: #fff;
     transform: rotateY(180deg);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.summary-text{
-    color: white;
+.summary-text {
+    color: #000;
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 4rem;
+    text-align: center;
 }
 
 a {
@@ -144,5 +147,4 @@ a {
 a:hover {
     color: #ff9900;
 }
-
 
