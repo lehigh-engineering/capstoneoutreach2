@@ -1,3 +1,7 @@
+* {
+    font-family: "Nunito", sans-serif;
+}
+
 .resources {
     width: 100%;
     background-image: url('./images/computer_science_resources.png');
@@ -55,12 +59,41 @@
     gap: 20px;
     padding: 20px;
     margin-top: 30px;
+    background-color: #502D0F;
 }
 
+.download-text {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 10px;
+    background-color: #502D0F;
+    border-radius: 5px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-direction: column;
+}
+
+.toggle-button:hover {
+    color: #ff9900;
+}
+
+.collapse-arrow-container {
+    grid-column: 1 / -1; 
+    text-align: center; 
+    margin-top: 10px; 
+}
+
+.collapse-arrow {
+    font-size: 1.5em;
+    color: #FFF;
+    cursor: pointer;
+}
 
 .box {
     text-align: center;
     padding: 20px;
+    position: relative;
     /* background-color: #f0f0f0; */
     background-color: #F0F0F0;
     border-radius: 10px;
@@ -68,9 +101,9 @@
 
 .box a {
     display: inline-block; /* Ensures links are treated as blocks for spacing */
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-decoration: none; /* Remove underline from links */
-    padding: 8px 12px; /* Padding for links */
+    padding: 5px 12px; /* Padding for links */
     margin: 5px 0; /* Margin for spacing between links */
     border-radius: 5px; /* Rounded corners for links */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
@@ -88,6 +121,10 @@
     color: #333; /* Darker text color for better contrast */
     margin-bottom: 10px; /* Space between heading and paragraph */
     text-align: center; /* Center-align the heading */
+}
+
+.box h3 a:hover {
+    color: #ff9900;
 }
 
 .box p{
@@ -112,18 +149,35 @@
     gap: 20px;
     padding: 20px;
     margin-top: 30px;
+    background-color: #502D0F;
 }
 
 .projects-container{
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
     padding: 20px;
     margin-top: 30px;
+    background-color: #502D0F;
 }
 
 .left-alignedP {
     text-align: left; /* Aligns text to the left */
     font-size: 1.25rem; /* Set font size (adjust as needed) */
     padding: 1rem;
+}
+
+@media (max-width: 800px) {
+    .platforms-container {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+
+    .levels-container {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
 }
