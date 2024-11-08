@@ -10,8 +10,8 @@ function HomePage() {
                 Computer Science Outreach Program
             </div>
             <div className='summaryText'>
-                Lehigh's Computer Science Outreach Program aims to broaden Lehigh’s outreach to the wider Bethlehem community, addressing the gap in computer science education and compliance with STEELS standards by 2025.
-                With original stand-alone modules, we equip teachers of all levels with the resources to expose young students to core computer science concepts and spark an early interest in engineering.
+                This student-led initiative aims to broaden the outreach of our program to address the gaps in STEM education and compliance with the K-12 STEELS Standards in PA.
+                Original modules serve as individual lesson plans for teachers of all levels to engage young students in core computer science concepts and spark an early interest in engineering.
             </div>
             <Link to="/modules" className="button">
                 Learn More ►
