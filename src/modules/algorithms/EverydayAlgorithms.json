@@ -1,0 +1,39 @@
+{
+    "title": "Introduction to Algorithms with Everyday Tasks",
+    "img": "EverydayAlgs",
+    "STEELS": [
+        {
+            "title":"Engineering Design (K-2): Understanding how to break down tasks and follow procedures.",
+            "url":"https://files5.pdesas.org/163005038051165169006245176208132131190217116096/Download.ashx?hash=2.2"
+        },
+        {
+            "title":"Technology Integration (K-2): Using simple tools like Scratch Jr. to sequence tasks.",
+            "url":"https://files5.pdesas.org/108112041116232255207228146204090032226252193124/Download.ashx?hash=2.2"
+        },
+        {
+            "title":"Scientific Practices (K-2): Analyzing and refining through debugging activities.",
+            "url":"https://files5.pdesas.org/225125079146198173223229244205143071127114037068/Download.ashx?hash=2.2"
+        }
+    ],
+    "objectives": [
+        "Introduce students to the fundamental concept of an algorithm",
+        "Practice tracing an algorithm",
+        "Students will understand the relationship between instructions they follow in everyday life and those followed by a computer"
+    ],
+    "overview": "This lesson introduces young students to the concept of algorithms by relating them to everyday tasks. The goal is to make children understand that an algorithm is a step-by-step set of instructions to achieve a desired outcome. The lesson will include activities that use familiar examples, such as making a sandwich or s'more, to illustrate how algorithms work in everyday life. By comparing coding concepts like sequences and debugging to simple activities, students will gain an approachable foundation in understanding how instructions form the basis of technology.",
+    "materials": [
+        "Bread, peanut butter, jelly, knife, plates (for PB&J activity) AND/OR Graham crackers, marshmallows, chocolate, plates (for s'more activity)",
+        "Whiteboard and markers",
+        "Printed sequence cards or slips of paper to create algorithm steps",
+        "Scratch Jr. (if technology is available)"
+    ],
+    "basic_vocab": {
+        "Algorithm": "A set of instructions to complete a task.",
+        "Sequence": "The order in which steps are performed.",
+        "Debugging": "Finding and fixing mistakes in an algorithm."
+    },
+    "introduction": "<p>Begin by explaining that algorithms are like instructions we follow every day. Ask the students if they have ever followed steps to complete something, like brushing their teeth or getting ready for school. These are all examples of algorithms. Explain that, just like they follow these steps, computers need instructions to complete tasks.</p>",
+    "class_activity": "<p>The teacher can choose between two activities: making a PB&J sandwich or making a s'more.</p><p><strong>1. Real-life Algorithm Example</strong>: Introduce the chosen activity, explaining how it involves a series of steps (an algorithm). Have the students break down the steps in detail. For example, if making a PB&J sandwich, steps might include getting the bread, spreading peanut butter, adding jelly, and putting the slices together.</p><p><strong>2. Instruction Following Challenge</strong>: After the students list the steps, follow their instructions literally. If they forget to mention opening the jar or using a knife, demonstrate the consequences. This will be a fun and engaging way to show the importance of detailed instructions and debugging.</p><p><strong>3. Simple Programming Activity</strong>: Use Scratch Jr. to create a sequence that shows a character moving through steps, similar to the activity they just completed. This will help them understand how algorithms are used in coding.</p>",
+    "summary": "<p>Wrap up by reinforcing that algorithms are everywhere, not just in computers. They use algorithms to solve problems every day. Reiterate the importance of following steps in order (sequence) and fixing mistakes (debugging) to achieve the desired outcome.</p><p>Encourage students to share their experiences from the activity and discuss the challenges they faced. Emphasize how following steps in the correct order is essential, both in everyday tasks and in programming.</p>",
+    "discussion": "<ul><li>Algorithms are all around us! We use them every day without even realizing it. Examples include:<ul><li>Following a recipe</li><li>Getting ready for school</li><li>Brushing teeth</li><li>Tying shoes</li></ul></li><li>Why is it important to follow steps in order?<ul><li>Discuss what might happen if we do steps out of order, like putting on shoes before socks.</li></ul></li><li>Debugging in everyday life<ul><li>What if something goes wrong? How do we fix it? Discuss examples of fixing mistakes, such as realizing you missed a step while making a sandwich and correcting it.</li></ul></li></ul>"
+}

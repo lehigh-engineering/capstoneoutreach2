@@ -16,6 +16,7 @@ import MakeCodeModule from './modules/makecode/MakeCodeModule';
 import ScratchModule from './modules/scratch/ScratchModule';
 import MazeModule from './modules/maze/MazeModule';
 import HtmlModule from './modules/html/HtmlModule';
+import EverdayAlgsModule from './modules/algorithms/EverydayAlgsModule';
 
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
@@ -98,6 +99,7 @@ function App() {
           <Route path="/maze" element={<MazeModule />} />
           <Route path="/scratch" element={<ScratchModule />} />
           <Route path="/html" element={<HtmlModule/>}/>
+          <Route path="/alg" element={<EverdayAlgsModule/>}/>
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
