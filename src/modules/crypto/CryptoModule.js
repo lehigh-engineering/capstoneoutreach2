@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../template/Module.css';
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 import cipherImg from './cipher.jpg';
 
@@ -37,6 +39,44 @@ function CryptoModule() {
         setIsVisible(!isVisible);
     };
 
+    const saveAsPDF = () => {
+        const button = document.querySelector('button'); 
+        button.style.display = 'none'; 
+    
+        const input = document.querySelector('.anyModuleContent');
+        
+        html2canvas(input, {
+            ignoreElements: (element) => {
+                return element.tagName === 'BUTTON'; 
+            }
+        }).then((canvas) => {
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = pdf.internal.pageSize.getHeight();
+            const imgWidth = pdfWidth;
+            const imgHeight = (canvas.height * pdfWidth) / canvas.width;
+            let heightLeft = imgHeight;
+            let position = 0;
+    
+            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pdfHeight;
+    
+            while (heightLeft >= 0) {
+                position -= pdfHeight;
+                pdf.addPage();
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pdfHeight;
+            }
+    
+            pdf.save('CryptoModule.pdf');
+            
+            button.style.display = 'block';
+        });
+    };
+    
+      
+
     return (
         <div class="anyModule">
             <div className={`toc-bar ${isVisible ? 'expanded' : ''}`} onClick={toggleSidebar}>
@@ -57,6 +97,7 @@ function CryptoModule() {
                 )} <p className="toc-text"> {isVisible ? '◄' : '►'} </p>
             </div>
             <div className={`anyModuleContent ${isVisible ? 'shift-right' : ''}`}>
+            <button onClick={saveAsPDF}>Download as PDF</button>
                     <div class="header-container">
                         <h1>Introduction to Cryptography:<br></br><i>Secret Codes and Ciphers</i></h1>
                         <img src={cipherImg} alt="Ceasar's Cipher"></img>
