@@ -7,6 +7,7 @@ import cipherImg from './cipher.jpg';
 
 function CryptoModule() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
     
     useEffect(() => {
         // Add event listeners to all TOC links
@@ -40,6 +41,7 @@ function CryptoModule() {
     };
 
     const saveAsPDF = () => {
+        setIsDownloading(true); 
         const button = document.querySelector('button'); 
         button.style.display = 'none'; 
     
@@ -70,7 +72,7 @@ function CryptoModule() {
             }
     
             pdf.save('CryptoModule.pdf');
-            
+            setIsDownloading(false); 
             button.style.display = 'block';
         });
     };
@@ -97,11 +99,12 @@ function CryptoModule() {
                 )} <p className="toc-text"> {isVisible ? '◄' : '►'} </p>
             </div>
             <div className={`anyModuleContent ${isVisible ? 'shift-right' : ''}`}>
-            <button onClick={saveAsPDF}>Download as PDF</button>
                     <div class="header-container">
                         <h1>Introduction to Cryptography:<br></br><i>Secret Codes and Ciphers</i></h1>
                         <img src={cipherImg} alt="Ceasar's Cipher"></img>
                     </div>
+                    <button className="download-button" onClick={saveAsPDF}>Download as PDF</button>
+                    {isDownloading && <p>Downloading...</p>}
                     <div class="body-content">
                         <h2 id="STEELS Standards">STEELS Standards</h2>
                             <ul>

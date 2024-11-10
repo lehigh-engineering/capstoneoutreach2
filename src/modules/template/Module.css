@@ -101,6 +101,21 @@
             color: #ff9900;
         }
 
-    
+    .download-button {
+        display: block;
+        margin: 20px auto;   
+        padding: 10px 20px;
+        font-size: 16px;     
+        background-color: #502D0F;
+        color: white;      
+        border: none;         
+        border-radius: 5px;  
+        cursor: pointer;     
+        text-align: center;   
+    }
+
+    .anyModuleContent p{
+        text-align: center;
+    }
 
 
