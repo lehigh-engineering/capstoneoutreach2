@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../template/Module.css';
-
 import heartImg from './heart.png';
 import homeImg from './makecodeImages/home.png';
 import moduleImg from './makecodeImages/module.png';
@@ -14,41 +13,11 @@ import pythonImg from './makecodeImages/python.png';
 
 function MakeCodeModule() {
     const [isVisible, setIsVisible] = useState(false);
-
-    function scrollToSection(event) {
-        event.preventDefault();
-        const targetId = event.target.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            const yOffset = -80;
-            const rect = targetSection.getBoundingClientRect();
-            const scrollPosition = rect.top + window.scrollY + yOffset;
-            window.scrollBy({ top: scrollPosition, left: 0, behavior: 'smooth' });
-        }
-    }
-
-    useEffect(() => {
-        // Add event listeners to all TOC links
-        const tocLinks = document.querySelectorAll('.toc a');
-        tocLinks.forEach(link => {
-            link.addEventListener('click', scrollToSection);
-        });
-
-        // Remove event listeners when component unmounts
-        return () => {
-            tocLinks.forEach(link => {
-                link.removeEventListener('click', scrollToSection);
-            });
-        };
-    }, []);
-
-    const toggleSidebar = () => {
-        setIsVisible(!isVisible);
-    };
+    const toggleSidebar = () => setIsVisible(!isVisible);
 
     return (
         <div class="anyModule">
-            <div className={`toc-bar ${isVisible ? 'expanded' : ''}`} onClick={toggleSidebar}>
+            <div className={`toc-bar ${isVisible ? 'expanded' : ''}`}>
                 {isVisible && (
                     <div className="toc">
                         <h1>Table of Contents</h1>
@@ -63,7 +32,7 @@ function MakeCodeModule() {
                             <li><a href="#Discussion">Discussion</a></li>
                         </ul>
                     </div>
-                )} <p className="toc-text"> {isVisible ? '◄' : '►'} </p>
+                )} <div className="toc-toggle" onClick={toggleSidebar}> {isVisible ? '◄' : '►'} </div>
             </div>
             <div className={`anyModuleContent ${isVisible ? 'shift-right' : ''}`}>
                 <div className="header-container">
