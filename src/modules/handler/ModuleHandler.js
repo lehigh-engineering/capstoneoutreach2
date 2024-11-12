@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import '../template/Module.css';
+import { useParams } from 'react-router-dom';
 
 import htmlImg from './HTML.png';
 import EverydayAlgorithms from './EverydayAlgorithms.json'
 
-function EverydayAlgsModule() {
+function ModuleHandler() {
     const [isVisible, setIsVisible] = useState(false);
     const vocabItems = Object.entries(EverydayAlgorithms.basic_vocab);
+
+    // Extracts the `id` parameter from the route
+    const { id } = useParams();
+
+    console.log(id)
 
     useEffect(() => {
         // Add event listeners to all TOC links
@@ -106,4 +112,4 @@ function EverydayAlgsModule() {
     );
 }
 
-export default EverydayAlgsModule;
+export default ModuleHandler;
