@@ -42,7 +42,7 @@ function CryptoModule() {
 
     const saveAsPDF = () => {
         setIsDownloading(true); 
-        const button = document.querySelector('button'); 
+        const button = document.querySelector('.download-button'); 
         button.style.display = 'none'; 
     
         const input = document.querySelector('.anyModuleContent');
