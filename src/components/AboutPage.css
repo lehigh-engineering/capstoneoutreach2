@@ -4,14 +4,20 @@
 }
 
 .about h1 {
-    font-family: "Nunito", sans-serif;
-    text-align: center;
-    margin-top: 3rem;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 200;
+    text-shadow: 3px 3px 0 rgb(200, 200, 200);
+    font-size: 50px;
+    padding-left: 30px;
 }
 
 .about h2 {
-    font-family: "Nunito", sans-serif;
-    padding-left: 20px;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 200;
+    text-shadow: 3px 3px 0 rgb(200, 200, 200);
+    font-size: 50px;
+    text-align: center;
+    margin-top: 3rem;
 }
 
 .about p {
@@ -41,7 +47,7 @@
 
 .teamMember h3 {
     font-family: "Nunito", sans-serif;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -68,10 +74,10 @@
     text-align: left;
 }
 
-.missionText h2 {
+/* .missionText h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-}
+} */
 
 .missionText img {
     width: 100%;

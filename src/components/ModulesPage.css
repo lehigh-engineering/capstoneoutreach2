@@ -45,8 +45,10 @@
 
 .modules h1 {
     text-align: center;
-    font-family: "Nunito", sans-serif;
-    font-size: 40px;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 200;
+    text-shadow: 3px 3px 0 rgb(200, 200, 200);
+    font-size: 60px;
 }
 
 .modules h2 {
@@ -63,7 +65,7 @@
     justify-content: center;
     gap: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
   
 .module {
