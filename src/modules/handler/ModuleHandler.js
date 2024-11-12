@@ -3,16 +3,31 @@ import '../template/Module.css';
 import { useParams } from 'react-router-dom';
 
 import htmlImg from './HTML.png';
-import EverydayAlgorithms from './EverydayAlgorithms.json'
+import fetchFileFromS3 from '../../services/s3service';
+import Spinner from '../../components/Spinner';
 
 function ModuleHandler() {
     const [isVisible, setIsVisible] = useState(false);
-    const vocabItems = Object.entries(EverydayAlgorithms.basic_vocab);
 
     // Extracts the `id` parameter from the route
     const { id } = useParams();
 
-    console.log(id)
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function loadData() {
+            try {
+                const result = await fetchFileFromS3('cs-modules-bucket', `${id}.json`);
+                setData(result);
+            } catch (error) {
+                console.error('Error fetching module data:', error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        loadData();
+    }, [id]);
 
     useEffect(() => {
         // Add event listeners to all TOC links
@@ -65,10 +80,10 @@ function ModuleHandler() {
                 <img src={htmlImg} alt="HTML"></img>
             </div>
             
-            <div class="anymodulebody">
+            {loading ? <Spinner /> : <div class="anymodulebody">
                 <h2 id="STEELS Standards">STEELS Standards</h2>
                 <ul>
-                    {EverydayAlgorithms.STEELS.map((standard, index) => (
+                    {data.STEELS.map((standard, index) => (
                         <li key={index}>
                             <a href={standard.url}>{standard.title}</a>
                         </li>
@@ -77,37 +92,37 @@ function ModuleHandler() {
 
                 <h2 id="Objectives">Obectives</h2>
                 <ul>
-                    {EverydayAlgorithms.objectives.map((objective, index) => (
+                    {data.objectives.map((objective, index) => (
                         <li key={index}>{objective}</li>
                     ))}
                 </ul>
 
                 <h2 id="Materials">Materials</h2>
                 <ul>
-                    {EverydayAlgorithms.materials.map((material, index) => (
+                    {data.materials.map((material, index) => (
                         <li key={index}>{material}</li>
                     ))}
                 </ul>
 
                 <h2 id="Basic Vocab">Basic Vocab</h2>
                 <div>
-                    {vocabItems.map(([word, definition]) => (
+                    {data && data.basic_vocab && Object.entries(data.basic_vocab).map(([word, definition]) => (
                         <p key={word}>
-                        <b>{word}:</b> {definition}
+                            <b>{word}:</b> {definition}
                         </p>
                     ))}
                 </div>
 
                 <h2 id="Introduction">Introduction</h2>
-                <div dangerouslySetInnerHTML={{ __html: EverydayAlgorithms.introduction }} />
+                <div dangerouslySetInnerHTML={{ __html: data.introduction }} />
                 
                 <h2 id="Class Activity">Class Activity</h2>
-                <div dangerouslySetInnerHTML={{ __html: EverydayAlgorithms.class_activity }} />
+                <div dangerouslySetInnerHTML={{ __html: data.class_activity }} />
                 
                 <h2 id="Discussion">Discussion</h2>
                 <p><i>(Try to guide student discussion to touch on these)</i></p>
-                <div dangerouslySetInnerHTML={{ __html: EverydayAlgorithms.discussion }} />
-            </div>
+                <div dangerouslySetInnerHTML={{ __html: data.discussion }} />
+            </div>}
         </div>
     );
 }
