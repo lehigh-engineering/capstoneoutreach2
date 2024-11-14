@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../template/Module.css';
 import { useParams } from 'react-router-dom';
 
-import htmlImg from './HTML.png';
 import fetchFileFromS3 from '../../services/s3service';
 import Spinner from '../../components/Spinner';
 
@@ -19,6 +18,7 @@ function ModuleHandler() {
         async function loadData() {
             try {
                 const result = await fetchFileFromS3('cs-modules-bucket', `${id}.json`);
+                console.log(result)
                 setData(result);
             } catch (error) {
                 console.error('Error fetching module data:', error);
@@ -77,7 +77,7 @@ function ModuleHandler() {
             )}
             <div class="header-container">
                 <h1>Introduction to HTML:<br></br><i>A Basic Webpage</i></h1>
-                <img src={htmlImg} alt="HTML"></img>
+                {loading ? <Spinner /> : <img src={"https://cs-images-bucket.s3.us-east-2.amazonaws.com/" + data.img} alt="HTML"></img>}
             </div>
             
             {loading ? <Spinner /> : <div class="anymodulebody">

@@ -16,6 +16,7 @@ async function fetchFileFromS3(bucketName, fileId) {
         }
 
         const data = await response.json();
+        console.log(url, data)
         return data;
     } catch (error) {
         console.error(`Error fetching file from S3: ${error}`);
