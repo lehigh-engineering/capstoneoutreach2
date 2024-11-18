@@ -284,20 +284,20 @@ function ResourcesPage() {
             <div className="projects-container">
                 <div className="box">
                     <h3>IDEs: All IDEs listed below are free or free under student accounts</h3>
-                    <div className="left-alignedP">VSCode: a highly customizable and lightweight code editor that is compatibe with most programming languages, making it a versatile beginner friendly IDE</div>
-                    <div className="left-alignedP">PyCharm: a full-featured IDE specifically for Python, with code completion, debugging, and extensive libraries</div>
-                    <div className="left-alignedP">Jupyter Notebook: Popular for data science and educational use, supporting interactive coding</div>
-                    <div className="left-alignedP">IntelliJ IDEA: Widely regarded as one of the best IDEs for Java development, with robust features for enterprise applications</div>
-                    <div className="left-alignedP">Eclipse: A free, open-source IDE commonly used for Java development, known for its plugins</div>
-                    <div className="left-alignedP">CLion: A powerful IDE by JetBrains for C/C++, with smart code completion and debugging tools</div>
+                    <div className="left-alignedP"><b>VSCode</b>: a highly customizable and lightweight code editor that is compatibe with most programming languages, making it a versatile beginner friendly IDE</div>
+                    <div className="left-alignedP"><b>PyCharm</b>: a full-featured IDE specifically for Python, with code completion, debugging, and extensive libraries</div>
+                    <div className="left-alignedP"><b>Jupyter Notebook</b>: Popular for data science and educational use, supporting interactive coding</div>
+                    <div className="left-alignedP"><b>IntelliJ IDEA</b>: Widely regarded as one of the best IDEs for Java development, with robust features for enterprise applications</div>
+                    <div className="left-alignedP"><b>Eclipse</b>: A free, open-source IDE commonly used for Java development, known for its plugins</div>
+                    <div className="left-alignedP"><b>CLion</b>: A powerful IDE by JetBrains for C/C++, with smart code completion and debugging tools</div>
                 </div>
                 <div className="box">
                     <h3>Languages</h3>
-                    <div className="left-alignedP">Python: A high-level, interpreted language known for its readability and simplicity. It's widely used in web development, data analysis, artificial intelligence, scientific computing, and automation</div>
-                    <div className="left-alignedP">JavaScript:  A versatile, high-level scripting language primarily used for web development to create interactive and dynamic web pages. It runs in the browser and is also popular for server-side development using Node.js</div>
-                    <div className="left-alignedP">Java: A widely-used, object-oriented programming language designed for portability across platforms. It’s commonly used in enterprise applications, Android app development, and large systems</div>
-                    <div className="left-alignedP">C++: An extension of the C programming language that includes object-oriented features. It’s widely used in systems programming, game development, and applications requiring high performance</div>
-                    <div className="left-alignedP">C# :A modern, object-oriented language developed by Microsoft, primarily used for developing Windows applications and games (using Unity). It's part of the .NET framework and is known for its performance and security features</div>
+                    <div className="left-alignedP"><b>Python</b>: A high-level, interpreted language known for its readability and simplicity. It's widely used in web development, data analysis, artificial intelligence, scientific computing, and automation</div>
+                    <div className="left-alignedP"><b>JavaScript</b>:  A versatile, high-level scripting language primarily used for web development to create interactive and dynamic web pages. It runs in the browser and is also popular for server-side development using Node.js</div>
+                    <div className="left-alignedP"><b>Java</b>: A widely-used, object-oriented programming language designed for portability across platforms. It’s commonly used in enterprise applications, Android app development, and large systems</div>
+                    <div className="left-alignedP"><b>C++</b>: An extension of the C programming language that includes object-oriented features. It’s widely used in systems programming, game development, and applications requiring high performance</div>
+                    <div className="left-alignedP"><b>C#</b>: A modern, object-oriented language developed by Microsoft, primarily used for developing Windows applications and games (using Unity). It's part of the .NET framework and is known for its performance and security features</div>
                 </div>
                 <div class="collapse-arrow-container" onClick={toggleTechRecommendations}>
                     <span class="collapse-arrow">▲</span>

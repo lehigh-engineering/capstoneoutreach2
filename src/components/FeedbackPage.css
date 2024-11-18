@@ -50,16 +50,18 @@
 .feedback button {
     background: #ff9900;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: #fff;
     padding: 10px 30px;
     font-family: "Nunito", sans-serif;
     font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
 }
 
 .feedback button:hover {
-    background-color: #ff990080;
-    color: #00000085;
+    background-color: #ff990060;
+    color: #ff9900;
+    /* font-weight: bold; */
 }

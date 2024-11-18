@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-color: #ff990060;
 }
 
 .tab-button {
@@ -25,9 +26,7 @@
 }
 
 .tab-button:hover {
-    background-color: #ff990080;
-    /* color: #00000085; */
-    color: #000;
+    background-color: #ff990060;
 }
 
 .tab-button.active {

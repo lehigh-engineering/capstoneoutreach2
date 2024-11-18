@@ -9,7 +9,7 @@
     max-width: 45%;
     margin-top: 20px;
 }
-.text {
+.home .text {
     font-family: "Pixelify Sans", sans-serif;
     font-weight: 200;
     text-shadow: 3px 3px 0 rgb(200, 200, 200);
@@ -18,22 +18,24 @@
     color: black;
     margin-top: 2rem;
 }
+
 .button {
     font-family: "Nunito", sans-serif;
     display: inline-block;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
-    background-color: #988EAC;
-    border-radius: 0.5rem;
+    /* background-color: #988EAC; */
+    background: #ff9900;
+    border-radius: 25px;
     margin-top: 1rem;
     color: white;
     font-size: 1.2em;
     font-weight: bold;
 }
 .button:hover {
-    background-color: #7A6D8D; /* Darkens the button on hover */
-    color: white;
+    background-color: #ff990060;
 }
+
 .summaryText {
     font-family: "Nunito", sans-serif;
     font-size: 22px;

@@ -7,7 +7,7 @@ function CryptoModule() {
     const toggleSidebar = () => setIsVisible(!isVisible);
 
     return (
-        <div className="anyModule">
+        <div class="anyModule">
             <div className={`toc-bar ${isVisible ? 'expanded' : ''}`}>
                 {isVisible && (
                     <div className="toc">

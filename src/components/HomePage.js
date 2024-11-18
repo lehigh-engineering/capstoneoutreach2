@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function HomePage() {
     return (
         <div class="home">
-            <div class="text">
+            <div className="text">
                 Computer Science Outreach Program
             </div>
             <div className='summaryText'>
