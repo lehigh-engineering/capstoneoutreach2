@@ -67,7 +67,7 @@ function CryptoModule() {
                 {isDownloading ? (
                     <p>Downloading...</p>
                 ) : (
-                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'MazeModule.pdf', setIsDownloading)}>
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'CryptoModule.pdf', setIsDownloading)}>
                         Download as PDF
                     </button>
                 )}

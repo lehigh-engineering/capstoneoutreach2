@@ -36,7 +36,7 @@ function InjectionModule() {
                 {isDownloading ? (
                     <p>Downloading...</p>
                 ) : (
-                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'MazeModule.pdf', setIsDownloading)}>
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'InjectionModule.pdf', setIsDownloading)}>
                         Download as PDF
                     </button>
                 )}

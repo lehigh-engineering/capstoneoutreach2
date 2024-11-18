@@ -36,7 +36,7 @@ function HtmlModule() {
                 {isDownloading ? (
                     <p>Downloading...</p>
                 ) : (
-                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'MazeModule.pdf', setIsDownloading)}>
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'HTMLModule.pdf', setIsDownloading)}>
                         Download as PDF
                     </button>
                 )}

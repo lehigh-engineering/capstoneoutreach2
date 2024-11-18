@@ -36,7 +36,7 @@ function JavaModule() {
                 {isDownloading ? (
                     <p>Downloading...</p>
                 ) : (
-                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'MazeModule.pdf', setIsDownloading)}>
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'JavaModule.pdf', setIsDownloading)}>
                         Download as PDF
                     </button>
                 )}

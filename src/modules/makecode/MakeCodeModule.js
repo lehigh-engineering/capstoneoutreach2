@@ -45,7 +45,7 @@ function MakeCodeModule() {
                 {isDownloading ? (
                     <p>Downloading...</p>
                 ) : (
-                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'MazeModule.pdf', setIsDownloading)}>
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'MakecodeModule.pdf', setIsDownloading)}>
                         Download as PDF
                     </button>
                 )}
