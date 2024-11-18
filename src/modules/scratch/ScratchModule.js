@@ -3,9 +3,12 @@ import React, { useState } from 'react';
 import '../template/Module.css';
 import scratchImg from './scratchcat.png';
 import scratchBlock from './ScratchBlocks.png'
+import { saveAsPDF } from '../downloadPDF';
+
 
 function ScratchModule() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
     const toggleSidebar = () => setIsVisible(!isVisible);
 
     return (
@@ -32,6 +35,13 @@ function ScratchModule() {
                     <h1><span class="pixelated">Introduction to Scratch:</span><br></br><i>Creative Coding</i></h1>
                     <img src={scratchImg} alt="Scratch"></img>
                 </div>
+                {isDownloading ? (
+                    <p>Downloading...</p>
+                ) : (
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'MazeModule.pdf', setIsDownloading)}>
+                        Download as PDF
+                    </button>
+                )}
                 <div class="body-content">
                     <h2 id="STEELS Standards">STEELS Standards</h2>
                         <ul>

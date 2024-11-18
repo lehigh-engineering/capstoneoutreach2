@@ -10,9 +10,12 @@ import step3Img from './makecodeImages/step3.png';
 import doneImg from './makecodeImages/done.png';
 import JSImg from './makecodeImages/JS.png';
 import pythonImg from './makecodeImages/python.png';
+import { saveAsPDF } from '../downloadPDF';
+
 
 function MakeCodeModule() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
     const toggleSidebar = () => setIsVisible(!isVisible);
 
     return (
@@ -39,6 +42,13 @@ function MakeCodeModule() {
                     <h1><span class="pixelated">Introduction to MakeCode:</span><br></br><i>Block Coding a Beating Heart</i></h1>
                     <img src={heartImg} alt="Heart" class="header-image"></img>
                 </div>
+                {isDownloading ? (
+                    <p>Downloading...</p>
+                ) : (
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'MazeModule.pdf', setIsDownloading)}>
+                        Download as PDF
+                    </button>
+                )}
                 <div class="body-content">
                     <h2 id="STEELS Standards">STEELS Standards</h2>
                         <ul>
