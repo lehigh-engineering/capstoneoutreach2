@@ -35,7 +35,7 @@ function MazeModule() {
                 </div>
                 <p class="inspo"><i>Inspired by </i><a href="https://www.sciencebuddies.org/stem-activities/program-a-maze-with-paper?from=Blog">Program a Maze with Paper</a> <i>from</i> Science Buddies</p>
                 {isDownloading ? (
-                    <p>Downloading...</p>
+                    <p className='downloading'>Downloading...</p>
                 ) : (
                     <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'MazeModule.pdf', setIsDownloading)}>
                         Download as PDF

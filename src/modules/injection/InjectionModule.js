@@ -34,7 +34,7 @@ function InjectionModule() {
                     <img src={hackerImg} alt="Hacker"></img>
                 </div>
                 {isDownloading ? (
-                    <p>Downloading...</p>
+                    <p className='downloading'>Downloading...</p>
                 ) : (
                     <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'InjectionModule.pdf', setIsDownloading)}>
                         Download as PDF

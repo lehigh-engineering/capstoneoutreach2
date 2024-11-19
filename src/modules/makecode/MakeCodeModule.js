@@ -43,7 +43,7 @@ function MakeCodeModule() {
                     <img src={heartImg} alt="Heart" class="header-image"></img>
                 </div>
                 {isDownloading ? (
-                    <p>Downloading...</p>
+                    <p className='downloading'>Downloading...</p>
                 ) : (
                     <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'MakecodeModule.pdf', setIsDownloading)}>
                         Download as PDF

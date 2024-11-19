@@ -36,7 +36,7 @@ function JavaModule2() {
                     <img src={javaImg} alt="Java"></img>
                 </div>
                 {isDownloading ? (
-                    <p>Downloading...</p>
+                    <p className='downloading'>Downloading...</p>
                 ) : (
                     <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'Java2Module.pdf', setIsDownloading)}>
                         Download as PDF

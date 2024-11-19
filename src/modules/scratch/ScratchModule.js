@@ -36,7 +36,7 @@ function ScratchModule() {
                     <img src={scratchImg} alt="Scratch"></img>
                 </div>
                 {isDownloading ? (
-                    <p>Downloading...</p>
+                    <p className='downloading'>Downloading...</p>
                 ) : (
                     <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'ScratchModule.pdf', setIsDownloading)}>
                         Download as PDF

@@ -34,7 +34,7 @@ function BoatModule() {
                     <img src={boatImg} alt="Boat"></img>
                 </div>
                 {isDownloading ? (
-                    <p>Downloading...</p>
+                    <p className='downloading'>Downloading...</p>
                 ) : (
                     <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'BoatModule.pdf', setIsDownloading)}>
                         Download as PDF
@@ -42,16 +42,6 @@ function BoatModule() {
                 )}
                 <div class="body-content">
                     <h2 id="STEELS Standards">STEELS Standards</h2>
-                    {/* 3.5.K-2.O Illustrate that there are different solutions to a design and that none are perfect.
-3.5.K-2.M Demonstrate essential skills of the engineering design process
-3.5.K-2.Q Apply skills necessary for making in design.
-3.5.K-2.S Apply design concepts, principles, and processes through play and exploration
-3.5.K-2.T Demonstrate that designs have requirements.
-3.5.K-2.U Explain that design is a response to wants and needs
-3.5.K-2.V Explain that materials are selected for use because they possess desirable properties and characteristics.
-3.5.K-2.X Develop a plan in order to complete a task.
-3.5.K-2.DD Collaborate effectively as a member of a team.
- */}
                     <ul>
                         <li><a href="https://files5.pdesas.org/141073079053144248148057232011143131034150087124/Download.ashx?hash=2.2">3.5.K-2.M</a></li>
                         <li><a href="https://files5.pdesas.org/207188128182216098135223010234062053089224157192/Download.ashx?hash=2.2">3.5.K-2.O</a></li>
