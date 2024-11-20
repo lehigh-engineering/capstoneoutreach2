@@ -17,6 +17,8 @@ import ScratchModule from './modules/scratch/ScratchModule';
 import MazeModule from './modules/maze/MazeModule';
 import HtmlModule from './modules/html/HtmlModule';
 import ModuleHandler from './modules/handler/ModuleHandler';
+import JavaModule from './modules/java/JavaModule';
+import JavaModule2 from './modules/java/JavaModule2';
 
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
@@ -99,6 +101,8 @@ function App() {
           <Route path="/maze" element={<MazeModule />} />
           <Route path="/scratch" element={<ScratchModule />} />
           <Route path="/html" element={<HtmlModule/>}/>
+          <Route path="/java" element={<JavaModule/>}/>
+          <Route path="/java2" element={<JavaModule2 />} />
 
           <Route path="/module/:id" element={<ModuleHandler/>}/>
 
