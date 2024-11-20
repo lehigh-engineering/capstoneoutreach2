@@ -15,7 +15,7 @@
       "function": {
         "modulespublic": {
           "deploymentBucketName": "amplify-capstoneoutreach2-dev-f41de-deployment",
-          "s3Key": "amplify-builds/modulespublic-447131546e5a766b7075-build.zip"
+          "s3Key": "amplify-builds/modulespublic-434b6350413778396546-build.zip"
         }
       },
       "storage": {
