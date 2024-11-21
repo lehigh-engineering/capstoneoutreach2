@@ -110,7 +110,7 @@ function ModulesPage() {
                 {activeTab === 'lower-beginner' && (
                     <>
                         <h1>Lower-Beginner Level</h1>
-                        <h2>Recommended for: Grades 1-3</h2>
+                        <h2>Recommended for: Grades K-2</h2>
                         <div className="module-container">
                         {modules.filter(module => module.level === 'lowerbeg').length === 0 ? (
                             <p><i>No content available for this tab yet.</i></p>
@@ -144,7 +144,7 @@ function ModulesPage() {
                 {activeTab === 'upper-beginner' && (
                     <>
                         <h1>Upper-Beginner Level</h1>
-                        <h2>Recommended for: Grades 4-5</h2>
+                        <h2>Recommended for: Grades 3-5</h2>
                         <div className="module-container">
                         {modules.filter(module => module.level === 'upperbeg').length === 0 ? (
                             <p><i>No content available for this tab yet.</i></p>
