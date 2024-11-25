@@ -19,7 +19,7 @@
     .header-container h1 {
         font-size: calc(1.5em + 1vw);
         max-width: 100%;
-        text-align: center;
+        /* text-align: center; */
     }
 
     .header-container h1 .pixelated {
@@ -114,7 +114,7 @@
         font-family: "Nunito", sans-serif;
         text-align: left;
         font-size: calc(2em + 1vw);
-        margin: 30px;
+        margin: 40px;
     }
 
     .header-container img {

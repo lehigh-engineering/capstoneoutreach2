@@ -91,7 +91,7 @@ function HtmlModule() {
                         <p>Draw up a mock website on the board and have students fill it out with their ideas. They may choose where to put a header, a table of contents, format their contents, add images, choose colors, etc. Take the different ideas and opinions and discuss the pros and cons of conflicting ideas to create a class webpage.</p>
                         <h3>HTML</h3>
                         <p>Introduce HTML as a way to create a personalized web page with nothing more than a local text editor. The objective for this class for you as a teacher is to attempt to replicate the class webpage as closely as possible in your demonstration before allowing students to branch off and create their own pages.</p>
-                        <p>IBegin by instructing your class to open the text editor on their computers and copying the code block below into their text editor:</p>
+                        <p>Begin by instructing your class to open the text editor on their computers and copying the code block below into their text editor:</p>
                         <pre>
                             <code>
                                 &lt;!DOCTYPE html&gt;
