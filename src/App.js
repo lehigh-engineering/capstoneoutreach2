@@ -16,6 +16,7 @@ import MakeCodeModule from './modules/makecode/MakeCodeModule';
 import ScratchModule from './modules/scratch/ScratchModule';
 import MazeModule from './modules/maze/MazeModule';
 import HtmlModule from './modules/html/HtmlModule';
+import ModuleHandler from './modules/handler/ModuleHandler';
 import JavaModule from './modules/java/JavaModule';
 import JavaModule2 from './modules/java/JavaModule2';
 import BoatModule from './modules/boat/BoatModule';
@@ -105,9 +106,10 @@ function App() {
           <Route path="/java2" element={<JavaModule2 />} />
           <Route path="/boat" element={<BoatModule />} />
 
+          <Route path="/module/:id" element={<ModuleHandler/>}/>
+
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        {/* <button onClick={invokeLambda}>Invoke Lambda</button> */}
       </div>
     </Router>
   );
