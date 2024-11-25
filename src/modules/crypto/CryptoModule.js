@@ -1,10 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../template/Module.css';
+import { saveAsPDF } from '../downloadPDF';
+
+
 import cipherImg from './cipher.jpg';
 
 function CryptoModule() {
     const [isVisible, setIsVisible] = useState(false);
-    const toggleSidebar = () => setIsVisible(!isVisible);
+    const [isDownloading, setIsDownloading] = useState(false);
+    
+    useEffect(() => {
+        // Add event listeners to all TOC links
+        const tocLinks = document.querySelectorAll('.toc a');
+        tocLinks.forEach(link => {
+            link.addEventListener('click', scrollToSection);
+        });
+
+        // Remove event listeners when component unmounts
+        return () => {
+            tocLinks.forEach(link => {
+                link.removeEventListener('click', scrollToSection);
+            });
+        };
+    }, []);
+
+    function scrollToSection(event) {
+        event.preventDefault();
+        const targetId = event.target.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            const yOffset = -80; // Adjust as needed to consider any fixed header
+            const rect = targetSection.getBoundingClientRect();
+            const scrollPosition = rect.top + window.scrollY + yOffset;
+            window.scrollBy({ top: scrollPosition, left: 0, behavior: 'smooth' });
+        }
+    }
+
+    const toggleSidebar = () => {
+        setIsVisible(!isVisible);
+    };
 
     return (
         <div class="anyModule">
@@ -30,6 +64,13 @@ function CryptoModule() {
                     <h1><span class="pixelated">Introduction to Cryptography:</span><br></br><i>Secret Codes and Ciphers</i></h1>
                     <img src={cipherImg} alt="Ceasar's Cipher"></img>
                 </div>
+                {isDownloading ? (
+                    <p className='downloading'>Downloading...</p>
+                ) : (
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'CryptoModule.pdf', setIsDownloading)}>
+                        Download as PDF
+                    </button>
+                )}
                 <div className="body-content">
                     <h2 id="STEELS Standards">STEELS Standards</h2>
                         <ul>

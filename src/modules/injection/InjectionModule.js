@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import '../template/Module.css';
 import hackerImg from './hacker.jpg';
+import { saveAsPDF } from '../downloadPDF';
+
 
 function InjectionModule() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
     const toggleSidebar = () => setIsVisible(!isVisible);
 
     return (
@@ -30,6 +33,13 @@ function InjectionModule() {
                     <h1><span class="pixelated">Introduction to Cybersecurity:</span><br></br><i>Prompt Injection Attacks</i></h1>
                     <img src={hackerImg} alt="Hacker"></img>
                 </div>
+                {isDownloading ? (
+                    <p className='downloading'>Downloading...</p>
+                ) : (
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'InjectionModule.pdf', setIsDownloading)}>
+                        Download as PDF
+                    </button>
+                )}
                 <div className="body-content">
                     <h2 id="STEELS Standards">STEELS Standards</h2>
                         <ul>

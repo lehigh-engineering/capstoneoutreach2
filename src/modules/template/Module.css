@@ -94,97 +94,113 @@
         transition: margin-left 0.3s ease;
     }
     
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center; 
-            margin-bottom: 50px;
-            border-radius: 25px;
-            box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.5);
-        }
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        margin-bottom: 50px;
+        border-radius: 25px;
+        box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.5);
+    }
 
-            .header-container h1 .pixelated {
-                font-family: "Pixelify Sans", sans-serif;
-                font-weight: 200;
-                text-shadow: 3px 3px 0 rgb(200, 200, 200);
-                font-size: calc(1em + 1vw);
-            }
+    .header-container h1 .pixelated {
+        font-family: "Pixelify Sans", sans-serif;
+        font-weight: 200;
+        text-shadow: 3px 3px 0 rgb(200, 200, 200);
+        font-size: calc(1em + 1vw);
+    }
 
-            .header-container h1 {
-                font-family: "Nunito", sans-serif;
-                text-align: left;
-                font-size: calc(2em + 1vw);
-                margin: 30px;
-            }
+    .header-container h1 {
+        font-family: "Nunito", sans-serif;
+        text-align: left;
+        font-size: calc(2em + 1vw);
+        margin: 30px;
+    }
 
-            .header-container img {
-                width: 300px;
-                display: flex;
-                position: relative;
-                margin: 0 auto;
-                justify-content: center;
-                padding-bottom: 20px;
-            }
+    .header-container img {
+        width: 300px;
+        display: flex;
+        position: relative;
+        margin: 0 auto;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
 
-        .body-content {
-            font-size: 18px;
-            line-height: 1.6;
-        }
+    .body-content {
+        font-size: 18px;
+        line-height: 1.6;
+    }
 
-        /* .body-content h1 {
-            font-size: 50px;
-            font-weight: 900;
-            text-align: center;
-        } */
+    /* .body-content h1 {
+        font-size: 50px;
+        font-weight: 900;
+        text-align: center;
+    } */
 
-        .body-content img {
-            width: 50%;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+    .body-content img {
+        width: 50%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
-        .body-content table {
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 18px;
-        }
+    .body-content table {
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+    }
 
-        .body-content th, 
-        .body-content td {
-            border: 1px solid #ddd; 
-            padding: 12px;
-            text-align: left;
-        }
+    .body-content th, 
+    .body-content td {
+        border: 1px solid #ddd; 
+        padding: 12px;
+        text-align: left;
+    }
 
-        .body-content th {
-            background-color: #502d0f;
-            color: white; 
-            font-weight: bold;
-        }
+    .body-content th {
+        background-color: #502d0f;
+        color: white; 
+        font-weight: bold;
+    }
 
-        .body-content tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        .body-content h2 {
-            font-weight: bold;
-            font-size: 30px;
-        }
-
-        .body-content pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-        
-        .body-content a {
-            color: #502D0F;
-            text-decoration: underline;
-        }
-        
-        .body-content a:hover {
-            color: #ff9900;
-        }
-
+    .body-content tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
     
+    .body-content h2 {
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    .body-content pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    
+    .body-content a {
+        color: #502D0F;
+        text-decoration: underline;
+    }
+    
+    .body-content a:hover {
+        color: #ff9900;
+    }
+
+    .download-button {
+        display: block;
+        margin: 20px auto;   
+        padding: 10px 20px;
+        font-size: 16px;     
+        background-color: #502D0F;
+        color: white;      
+        border: none;         
+        border-radius: 5px;  
+        cursor: pointer;     
+        text-align: center;   
+    }
+
+    .downloading {
+        text-align: center;
+    }
+
 
 

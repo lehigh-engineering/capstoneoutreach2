@@ -3,9 +3,12 @@ import '../template/Module.css';
 import javaImg from './java.png';
 import arrImg from './arrayDec.png';
 import forImg from './forLoop.png';
+import { saveAsPDF } from '../downloadPDF';
+
 
 function JavaModule2() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
     const toggleSidebar = () => setIsVisible(!isVisible);
 
     return (
@@ -32,6 +35,13 @@ function JavaModule2() {
                     <h1><span class="pixelated">Introduction to Java 2.0:</span><br></br><i>Intermediate Programming Concepts</i></h1>
                     <img src={javaImg} alt="Java"></img>
                 </div>
+                {isDownloading ? (
+                    <p className='downloading'>Downloading...</p>
+                ) : (
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'Java2Module.pdf', setIsDownloading)}>
+                        Download as PDF
+                    </button>
+                )}
                 <div class="body-content">
                     <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import '../template/Module.css';
 import htmlImg from './HTML.png';
+import { saveAsPDF } from '../downloadPDF';
+
 
 function HtmlModule() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
     const toggleSidebar = () => setIsVisible(!isVisible);
 
     return (
@@ -30,6 +33,13 @@ function HtmlModule() {
                     <h1><span class="pixelated">Introduction to HTML:</span><br></br><i>A Basic Webpage</i></h1>
                     <img src={htmlImg} alt="HTML"></img>
                 </div>
+                {isDownloading ? (
+                    <p className='downloading'>Downloading...</p>
+                ) : (
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'HTMLModule.pdf', setIsDownloading)}>
+                        Download as PDF
+                    </button>
+                )}
                 <div className="body-content">
                     <h2 id="STEELS Standards">STEELS Standards</h2>
                         <ul>
