@@ -73,7 +73,7 @@ function App() {
     <Router>
       <div class="App">
         <header className="banner">
-          <a href="https://www2.lehigh.edu"><img src="./lehigh-white-logo.svg" alt="logo"></img></a>
+          <a href="https://www2.lehigh.edu"><img src="/lehigh-white-logo.svg" alt="logo"></img></a>
           <h1><a href="https://engineering.lehigh.edu">P.C. ROSSIN COLLEGE OF<br></br>ENGINEERING AND APPLIED SCIENCE</a></h1>
           <button className="hamburger" onClick={toggleNav}>
             ☰
