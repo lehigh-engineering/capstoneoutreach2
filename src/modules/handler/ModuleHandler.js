@@ -71,7 +71,6 @@ function ModuleHandler() {
                             <li><a href="#Basic Vocab">Basic Vocab</a></li>
                             <li><a href="#Introduction">Introduction</a></li>
                             <li><a href="#Class Activity">Class Activity</a></li>
-                            <li><a href="#Summary">Summary</a></li>
                             <li><a href="#Discussion">Discussion</a></li>
                         </ul>
                     </div>
