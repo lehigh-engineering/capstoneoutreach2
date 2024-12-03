@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-color: #ff990060;
 }
 
 .tab-button {
@@ -25,8 +26,7 @@
 }
 
 .tab-button:hover {
-    background-color: #ff990080;
-    color: #00000085;
+    background-color: #ff990060;
 }
 
 .tab-button.active {
@@ -45,8 +45,10 @@
 
 .modules h1 {
     text-align: center;
-    font-family: "Nunito", sans-serif;
-    font-size: 40px;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 200;
+    text-shadow: 3px 3px 0 rgb(200, 200, 200);
+    font-size: 60px;
 }
 
 .modules h2 {
@@ -54,6 +56,7 @@
     font-family: "Nunito", sans-serif;
     font-weight: normal;
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .modules .module-container {
@@ -63,7 +66,7 @@
     justify-content: center;
     gap: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
   
 .module {

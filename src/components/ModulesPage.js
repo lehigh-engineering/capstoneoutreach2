@@ -85,6 +85,7 @@ function ModulesPage() {
                         <div className="module-container">
                         {modules.map((module) => (
                         <div key={module.id} className={`module ${flipped[module.id] ? 'flipped' : ''}`}>
+                            <a href={`/${module.keyword}`}>
                                 <div className="module-inner">
                                     <div className="module-flip-container"
                                         onMouseEnter={() => handleMouseEnter(module.id)}
@@ -102,6 +103,8 @@ function ModulesPage() {
                                     </div>
                                     <nav><p><a href={`/${module.keyword}`}>{module.title}</a></p></nav>
                                 </div>
+                                <a href={`/${module.keyword}`}><div></div></a>
+                            </a>
                             </div>
                         ))}
                         </div>

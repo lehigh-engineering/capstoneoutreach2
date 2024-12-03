@@ -1,50 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../template/Module.css';
-
 import javaImg from './java.png';
 import arrImg from './arrayDec.png';
 import forImg from './forLoop.png';
+import { saveAsPDF } from '../downloadPDF';
+
 
 function JavaModule2() {
     const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        // Add event listeners to all TOC links
-        const tocLinks = document.querySelectorAll('.toc a');
-        tocLinks.forEach(link => {
-            link.addEventListener('click', scrollToSection);
-        });
-
-        // Remove event listeners when component unmounts
-        return () => {
-            tocLinks.forEach(link => {
-                link.removeEventListener('click', scrollToSection);
-            });
-        };
-    }, []);
-
-    function scrollToSection(event) {
-        event.preventDefault();
-        const targetId = event.target.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            const yOffset = -80; // Adjust as needed to consider any fixed header
-            const rect = targetSection.getBoundingClientRect();
-            const scrollPosition = rect.top + window.scrollY + yOffset;
-            window.scrollBy({ top: scrollPosition, left: 0, behavior: 'smooth' });
-        }
-    }
-
-    const toggleSidebar = () => {
-        setIsVisible(!isVisible);
-    };
+    const [isDownloading, setIsDownloading] = useState(false);
+    const toggleSidebar = () => setIsVisible(!isVisible);
 
     return (
         <div class="anyModule">
-            <div className={`toc-bar ${isVisible ? 'expanded' : ''}`} onClick={toggleSidebar}>
+            <div className={`toc-bar ${isVisible ? 'expanded' : ''}`}>
                 {isVisible && (
                     <div className="toc">
-                        <h2>Table of Contents</h2>
+                        <h1>Table of Contents</h1>
                         <ul>
                             <li><a href="#STEELS Standards">STEELS Standards</a></li>
                             <li><a href="#Objectives">Objectives</a></li>
@@ -56,13 +28,20 @@ function JavaModule2() {
                             <li><a href="#Discussion">Discussion</a></li>
                         </ul>
                     </div>
-                )} <p className="toc-text"> {isVisible ? '◄' : '►'} </p>
+                )} <div className="toc-toggle" onClick={toggleSidebar}> {isVisible ? '◄' : '►'} </div>
             </div>
             <div className={`anyModuleContent ${isVisible ? 'shift-right' : ''}`}>
                 <div class="header-container">
-                    <h1>Introduction to Basic Programming Concepts:<br></br><i>Java</i></h1>
+                    <h1><span class="pixelated">Introduction to Java 2.0:</span><br></br><i>Intermediate Programming Concepts</i></h1>
                     <img src={javaImg} alt="Java"></img>
                 </div>
+                {isDownloading ? (
+                    <p className='downloading'>Downloading...</p>
+                ) : (
+                    <button className="download-button" onClick={() => saveAsPDF('.anyModuleContent', 'Java2Module.pdf', setIsDownloading)}>
+                        Download as PDF
+                    </button>
+                )}
                 <div class="body-content">
                     <h2 id="STEELS Standards">STEELS Standards</h2>
                     <ul>

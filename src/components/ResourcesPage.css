@@ -1,18 +1,22 @@
+* {
+    font-family: "Nunito", sans-serif;
+}
+
 .resources {
     width: 100%;
-    background-image: url('./images/computer_science_resources.png');
-    background-size: cover;
+    /* background-image: url('./images/computer_science_resources.png'); */
+    /* background-size: cover;
     background-position: center;
     background-position: center;
     background-repeat: no-repeat; 
-    background-attachment: fixed; 
-    min-height: 100vh;
+    background-attachment: fixed;  */
+    max-height: 100%;
 }
 
 .button-container {
     display: flex;
     padding: 40px;
-    gap: 20px;
+    gap: 50px;
     flex-direction: column; /* Stacks buttons vertically */
     justify-content: center; /* Centers content vertically */
     align-items: center; /* Centers content horizontally */
@@ -24,17 +28,33 @@
 }
 
 .resources button {
-    display: inline-block; /* Allows padding and margins */
+    /* display: inline-block; 
     padding: 10px 20px;
     border-radius: 2rem;
     margin-top: 1rem;
     font-size: 1.2em; 
-    font-weight: bold;    
+    font-weight: bold;     */
+    background: #ff9900;
+    border: none;
+    border-radius: 150px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    padding: 10px 50px;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.resources button:hover {
+    background-color: #ff990060;
+    color: #ff9900;
 }
 
 .resources h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .resources li {
@@ -51,25 +71,55 @@
 .levels-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
+    border-radius: 50px;
     gap: 20px;
-    padding: 20px;
-    margin-top: 30px;
+    padding: 30px;
+    /* margin-top: 20px; */
+    background-color: #502D0F;
 }
 
+.download-text {
+    grid-column: 1 / -1;
+    text-align: center;
+    /* padding: 10px; */
+    background-color: #502D0F;
+    border-radius: 5px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-direction: column;
+}
+
+.toggle-button:hover {
+    color: #ff9900;
+}
+
+.collapse-arrow-container {
+    grid-column: 1 / -1; 
+    text-align: center; 
+    /* margin-top: 10px;  */
+}
+
+.collapse-arrow {
+    font-size: 1.5em;
+    color: #FFF;
+    cursor: pointer;
+}
 
 .box {
     text-align: center;
     padding: 20px;
+    position: relative;
     /* background-color: #f0f0f0; */
     background-color: #F0F0F0;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .box a {
     display: inline-block; /* Ensures links are treated as blocks for spacing */
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-decoration: none; /* Remove underline from links */
-    padding: 8px 12px; /* Padding for links */
+    padding: 5px 12px; /* Padding for links */
     margin: 5px 0; /* Margin for spacing between links */
     border-radius: 5px; /* Rounded corners for links */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
@@ -78,7 +128,7 @@
 .box h3 {
     font-size: 2rem; /* Increase font size */
     color: #333; /* Darker text color for better contrast */
-    margin-bottom: 10px; /* Space between heading and paragraph */
+    margin: 10px; 
     text-align: center; /* Center-align the heading */
 }
 
@@ -87,6 +137,10 @@
     color: #333; /* Darker text color for better contrast */
     margin-bottom: 10px; /* Space between heading and paragraph */
     text-align: center; /* Center-align the heading */
+}
+
+.box h3 a:hover {
+    color: #ff9900;
 }
 
 .box p{
@@ -108,21 +162,40 @@
 .platforms-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
+    border-radius: 50px;
     gap: 20px;
-    padding: 20px;
-    margin-top: 30px;
+    padding: 30px;
+    /* margin-top: 30px; */
+    background-color: #502D0F;
 }
 
-.projects-container{
+.projects-container {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(2, 1fr); 
+    border-radius: 50px;
     gap: 20px;
-    padding: 20px;
-    margin-top: 30px;
+    padding: 30px;
+    /* margin-top: 30px; */
+    background-color: #502D0F;
 }
 
 .left-alignedP {
     text-align: left; /* Aligns text to the left */
     font-size: 1.25rem; /* Set font size (adjust as needed) */
     padding: 1rem;
+}
+
+@media (max-width: 800px) {
+    .platforms-container {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+
+    .levels-container {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
 }
