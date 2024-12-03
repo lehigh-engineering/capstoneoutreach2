@@ -7,7 +7,7 @@ import html2canvas from 'html2canvas';
 export const saveAsPDF = (selector, fileName = 'Document.pdf', setIsDownloading) => {
     setIsDownloading(true); // Set downloading state to true
     const button = document.querySelector('button');
-    button.style.display = 'none';
+    // button.style.display = 'none';
 
     const input = document.querySelector(selector);
 
@@ -39,6 +39,6 @@ export const saveAsPDF = (selector, fileName = 'Document.pdf', setIsDownloading)
 
         pdf.save(fileName);
         setIsDownloading(false); // Set downloading state to false
-        button.style.display = 'block';
+        // button.style.display = 'block';
     });
 };
