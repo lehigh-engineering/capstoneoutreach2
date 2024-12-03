@@ -125,11 +125,55 @@ function JavaModule2() {
                     <p><b>Option 1:</b></p>
                     <p>Create an array of 15 grades using any values you desire. Calculate the average of the class! For an extra challenge, apply a curve by adding 10 to every, or just some grades before recalculating the average.</p>
 
-
+                    <p><b>Solution</b></p>
+                    <pre><code>
+                        int[] grades = &#123;85, 92, 78, 64, 89, 73, 95, 88, 76, 84, 91, 67, 80, 93, 70&#125;;<br></br>
+                        int total = 0;<br></br>
+                        for (int i = 0; i &lt; grades.length; i++)&#123;<br></br>
+                        total += grades[i];<br></br>
+                        &#125;<br></br>
+                        System.out.println("Average grade before curve:");<br></br>
+                        System.out.println(total / grades.length);<br></br>
+                        <br></br>
+                        //curving the class by 5 points<br></br>
+                        for (int i = 0; i &lt; grades.length; i++)&#123;<br></br>
+                        grades[i] = grades[i] + 5;<br></br>
+                        &#125;<br></br>
+                        <br></br>
+                        int curvedTotal = 0;<br></br>
+                        for (int i = 0; i &lt; grades.length; i++)&#123;<br></br>
+                        curvedTotal += grades[i];<br></br>
+                        &#125;<br></br>
+                        <br></br>
+                        System.out.println("Average grade after curve:");<br></br>
+                        System.out.println(curvedTotal / grades.length);<br></br>                        
+                    </code></pre>
+                    <p>We begin by initializing an array of realistic values for grades. Note that students may populate their arrays differently resulting in varying values for averages. There is no one right answer! We then also initialize the variable total to hold the summation of all the grades. Using a for loop, we loop through the entire array of grades and add them to our total variable. Finally, we simply print the average which we calculate by dividing the total sum by the length.</p>
+                    <p>For the challenge activity, first we must loop through the array and modify the values of each element. We set each element to itself + 5 through each iteration, applying the curve. Then much like before, we loop through it again from the beginning and accumulate the total sum to find the average.</p>
 
                     <p><b>Option 2:</b></p>
-                    <p>Find the minimum and maximum of an array or even try to reverse an array.</p>
+                    <p>Find the minimum and maximum of an array.</p>
+                    <p><b>Solution:</b></p>
+                    <pre><code>
+                        int[] grades = &#123;85, 92, 78, 64, 89, 73, 95, 88, 76, 84, 91, 67, 80, 93, 70&#125;;<br></br>
+                        int min = 10000;<br></br>
+                        int max = 0;<br></br>
+                        for (int i = 0; i &lt; grades.length; i++)&#123;<br></br>
+                        if (grades[i] &lt; min)&#123;<br></br>
+                        min = grades[i];<br></br>
+                        &#125; else if (grades[i] &gt; max)&#123;<br></br>
+                        max = grades[i];<br></br>
+                        &#125;<br></br>
+                        &#125;<br></br>
+                        System.out.println("Min of array: ");<br></br>
+                        System.out.println(min);<br></br>
+                        System.out.println("Max of array: ");<br></br>
+                        System.out.println(max);<br></br>
+                        
+                    </code></pre>
 
+                    <p>We begin by initializing an array of any values we desire. Next we assign an arbitrarily high value for minimum (Keep in mind this value must be larger than any value in the array you created. Think about why!  Or you can simply set it equal to the first element of the array with int min = grades[0]. Talk about why this would work as well) We do a similar thing for max, assigning a value lower than any within the array, or simply the value of the first element. </p>
+                    <p>Then we traverse the array using a for loop to access every element of the array. Using our if statements, we check if the current value is smaller than min. If it is, we update min. The else if branch then checks if it is larger than max, updating max if so. A common mistake made here is simply having an else arm. Without the conditional specified, max would not be updated correctly. Finally we can print and verify that our program works as desired!</p>
                     <h2 id="Summary">Summary</h2>
                     <p>Bring the class back together and have them share their programs (as applicable based on classroom activity). Discuss the strategies they employed and the challenges they faced during the activity.</p>
                     <p>Have a few volunteers take a deeper dive into their program, walking their peers through the code line by line and verbally explaining their thought process as they coded their solution. Analyze the many ways to do the same task and weigh the pros and cons of each.</p>
