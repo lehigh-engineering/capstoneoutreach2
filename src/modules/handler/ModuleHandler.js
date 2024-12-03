@@ -99,7 +99,7 @@ function ModuleHandler() {
                         ))}
                     </ul>
 
-                    <h2 id="Objectives">Obectives</h2>
+                    <h2 id="Objectives">Objectives</h2>
                     <ul>
                         {data.objectives.map((objective, index) => (
                             <li key={index}>{objective}</li>
