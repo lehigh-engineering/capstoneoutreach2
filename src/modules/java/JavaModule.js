@@ -164,12 +164,52 @@ function JavaModule() {
                     <p>**</p>
                     <p>***</p>
                     <p>****</p>
+
+                    <p><b>Solution:</b></p>
+                    <pre><code>
+                        int height = 4; <br></br>
+                        int row = 0;<br></br>
+                        int star = 0;<br></br>
+                        while (row &lt;= height)&#123;<br></br>
+                        while (star &lt; row)&#123;<br></br>
+                        System.out.print("*");<br></br>
+                        star = star + 1;<br></br>
+                        &#125;<br></br>
+                        star = 0;<br></br>
+                        row = row + 1;<br></br>
+                        System.out.println();<br></br>
+                        &#125;<br></br>
+                    </code></pre>
+                    <p>Walking through the solution would be a great activity as well! You can demonstrate the logic of the while loop and how it terminates only once the conditional holds false. Tracking the values in each variable of each iteration is also very important when figuring out how the code works or debugging.</p>
+                    <p>First we initialized three variables:</p>
+                        <ul>
+                            <li>height holds the unchanging height of the triangle we want to build, four in this example solution</li>
+                            <ul><li>Observe how changing its value is all that is necessary to change the triangle</li></ul>
+                            <ul><li>Good variable usage should bring about varying results with minimal changes to the rest of the code!</li></ul>
+                        </ul>
+                        <ul><li>row holds the value representing which level of the triangle we are on</li></ul>
+                        <ul><li>star holds the value representing which star we are on within the same row</li></ul>
+                    <p>In our outer while loop, our conditional is row &lt;= height. This allows the code within to execute while we are still on a row of the triangle we are trying to build. Now that we have a way to access each “row” of the triangle, the code within is what we want each row to do: print the right number of stars!</p>
+                    <p>The key observation that allows us to solve the problem, is the row we are on is equivalent to the number of stars we want to print. As a result, this allows us to create our inner while loop conditional, setting it to star &lt; row.Until we have printed enough stars to equal the row we are on, we want to keep printing them. Within the while loop, we simply have a print statement. Note that this one is missing the “ln” at the end of print, all this does is it doesn’t jump to the next line after printing, allowing us to print consecutive stars on the same line. Finally to avoid being stuck in an infinite while loop, we must change the variable(s) of the while loop. Each time we print a star, we add one to our star variable!</p>
+                    <p>Now back to the outer while loop, after running the code we wanted to execute in each iteration (the inner while loop), we must update the variables we used and those of our conditional! First we reset star to 0, as for our next row, we would like to start from 0 stars again. Then we add 1 to row to move on to the next one. And finally, we execute a println to move our output to the next line, ready for the next row of stars!</p>
                     
                     
                     <p><b>Option 2:</b></p>
                     <p>Write a program that prints out the months corresponding to a number. For example, if x is set to 10, we should print out “October”.</p>
                     <p>This would be a good option to introduce error checking. How would a value of 100 be handled? How about a -5 or a string?</p>
 
+                    <p><b>Solution:</b></p>
+                    <pre><code>
+                        int month = 5;<br></br>
+                        if (month == 1)&#123;<br></br>
+                        System.out.println("January");<br></br>
+                        &#125; else if (month == 2)&#123;<br></br>
+                        System.out.println("February");<br></br>
+                        &#125; else &#123;<br></br>
+                        System.out.println("Invalid month input");<br></br>
+                        &#125;<br></br>
+                    </code></pre>
+                    <p>This activity serves as excellent practice for getting used to if-else statements! Essentially, you can check if the value of the month variable is equal to the numeric representation of each month of the year. For example, 1 would correlate to January. Using if else branches, you should run all the other months, beyond just February which is displayed here. And finally, the else at the very end acts as error checking. We know if the code doesn’t enter any of the if/else if statements, it isn’t a valid month input, and so we print an appropriate error message</p>
                     <h2 id="Summary">Summary</h2>
                     <p>Bring the class back together and have them share their programs (as applicable based on classroom activity). Discuss the strategies they employed and the challenges they faced during the activity.</p>
                     <p>Have a few volunteers take a deeper dive into their program, walking their peers through the code line by line and verbally explaining their thought process as they coded their solution. Analyze the many ways to do the same task and weigh the pros and cons of each.</p>
