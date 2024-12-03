@@ -53,7 +53,7 @@ function HtmlModule() {
                             <li><a href="https://files5.pdesas.org/191077107162061033191092180254094011093001251131/Download.ashx?hash=2.2">3.5.6-8.X</a></li>
                             <li><a href="https://files5.pdesas.org/031176110099065030206242252068251045122192108014/Download.ashx?hash=2.2">3.5.6-8.KK</a></li>
                         </ul>
-                    <h2 id="Objectives">Obectives</h2>
+                    <h2 id="Objectives">Objectives</h2>
                         <ul>
                             <li>Introduce students to the fundamental concepts of HTML (Hypertext Markup Language)</li>
                             <li>Enable students to create simple web pages using HTML</li>
