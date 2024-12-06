@@ -16,6 +16,10 @@ import MakeCodeModule from './modules/makecode/MakeCodeModule';
 import ScratchModule from './modules/scratch/ScratchModule';
 import MazeModule from './modules/maze/MazeModule';
 import HtmlModule from './modules/html/HtmlModule';
+import ModuleHandler from './modules/handler/ModuleHandler';
+import JavaModule from './modules/java/JavaModule';
+import JavaModule2 from './modules/java/JavaModule2';
+import BoatModule from './modules/boat/BoatModule';
 
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
@@ -67,19 +71,19 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <header class="banner">
-          <a href="https://www2.lehigh.edu"><img src="./lehigh-white-logo.svg" alt="logo"></img></a>
+      <div class="App">
+        <header className="banner">
+          <a href="https://www2.lehigh.edu"><img src="/lehigh-white-logo.svg" alt="logo"></img></a>
           <h1><a href="https://engineering.lehigh.edu">P.C. ROSSIN COLLEGE OF<br></br>ENGINEERING AND APPLIED SCIENCE</a></h1>
           <button className="hamburger" onClick={toggleNav}>
             ☰
           </button>
           <nav className={`nav-links ${isNavOpen ? "open" : ""}`}>
-            <h2><NavLink to="/" className="nav-link" activeClassName="active">Home</NavLink></h2>
-            <h2><NavLink to="/modules" className="nav-link" activeClassName="active">Modules</NavLink></h2>
-            <h2><NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink></h2>
-            <h2><NavLink to="/resources" className="nav-link" activeClassName="active">Resources</NavLink></h2>
-            <h2><NavLink to="/feedback" className="nav-link" activeClassName="active">Feedback</NavLink></h2>
+            <h2><NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Home</NavLink></h2>
+            <h2><NavLink to="/modules" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Modules</NavLink></h2>
+            <h2><NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>About</NavLink></h2>
+            <h2><NavLink to="/resources" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Resources</NavLink></h2>
+            <h2><NavLink to="/feedback" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Feedback</NavLink></h2>
           </nav>
         </header>
         
@@ -98,10 +102,14 @@ function App() {
           <Route path="/maze" element={<MazeModule />} />
           <Route path="/scratch" element={<ScratchModule />} />
           <Route path="/html" element={<HtmlModule/>}/>
+          <Route path="/java" element={<JavaModule/>}/>
+          <Route path="/java2" element={<JavaModule2 />} />
+          <Route path="/boat" element={<BoatModule />} />
+
+          <Route path="/module/:id" element={<ModuleHandler/>}/>
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        {/* <button onClick={invokeLambda}>Invoke Lambda</button> */}
       </div>
     </Router>
   );

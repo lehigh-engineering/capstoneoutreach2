@@ -3,15 +3,37 @@ import './ResourcesPage.css';
 
 function ResourcesPage() {
     const [showSteels, setShowSteels] = useState(false);
+    const [showLowBeg, setLowBeg] = useState(false);
+    const [showUpBeg, setUpBeg] = useState(false);
+    const [showProficient, setProficient] = useState(false);
+    const [showAdvanced, setAdvanced] = useState(false);
     const [showPlatforms, setShowPlatforms] = useState(false);
     const [showProjects, setShowProjects] = useState(false);
     const [showTechRecommendations, setShowTechRecommendations] = useState(false);
 
     // Toggle functions for each section
-    const toggleSteels = () => setShowSteels(!showSteels);
+    //const toggleSteels = () => setShowSteels(!showSteels);
+    const toggleLowBeg = () => setLowBeg(!showLowBeg);
+    const toggleUpBeg = () => setUpBeg(!showUpBeg);
+    const toggleProficient = () => setProficient(!showProficient);
+    const toggleAdvanced = () => setAdvanced(!showAdvanced);
     const togglePlatforms = () => setShowPlatforms(!showPlatforms);
     const toggleProjects = () => setShowProjects(!showProjects);
     const toggleTechRecommendations = () => setShowTechRecommendations(!showTechRecommendations);
+
+    const closeAllLevels = () => {
+        setLowBeg(false);
+        setUpBeg(false);
+        setProficient(false);
+        setAdvanced(false);
+    };
+
+    const toggleSteels = () => {
+        setShowSteels(!showSteels);
+        if (showSteels) {
+            closeAllLevels(); // Close all levels when collapsing STEELS
+        }
+    };
 
     return (
         <div class="resources">
@@ -19,14 +41,18 @@ function ResourcesPage() {
             <button onClick={toggleSteels} className="toggle-button">
                 <h2>STEELS Standards</h2>
             </button>
-
             {showSteels && (
-            <div className="levels-container">
+                <div className="levels-container">
+                    <div className="download-text">
+                    <p>Click on a STEELS standard to download it!</p>
+                    </div>
                 <div className="box">
                     <h3>Lower Beginner</h3>
                     <a href="https://files5.pdesas.org/117181208234027170154255183096157115097174210144/Download.ashx?hash=2.2">3.5.K-2.A</a><br />
                     <a href="https://files5.pdesas.org/237198230215126081060166106182139140088219007107/Download.ashx?hash=2.2">3.5.K-2.B</a><br />
                     <a href="https://files5.pdesas.org/254124005099200220163213163018147126087211127208/Download.ashx?hash=2.2">3.5.K-2.C</a><br />
+                    {showLowBeg && ( 
+                    <>
                     <a href="https://files5.pdesas.org/169080103040029253161014097207126207083002141099/Download.ashx?hash=2.2">3.5.K-2.D</a><br />
                     <a href="https://files5.pdesas.org/161230240169255061023094135120081164110030051105/Download.ashx?hash=2.2">3.5.K-2.E</a><br />
                     <a href="https://files5.pdesas.org/154120155141037254059038146041015125157056090032/Download.ashx?hash=2.2">3.5.K-2.F</a><br />
@@ -54,12 +80,19 @@ function ResourcesPage() {
                     <a href="https://files5.pdesas.org/054134017255078026107242192105194132191014144116/Download.ashx?hash=2.2">3.5.K-2.BB</a><br />
                     <a href="https://files5.pdesas.org/212103033137111081203018211043018126090111198128/Download.ashx?hash=2.2">3.5.K-2.CC</a><br />
                     <a href="https://files5.pdesas.org/120013050040189120039035103019186249131050125077/Download.ashx?hash=2.2">3.5.K-2.DD</a><br />
+                    </>)}
+                    <button onClick={toggleLowBeg} className="show-all-button">
+                        {showLowBeg ? "Show Less" : "Show All"}
+                    </button>
                 </div>
+                
                 <div className="box">
                     <h3>Upper Beginner</h3>
                     <a href="https://files5.pdesas.org/192123200213051253114190099114138033029024251068/Download.ashx?hash=2.2">3.5.3-5.A</a><br />
                     <a href="https://files5.pdesas.org/080033089127183102084155242179142161102043032204/Download.ashx?hash=2.2">3.5.3-5.B</a><br />
                     <a href="https://files5.pdesas.org/227124228014115124108137204158214222242220044074/Download.ashx?hash=2.2">3.5.3-5.C</a><br />
+                    {showUpBeg && ( 
+                    <>
                     <a href="https://files5.pdesas.org/005217049026216210108020201117108201070032115033/Download.ashx?hash=2.2">3.5.3-5.D</a><br />
                     <a href="https://files5.pdesas.org/124154094171226144221054011105155180028216014181/Download.ashx?hash=2.2">3.5.3-5.E</a><br />
                     <a href="https://files5.pdesas.org/253227175075069096135218040098217086121148208094/Download.ashx?hash=2.2">3.5.3-5.F</a><br />
@@ -91,12 +124,18 @@ function ResourcesPage() {
                     <a href="https://files5.pdesas.org/238011211062058118139224042235192097016038147129/Download.ashx?hash=2.2">3.5.3-5.FF</a><br />
                     <a href="https://files5.pdesas.org/069021061250215126097141193074039086127208093053/Download.ashx?hash=2.2">3.5.3-5.GG</a><br />
                     <a href="https://files5.pdesas.org/233165143004208231102043183111067160012240136060/Download.ashx?hash=2.2">3.5.3-5.HH</a><br />
+                    </>)}
+                    <button onClick={toggleUpBeg} className="show-all-button">
+                        {showUpBeg ? "Show Less" : "Show All"}
+                    </button>
                 </div>
                 <div className="box">
                     <h3>Proficient</h3>
                     <a href="https://files5.pdesas.org/002090051034201229117219190199235164188238024034/Download.ashx?hash=2.2">3.5.6-8.A</a><br />
                     <a href="https://files5.pdesas.org/244214132125186219033198116042173016204114033174/Download.ashx?hash=2.2">3.5.6-8.B</a><br />
                     <a href="https://files5.pdesas.org/006008023101053170117031108070123074097113109072/Download.ashx?hash=2.2">3.5.6-8.C</a><br />
+                    {showProficient && ( 
+                    <>
                     <a href="https://files5.pdesas.org/037227059013089157130186151183253243227136190167/Download.ashx?hash=2.2">3.5.6-8.D</a><br />
                     <a href="https://files5.pdesas.org/254078244078110121079251115164023230092100016195/Download.ashx?hash=2.2">3.5.6-8.E</a><br />
                     <a href="https://files5.pdesas.org/050205197024147196040149181007017248032244235080/Download.ashx?hash=2.2">3.5.6-8.F</a><br />
@@ -132,12 +171,18 @@ function ResourcesPage() {
                     <a href="https://files5.pdesas.org/164216219116102219064033106096129149122247219042/Download.ashx?hash=2.2">3.5.6-8.JJ</a><br />
                     <a href="https://files5.pdesas.org/031176110099065030206242252068251045122192108014/Download.ashx?hash=2.2">3.5.6-8.KK</a><br />
                     <a href="https://files5.pdesas.org/050156046234044222190009142015192137030139180004/Download.ashx?hash=2.2">3.5.6-8.LL</a><br />
+                    </>)}
+                    <button onClick={toggleProficient} className="show-all-button">
+                        {showProficient ? "Show Less" : "Show All"}
+                    </button>
                 </div>
                 <div className="box">
                     <h3>Advanced</h3>
                     <a href="https://files5.pdesas.org/162044083152017021026239152101217105009088179002/Download.ashx?hash=2.2">3.5.9-12.A</a><br />
                     <a href="https://files5.pdesas.org/162182216218005227239103014162202179188173158137/Download.ashx?hash=2.2">3.5.9-12.B</a><br />
                     <a href="https://files5.pdesas.org/215245078057186073251063009173014100075046063174/Download.ashx?hash=2.2">3.5.9-12.C</a><br />
+                    {showAdvanced && ( 
+                    <>
                     <a href="https://files5.pdesas.org/090121114181159062147150255156099252193174248184/Download.ashx?hash=2.2">3.5.9-12.D</a><br />
                     <a href="https://files5.pdesas.org/215202132108178027027000030255142164072248083221/Download.ashx?hash=2.2">3.5.9-12.E</a><br />
                     <a href="https://files5.pdesas.org/204135184189177114224098078144114178189161031046/Download.ashx?hash=2.2">3.5.9-12.F</a><br />
@@ -177,6 +222,13 @@ function ResourcesPage() {
                     <a href="https://files5.pdesas.org/207201150035116097240055227025066240219081204073/Download.ashx?hash=2.2">3.5.9-12.NN</a><br />
                     <a href="https://files5.pdesas.org/010138063158210172055107071198238162242194167171/Download.ashx?hash=2.2">3.5.9-12.OO</a><br />
                     <a href="https://files5.pdesas.org/223183051006182031178026012150050197228050027199/Download.ashx?hash=2.2">3.5.9-12.PP</a><br />
+                    </>)}
+                    <button onClick={toggleAdvanced} className="show-all-button">
+                        {showAdvanced ? "Show Less" : "Show All"}
+                    </button>
+                </div>
+                <div class="collapse-arrow-container" onClick={toggleSteels}>
+                    <span class="collapse-arrow">▲</span>
                 </div>
             </div> 
             )}
@@ -200,6 +252,9 @@ function ResourcesPage() {
                     <p>Replit is an online platform designed for coding, learning, and collaboration. It provides an integrated development environment (IDE) in the cloud, where users can write, run, and share code in multiple programming languages directly from their browser.</p>
                     <p>Replit is widely used by beginners, educators, and experienced developers for learning to code, building projects, and working on collaborative coding tasks.</p>
                 </div>
+                <div class="collapse-arrow-container" onClick={togglePlatforms}>
+                    <span class="collapse-arrow">▲</span>
+                </div>
             </div>
             )}
             <button onClick={toggleProjects} className="toggle-button">
@@ -216,6 +271,9 @@ function ResourcesPage() {
                     <h3>Encryption/Decryption Tool</h3>
                     <p>Write a simple program that encrypts/decrypts a message using a cipher --- such as the caesar cipher as taught in our module. Using online code compilers or their own personal IDE, and utilizing string manipulation, loops, and other core cs concepts, create your down crypto program!</p>
                 </div>
+                <div class="collapse-arrow-container" onClick={toggleProjects}>
+                    <span class="collapse-arrow">▲</span>
+                </div>
             </div>
             )}
         
@@ -226,20 +284,23 @@ function ResourcesPage() {
             <div className="projects-container">
                 <div className="box">
                     <h3>IDEs: All IDEs listed below are free or free under student accounts</h3>
-                    <div className="left-alignedP">VSCode: a highly customizable and lightweight code editor that is compatibe with most programming languages, making it a versatile beginner friendly IDE</div>
-                    <div className="left-alignedP">PyCharm: a full-featured IDE specifically for Python, with code completion, debugging, and extensive libraries</div>
-                    <div className="left-alignedP">Jupyter Notebook: Popular for data science and educational use, supporting interactive coding</div>
-                    <div className="left-alignedP">IntelliJ IDEA: Widely regarded as one of the best IDEs for Java development, with robust features for enterprise applications</div>
-                    <div className="left-alignedP">Eclipse: A free, open-source IDE commonly used for Java development, known for its plugins</div>
-                    <div className="left-alignedP">CLion: A powerful IDE by JetBrains for C/C++, with smart code completion and debugging tools</div>
+                    <div className="left-alignedP"><b>VSCode</b>: a highly customizable and lightweight code editor that is compatibe with most programming languages, making it a versatile beginner friendly IDE</div>
+                    <div className="left-alignedP"><b>PyCharm</b>: a full-featured IDE specifically for Python, with code completion, debugging, and extensive libraries</div>
+                    <div className="left-alignedP"><b>Jupyter Notebook</b>: Popular for data science and educational use, supporting interactive coding</div>
+                    <div className="left-alignedP"><b>IntelliJ IDEA</b>: Widely regarded as one of the best IDEs for Java development, with robust features for enterprise applications</div>
+                    <div className="left-alignedP"><b>Eclipse</b>: A free, open-source IDE commonly used for Java development, known for its plugins</div>
+                    <div className="left-alignedP"><b>CLion</b>: A powerful IDE by JetBrains for C/C++, with smart code completion and debugging tools</div>
                 </div>
                 <div className="box">
                     <h3>Languages</h3>
-                    <div className="left-alignedP">Python: A high-level, interpreted language known for its readability and simplicity. It's widely used in web development, data analysis, artificial intelligence, scientific computing, and automation</div>
-                    <div className="left-alignedP">JavaScript:  A versatile, high-level scripting language primarily used for web development to create interactive and dynamic web pages. It runs in the browser and is also popular for server-side development using Node.js</div>
-                    <div className="left-alignedP">Java: A widely-used, object-oriented programming language designed for portability across platforms. It’s commonly used in enterprise applications, Android app development, and large systems</div>
-                    <div className="left-alignedP">C++: An extension of the C programming language that includes object-oriented features. It’s widely used in systems programming, game development, and applications requiring high performance</div>
-                    <div className="left-alignedP">C# :A modern, object-oriented language developed by Microsoft, primarily used for developing Windows applications and games (using Unity). It's part of the .NET framework and is known for its performance and security features</div>
+                    <div className="left-alignedP"><b>Python</b>: A high-level, interpreted language known for its readability and simplicity. It's widely used in web development, data analysis, artificial intelligence, scientific computing, and automation</div>
+                    <div className="left-alignedP"><b>JavaScript</b>:  A versatile, high-level scripting language primarily used for web development to create interactive and dynamic web pages. It runs in the browser and is also popular for server-side development using Node.js</div>
+                    <div className="left-alignedP"><b>Java</b>: A widely-used, object-oriented programming language designed for portability across platforms. It’s commonly used in enterprise applications, Android app development, and large systems</div>
+                    <div className="left-alignedP"><b>C++</b>: An extension of the C programming language that includes object-oriented features. It’s widely used in systems programming, game development, and applications requiring high performance</div>
+                    <div className="left-alignedP"><b>C#</b>: A modern, object-oriented language developed by Microsoft, primarily used for developing Windows applications and games (using Unity). It's part of the .NET framework and is known for its performance and security features</div>
+                </div>
+                <div class="collapse-arrow-container" onClick={toggleTechRecommendations}>
+                    <span class="collapse-arrow">▲</span>
                 </div>
             </div>
             )}

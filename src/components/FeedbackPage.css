@@ -5,14 +5,16 @@
 
 .feedback h1 {
     font-family: "Pixelify Sans", sans-serif;
-    font-weight: 500;
-    font-size: 50px;
+    font-weight: 200;
+    text-shadow: 3px 3px 0 rgb(200, 200, 200);
+    font-size: 60px;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 75px;
 }
 
 .feedback h3 {
+    font-family: "Nunito", sans-serif;
     margin-bottom: 30px;
 }
 
@@ -48,16 +50,18 @@
 .feedback button {
     background: #ff9900;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: #fff;
     padding: 10px 30px;
     font-family: "Nunito", sans-serif;
     font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
 }
 
 .feedback button:hover {
-    background-color: #ff990080;
-    color: #00000085;
+    background-color: #ff990060;
+    color: #ff9900;
+    /* font-weight: bold; */
 }
