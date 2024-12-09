@@ -79,7 +79,7 @@ function ModuleHandler() {
             
             {loading ? <Spinner /> : <div className={`anyModuleContent ${isVisible ? 'shift-right' : ''}`}>
                 <div class="header-container">
-                    <h1>{data.title}</h1>
+                    <h1><span class="pixelated">{data.title}</span></h1>
                     <img src={"https://cs-images-bucket.s3.us-east-2.amazonaws.com/" + data.img} alt="HTML"></img>
                 </div>
                 {isDownloading ? (
