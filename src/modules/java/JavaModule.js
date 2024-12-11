@@ -43,12 +43,11 @@ function JavaModule() {
                 <div class="body-content">
                     <h2 id="STEELS Standards">STEELS Standards</h2>
                         <ul>
-                            <li><a href="https://files5.pdesas.org/163005038051165169006245176208132131190217116096/Download.ashx?hash=2.2">3.5.6-8.H</a></li>
-                            <li><a href="https://files5.pdesas.org/108112041116232255207228146204090032226252193124/Download.ashx?hash=2.2">3.5.6-8.I</a></li>
-                            <li><a href="https://files5.pdesas.org/225125079146198173223229244205143071127114037068/Download.ashx?hash=2.2">3.5.6-8.U</a></li>
-                            <li><a href="https://files5.pdesas.org/235036232045134075125059046142179129042095134123/Download.ashx?hash=2.2">3.5.6-8.BB</a></li>
-                            <li><a href="https://files5.pdesas.org/202207034238051062213202015009077219061167227169/Download.ashx?hash=2.2">3.5.6-8.CC</a></li>
-                            <li><a href="https://files5.pdesas.org/101203203242197017109096133004207133057127052228/Download.ashx?hash=2.2">3.5.6-8.EE</a></li>
+                        <li><a href="https://files5.pdesas.org/161203195084170179233068016174194158009105195187/Download.ashx?hash=2.2">3.5.9-12.N</a></li>
+                        <li><a href="https://files5.pdesas.org/133028192161040124000026223038023050097131199014/Download.ashx?hash=2.2">3.5.9-12.P</a></li>
+                        <li><a href="https://files5.pdesas.org/016138081223065117078046198102044010228081064063/Download.ashx?hash=2.2">3.5.9-12.Q</a></li>
+                        <li><a href="https://files5.pdesas.org/077243227002061056253089236238029152122022131221/Download.ashx?hash=2.2">3.5.9-12.U</a></li>
+                            
                         </ul>
                     <h2 id="Objectives">Objectives</h2>
                         <ul>
